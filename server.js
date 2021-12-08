@@ -2,6 +2,11 @@ const port = process.env.PORT || 8080;
 const host = process.env.HOST || '127.0.0.1';
 const express = require('express');
 const app = express();
+app.set('view-engine', 'ejs')
+var router = require("express").Router();
+const controlador = require("../DEVWEV_TBL-main/controllers/controller");
+app.use(express.urlencoded({ extended: true }));
+
 const cors = require("cors");
 app.use(cors({
   exposedHeaders: ['Location'],
@@ -24,6 +29,23 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+app.get('/login', (req,res) => {
+  res.render('login.ejs')
+})
+
+app.get('/register', (req,res) => {
+  res.render('register.ejs')
+})
+
+// Cria um novo utilizador
+app.post("/registar", controlador.registar);
+  
+// Rota para login - tem de ser POST para não vir user e pass na URL
+app.post("/login", controlador.login);
+
+// Rota para verificar e ativar o utilizador
+app.get("/auth/confirm/:confirmationCode", controlador.verificaUtilizador)
+
+
 
 module.exports = app;
-require('./loader.js');
