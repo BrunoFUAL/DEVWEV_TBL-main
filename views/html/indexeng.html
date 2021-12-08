@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <link rel="icon" href="/views/img/tbl4.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Site de uma Conferência Web">
+    <meta name="author" content="Ricardo Queirós">
+
+    <title>TBL - Virtual Classroom</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="/views/css/webconf.css">
+    
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    
+    <style>
+        #googleMap {
+            width: 100%; /* Span the entire width of the screen */
+            height: 400px; /* Set the height to 400 pixels */
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%); /* Change the color of the map to black and white */
+        }
+      </style>
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <img src="/views/img/tbl4.png" alt="Dev Web">
+        <a class="navbar-brand " href="#page-top">TBL - Virtual Classroom</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>          
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#sobre">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#speakers">SUBJECTS</a>
+            </li>
+            <!--
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">PROGRAMA</a>
+            </li>
+            -->
+            <li class="nav-item">
+              <a id="aSponsors" class="nav-link js-scroll-trigger" href="#sponsors">WEBSITE LINKS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contacts">CONTACTS</a>
+            </li>
+            <li class="nav-item">
+              <a id="btnLogin" class="nav-link" href="#">TEACHERS</a>
+            </li>
+            <li>
+              <button class="pushable" onclick="window.location.href='http://localhost:8080/';"></a>
+                <span class="front">
+                  Portuguese Version
+                </span>
+              </button>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-lead-in">Lets Go!</div>
+          <div class="intro-heading text-uppercase">Your Virtual Classroom</div>
+          <a id="btnRegister" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Subscribe</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ######################### SOBRE ########################## -->
+    <section id="sobre">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">About</h2>
+            <h3 class="section-subheading ">Sala de aula virtual destinada à aprendizagem em grupo e partilha de informação entre alunos e docentes</h3>      
+            <h3 class="section-subheading ">Estão disponiveis materiais para as seguintes unidades curriculares</h3>        
+          </div>
+        </div>
+        
+        </div>
+      </div>
+    </section>
+
+       <!-- ###################### SPEAKERS ####################### -->
+       <section class="bg-light" id="speakers">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading text-uppercase">Disciplinas</h2>
+              <h3 class="section-subheading text-muted">Estão disponiveis materiais de estudo para as seguintes unidades curriculares:.</h3>
+            </div>
+            <div class="row text-center">
+              <div class="col-md-6">
+                <span class="fa-stack fa-4x">
+                  <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                  <i class="fas fa-globe fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="topic-heading">Desenvolvimento WEB</h4>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDEVWEB">DEV WEB</button>
+                <p class="text-muted">Expandir a Web para fora do computador e ligá-la à Internet das Coisas!</p>
+              </div>
+              <div class="col-md-6">
+                <span class="fa-stack fa-4x">
+                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                  <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="topic-heading">Inteligência Artificial</h4>
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">IA</button>
+                <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em termos de performance!</p>
+              </div>      
+              <div class="col-md-6">
+                <span class="fa-stack fa-4x">
+                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                  <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="topic-heading">Gestão de Projetos</h4>
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">GP</button>
+                <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em termos de performance!</p>
+              </div> 
+              <div class="col-md-6">
+                <span class="fa-stack fa-4x">
+                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                  <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="topic-heading">Controlo de Gestão</h4>
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">CG</button>
+                <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em termos de performance!</p>
+              </div> 
+              <div class="col-md-6">
+                <span class="fa-stack fa-4x">
+                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                  <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="topic-heading">Gestão de Redes e Sistemas</h4>
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">GRS</button>
+                <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em termos de performance!</p>
+              </div>     
+          </div>
+          <div class="row" id="renderSpeakers">
+          </div>
+          </div>
+        </div>
+      </section>
+  
+
+
+
+<div class="modal" id="modalDEVWEB">
+	<div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-header">
+          <h4 class="modal-title">Desenvolvimento WEB</h4>    
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div><div class="container"></div>
+        <div class="modal-body">
+          <object data="/views/docs/debweb.txt" width="800" height="400">
+            Not supported
+            </object
+            width="95%"></iframe></p>
+          <a data-toggle="modal" href="#modalDEVWEBl2" class="btn btn-primary">Aula nº1</a>
+          <a data-toggle="modal" href="#modalDEVWEBl3" class="btn btn-primary">Aula nº2</a>
+          <a data-toggle="modal" href="#modalDEVWEBl4" class="btn btn-primary">Trabalho de Grupo</a>
+          <a data-toggle="modal" href="#modalDEVWEBl5" class="btn btn-primary">Links Uteis</a>
+        </div>
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn">Close</a>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="modal" id="modalDEVWEBl2" data-backdrop="static">
+	<div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Aula nº 1 - HTML</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div><div class="container"></div>
+        <div class="modal-body">
+          <embed src="/views/docs/html_tutorial.pdf" frameborder="0" width="100%" height="400px">
+        </div>
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn">Close</a>
+          <a href="#" class="btn btn-primary">Save changes</a>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="modal" id="modalDEVWEBl3" data-backdrop="static">
+	<div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Aula nº 2 - Javascript</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div><div class="container"></div>
+        <div class="modal-body">
+          <embed src="/views/docs/javascript_tutorial.pdf" frameborder="0" width="100%" height="400px">
+        </div>
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn">Close</a>
+          <a href="#" class="btn btn-primary">Save changes</a>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="modal" id="modalDEVWEBl4" data-backdrop="static">
+	<div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Trabalho de Grupo</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div><div class="container"></div>
+        <div class="modal-body">
+          <embed src="/views/docs/trabalhodevweb.pdf" frameborder="0" width="100%" height="400px">
+        </div>
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn">Close</a>
+          <a href="#" class="btn btn-primary">Save changes</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+    <!-- ###################### SPONSORS ########################## -->
+    <section id="sponsors" class="py-5">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase">Links Uteis</h2>                
+              </div>
+            </div>
+            
+        <div class="row" id="renderSponsors">        
+        </div>
+      </div>
+    </section>
+
+    <!-- ####################### CONTACTOS ######################### -->
+    <section id="contacts">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Contactos</h2>
+            <h3 class="section-subheading text-muted">Deixe-nos a sua suesgtão/dúvida e nós rapidamente entraremos em contacto consigo!</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="contactForm" name="sentMessage">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" id="name" type="text" placeholder="o seu nome" required>                    
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="email" type="email" placeholder="o seu email" required>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="phone" type="tel" placeholder="o seu nº de telemóvel">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <textarea class="form-control" id="message" placeholder="a sua mensagem" required></textarea>
+                  </div>
+                </div>
+                
+                <div class="col-lg-12 text-center">                  
+                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Enviar mensagem</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>      
+      </div>
+      <br><br>
+      <div class="container-fluid" id="googleMap">
+        <div class="row">
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="">    
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <span class="copyright">Copyright &copy; TBL - Virtual Classroom</span>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+   
+
+    <!-- Modal para autenticação -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Entrar na Área privada</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            
+              <form role="form">
+                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Email"/><br>
+                  <input type="password" class="form-control" placeholder="Password" />
+                </div>
+              </form>
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Entrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="/views/javascript/animation.js"></script>
+    
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.9/sweetalert2.all.min.js"></script>
+    
+    <!-- Custom scripts for this template -->
+    <script src="/views/javascript/webconfeng.js"></script>
+
+
+  </body>
+
+</html>
