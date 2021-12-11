@@ -15,6 +15,7 @@
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="/views/css/webconf.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     
     <!-- Custom fonts for this template -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
@@ -41,9 +42,9 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
+
         <img src="/views/img/tbl4.png" alt="Dev Web">
-        <a class="navbar-brand " href="#page-top"><strong>TBL - Virtual Classroom</strong></a>
+        <a class="navbar-brand" href="#page-top"><strong>TBL - Virtual Classroom</strong></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>          
         </button>
@@ -78,9 +79,7 @@
           </li>
           </ul>
         </div>
-      </div>
     </nav>
-
     <!-- Header -->
     <header class="masthead">
       <div class="container">
@@ -95,21 +94,24 @@
     <!-- ######################### SOBRE ########################## -->
     <section id="sobre">
       <div class="container">
+
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Sobre</h2>
-            <h3 class="section-subheading ">Sala de aula virtual destinada à aprendizagem em grupo e partilha de informação entre alunos e docentes</h3>      
-            <h3 class="section-subheading ">Estão disponiveis materiais para as seguintes unidades curriculares</h3>        
+            <h1 class="section-heading text-uppercase">Sobre</h1>
+            <h2 class="section-subheading text-center">Team Based Learning </h2>
+            <video width="1000" controls>
+              <source src="/views/video/tbl.mp4" type="video/mp4">
+              Your browser does not support HTML video.
+            </video>
           </div>
         </div>
         
         </div>
-      </div>
-    </section>
+
+       
 
        <!-- ###################### SPEAKERS ####################### -->
        <section class="bg-light" id="speakers">
-        <div class="container">
           <div class="row">
             <div class="col-lg-12 text-center">
               <h2 class="section-heading text-uppercase">Disciplinas</h2>
@@ -122,7 +124,7 @@
                   <i class="fas fa-globe fa-stack-1x fa-inverse"></i>
                 </span>
                 <h4 class="topic-heading">Desenvolvimento WEB</h4>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDEVWEB">DEV WEB</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDEVWEB">Consultar</button>
                 <p class="text-muted">Expandir a Web para fora do computador e ligá-la à Internet das Coisas!</p>
               </div>
               <div class="col-md-3">
@@ -131,7 +133,7 @@
                   <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                 </span>
                 <h4 class="topic-heading">Inteligência Artificial</h4>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">IA</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Consultar</button>
                 <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em termos de performance!</p>
               </div>      
               <div class="col-md-3">
@@ -140,7 +142,7 @@
                   <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                 </span>
                 <h4 class="topic-heading">Gestão de Projetos</h4>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">GP</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Consultar</button>
                 <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em termos de performance!</p>
               </div> 
               <div class="col-md-3">
@@ -149,7 +151,7 @@
                   <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                 </span>
                 <h4 class="topic-heading">Controlo de Gestão</h4>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">CG</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Consultar</button>
                 <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em termos de performance!</p>
               </div> 
               <div class="col-md-3">
@@ -158,18 +160,15 @@
                   <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                 </span>
                 <h4 class="topic-heading">Gestão de Redes e Sistemas</h4>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">GRS</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Consultar</button>
                 <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em termos de performance!</p>
               </div>     
           </div>
           <div class="row" id="renderSpeakers">
           </div>
           </div>
-        </div>
       </section>
   
-
-
 
 <div class="modal" id="modalDEVWEB">
 	<div class="modal-dialog modal-lg">
@@ -189,12 +188,77 @@
           <a data-toggle="modal" href="#modalDEVWEBl3" class="btn btn-primary" data-dismiss="modal">Aula nº2</a>
           <a data-toggle="modal" href="#modalDEVWEBl4" class="btn btn-primary" data-dismiss="modal">Trabalho de Grupo</a>
           <a data-toggle="modal" href="#modalDEVWEBl5" class="btn btn-primary" data-dismiss="modal">Links Uteis</a>
+          
         </div>
         <div class="modal-footer">
           <a href="#" data-dismiss="modal" class="btn">Fechar</a>
         </div>
       </div>
     </div>
+    <div>
+     <!-- start Quiz button -->
+     <div class="start_btn"><button>Iniciar Teste</button></div>
+     <!-- Info Box -->
+     <div class="info_box">
+         <div class="info-title"><span>Regras do Teste</span></div>
+         <div class="info-list">
+             <div class="info">1. Terá apenas <span>15 segundos</span> por cada questãp.</div>
+             <div class="info">2. A partir do momento em que seleccionar uma opção ja nao poderá alterar.</div>
+             <div class="info">3. Não poderá selecionar qualquer opção após o término do tempo.</div>
+             <div class="info">4. Não poderá abandonar o teste enquanto o mesmo estiver a decorrer.</div>
+             <div class="info">5. Terá a sua classificação calculada com base nas respostas corretas.</div>
+         </div>
+         <div class="buttons">
+             <button class="quit">Sair</button>
+             <button class="restart">Continuar</button>
+         </div>
+     </div>
+     <!-- Quiz Box -->
+     <div class="quiz_box">
+         <header>
+             <div class="title">Teste Teórico</div>
+             <div class="timer">
+                 <div class="time_left_txt">Tempo restante</div>
+                 <div class="timer_sec">15</div>
+             </div>
+             <div class="time_line"></div>
+         </header>
+         <section>
+             <div class="que_text">
+                 <!-- Here I've inserted question from JavaScript -->
+             </div>
+             <div class="option_list">
+                 <!-- Here I've inserted options from JavaScript -->
+             </div>
+         </section>
+         <!-- footer of Quiz Box -->
+         <footer>
+             <div class="total_que">
+                 <!-- Here I've inserted Question Count Number from JavaScript -->
+             </div>
+             <button class="next_btn">Proxima Questão</button>
+         </footer>
+     </div>
+     <!-- Result Box -->
+     <div class="result_box">
+         <div class="icon">
+             <i class="fas fa-crown"></i>
+         </div>
+         <div class="complete_text">Terminou o Teste</div>
+         <div class="score_text">
+             <!-- Here I've inserted Score Result from JavaScript -->
+         </div>
+         <div class="buttons">
+             <button class="restart">Repetir Teste</button>
+             <button class="quit">Sair do Teste</button>
+         </div>
+     </div>
+     <!-- Inside this JavaScript file I've inserted Questions and Options only -->
+     <script src="/views/javascript/questions.js"></script>
+     <!-- Inside this JavaScript file I've coded all Quiz Codes -->
+     <script src="/views/javascript/script.js"></script>
+     </section>
+</div>
 </div>
 <div class="modal" id="modalDEVWEBl2" data-backdrop="static">
 	<div class="modal-dialog modal-lg">
@@ -281,18 +345,162 @@
 </div>
 
 
-    <!-- ###################### SPONSORS ########################## -->
+    <!-- ###################### LINKS UTEIS ########################## -->
     <section id="sponsors" class="py-5">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">Links Uteis</h2>                
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Links Uteis</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4 container-fluid">
+
+                      <div class="flip-card" >
+                        <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <br></br>
+                          <br></br>
+
+                          <img src="/views/img/bibliotecaportuguesa.png" alt="covid" style="width:100%;">
+                          </div>
+
+                            <div class="flip-card-back">
+                            <br></br>
+                            <br></br>
+                            <button type="button" class="button-51"><a href="https://bibliotronicaportuguesa.pt/">Website</a></button></p>
+                            
+                            </div>
+                        </div>
+                    </div>`;
+                    <div class="flip-card" >
+                      <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <br></br>
+                        <br></br>
+                        <img src="/views/img/projetoadamastor.png" alt="covid" style="width:100%;">
+                        </div>
+
+                          <div class="flip-card-back">
+                          <br></br>
+                          <br></br>
+                          <button type="button" class="button-51"><a href="https://projectoadamastor.org/">Website</a></button></p>
+                          
+                          </div>
+                      </div>
+                  </div>`;
+                  <div class="flip-card" >
+                    <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <br></br>
+
+                      <img src="/views/img/projectguten.png" alt="covid" style="width:100%;">
+                      </div>
+
+                        <div class="flip-card-back">
+                        <br></br>
+                        <br></br>
+                        <button type="button" class="button-51"><a href="https://www.gutenberg.org/">Website</a></button></p>
+                        
+                        </div>
+                    </div>
+                </div>`;
+                <div class="flip-card" >
+                  <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <br></br>
+                    <br></br>
+                    <img src="/views/img/camoes.png" alt="covid" style="width:100%;">
+                    </div>
+
+                      <div class="flip-card-back">
+                      <br></br>
+                      <br></br>
+                      <button type="button" class="button-51"><a href="http://cvc.instituto-camoes.pt/conhecer/biblioteca-digital-camoes.html">Website</a></button></p>
+                      
+                      </div>
+                  </div>
+              </div>`;
+              <div class="flip-card" >
+                <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <br></br>
+                  <br></br>
+                  <img src="/views/img/coimbra.png" alt="covid" style="width:100%;">
+                  </div>
+
+                    <div class="flip-card-back">
+                    <br></br>
+                    <br></br>
+                    <button type="button" class="button-51"><a href="https://almamater.sib.uc.pt/pt-pt">Website</a></button></p>
+                    
+                    </div>
+                </div>
+            </div>`;
+            <div class="flip-card" >
+              <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <br></br>
+                <br></br>
+                <img src="/views/img/freeeboks.png" alt="covid" style="width:100%;">
+                </div>
+
+                  <div class="flip-card-back">
+                  <br></br>
+                  <br></br>
+                  <button type="button" class="button-51"><a href="https://portugues.free-ebooks.net/">Website</a></button></p>
+                  
+                  </div>
               </div>
+          </div>`;
+          <div class="flip-card" >
+            <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <br></br>
+              <br></br>
+              <img src="/views/img/open.png" alt="covid" style="width:100%;">
+              </div>
+
+                <div class="flip-card-back">
+                <br></br>
+                <br></br>
+                <button type="button" class="button-51"><a href="https://open.umn.edu/opentextbooks">Website</a></button></p>
+                
+                </div>
             </div>
+        </div>`;
+        <div class="flip-card" >
+          <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <br></br>
+            <br></br>
+            <img src="/views/img/universia.png" alt="covid" style="width:100%;">
+            </div>
+
+              <div class="flip-card-back">
+              <br></br>
+              <br></br>
+              <button type="button" class="button-51"><a href="https://www.universia.net/pt/home.html">Website</a></button></p>
+              
+              </div>
+          </div>
+      </div>`;
+      <div class="flip-card" >
+        <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <br></br>
+          <br></br>
+          <img src="/views/img/logo.svg" alt="covid" style="width:100%;">
+          </div>
+
+            <div class="flip-card-back">
+            <br></br>
+            <br></br>
+            <button type="button" class="button-51"><a href="https://openstax.org/">Ver Website</a></button></p>
             
-        <div class="row" id="renderSponsors">        
+            </div>
         </div>
+    </div>`;
+                    
       </div>
+    </div>
     </section>
 
     <!-- ####################### CONTACTOS ######################### -->
@@ -514,7 +722,7 @@
     <!-- Modal para fazer login -->
     <!-- se retirar o data-bs-backdrop, o modal desaparece ao clicar no fundo da página -->
     <div
-      class="modal"
+      class="modal fade"
       id="modalLogin"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
@@ -527,6 +735,13 @@
             <h5 class="modal-title" id="exampleModalLabel">
               Insira suas credenciais
             </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              id="btnLoginClose"
+            ></button>
           </div>
           <div class="modal-body">
             <div class="mb-3">
@@ -562,7 +777,7 @@
               <p id='pRegistar' class="float-start">
                 Sem conta ainda? <a href="#">Registe-se</a>
               </p>
-              <button class="btn btn-warning float-end" data-dismiss="modal">
+              <button class="btn btn-warning float-end" data-bs-dismiss="modal">
                 Cancelar
               </button>
               <button
@@ -577,7 +792,6 @@
         </div>
       </div>
     </div>
-  </div>
     <script src="/views/javascript/users.js"></script>
   </body>
 
