@@ -11,7 +11,7 @@ const btnModalLogin = document.getElementById("btnModalLogin");
 const btnModalRegistar = document.getElementById("btnModalRegistar");
 const btnLogoff = document.getElementById("btnLogoff");
 const pRegistar = document.getElementById("pRegistar");
-
+const listaDisciplinas = document.getElementById("listaDisciplinas");
 
 pRegistar.addEventListener("click", () => {
   bsModalLogin.hide();
@@ -37,7 +37,7 @@ function chamaModalRegistar() {
 btnLogoff.addEventListener("click", () => {
   localStorage.removeItem("token");
   document.getElementById("btnLogoff").style.display = "none";
-  window.location.replace("index.html");
+  window.location.replace("http://localhost:8080/");
 });
 
 function validaRegisto() {
@@ -103,9 +103,15 @@ function validaLogin() {
       const token = result.accessToken;
       localStorage.setItem("token", token);
       document.getElementById("statusLogin").innerHTML = "Sucesso!";
-      document.getElementById("btnLoginClose").click();
+      
+
+      
+      
     })
     .catch(async (error) => {
       statLogin.innerHTML = error;
-    });
+    }); 
+    $('#myModal').modal('hide'); 
+    $('#modalGrupo').modal('show'); 
+    document.getElementById("btnLoginClose").click();
 }
