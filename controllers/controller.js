@@ -130,3 +130,34 @@ exports.login = async (req, res) => {
       return res.status(400).send(response);
     });
 };
+
+// CREATE - cria um novo registo
+exports.create = (req, res) => {
+  console.log("Create");
+  if (!req.body) {
+    return res.status(400).send({
+      message: "O conteúdo não pode ser vazio!",
+    });
+  }
+  const data = req.body;
+  alunos.insert(data);
+  console.log(JSON.stringify(data));
+  const resposta = {message: "Criou um novo registo!"};
+  console.log(resposta);
+  return res.send(resposta);
+};
+
+exports.findAll = (req, res) => {
+  console.log("FindAll");
+  console.log("Mensagem de debug - listar disciplinas");
+  alunos.cRud_all(req, res) // R: Read
+    .then((dados) => {
+      res.send(dados);
+      // console.log("Dados: " + JSON.stringify(dados)); // para debug
+    })
+    .catch((err) => {
+      return res
+        .status(400)
+        .send({ message: "Não há Alunos para mostrar!" });
+    });
+};

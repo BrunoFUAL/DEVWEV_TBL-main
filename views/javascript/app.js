@@ -260,8 +260,8 @@ function ques_details_template(id) {
 function ques_form_template() {
     return `
         <div class="new_form">
-            <h1>Welcome to Discussion Portal</h1>
-            <p>Enter a subject and question to get started</p>
+            <h1>Bem Vindos ao portal de discussão de Equipas</h1>
+            <p>Introduza um tema ou efetue o upload do trabalho para discussão</p>
             <form>
                 <input type="text" name="subject" placeholder="Subject" required />
                 <textarea name="question" placeholder="Question" required ></textarea>
@@ -307,3 +307,13 @@ function init() {
 // Call to init
 
 init();
+
+var fileSelect = document.getElementById("fileSelect"),
+  fileElem = document.getElementById("fileElem");
+
+fileSelect.addEventListener("click", function (e) {
+  if (fileElem) {
+    fileElem.click();
+  }
+  e.preventDefault(); // prevent navigation to "#"
+}, false);

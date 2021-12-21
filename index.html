@@ -78,7 +78,7 @@
           <a class="nav-link js-scroll-trigger" href="#contacts">CONTACTOS</a>
         </li>
         <li class="nav-item">
-          <a id="btnLogin" class="nav-link" href="#">DOCENTES</a>
+          <a id="btnLogin" class="nav-link" href='/views/html/admin.html'>Administrador</a>
         </li>
         <li>
           <button class="pushable" onclick="window.location.href='/views/html/indexeng.html';"></a>
@@ -95,7 +95,7 @@
     <div class="container">
       <div class="intro-text">
         <div class="intro-lead-in">Vamos a isto!</div>
-        <div class="intro-heading text-uppercase">A tua sala de aula virtual</div>
+        <div class="intro-heading text-uppercase">Equipas Unidas, sucesso alcançado!</div>
       </div>
     </div>
   </header>
@@ -866,6 +866,10 @@
               <div class="actions">
                   <button> Novo Tema </button>
                   <input type="text" placeholder="search questions..."/>
+              </div>
+              <div>
+              <input type="file" id="fileElem" multiple accept="image/*" style="display:none" onchange="handleFiles(this.files)">
+              <a href="#" id="fileSelect">Select some files</a>
               </div>
               <div class="questions">
                   <ul>

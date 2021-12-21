@@ -5,6 +5,7 @@ const app = express();
 app.set('view-engine', 'ejs')
 var router = require("express").Router();
 const controlador = require("../DEVWEV_TBL-main/controllers/controller");
+app.use(express.json()); // Faz o parse (validação e interpretação) de solicitações do tipo application/json
 app.use(express.urlencoded({ extended: true }));
 
 const cors = require("cors");
@@ -46,6 +47,8 @@ app.post("/login", controlador.login);
 // Rota para verificar e ativar o utilizador
 app.get("/auth/confirm/:confirmationCode", controlador.verificaUtilizador)
 
+app.post("/admin", controlador.create);
 
+app.get("/admin", controlador.findAll);
 
 module.exports = app;
