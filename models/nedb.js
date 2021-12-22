@@ -5,6 +5,9 @@ alunos = new Datastore("alunos.db");
 alunos.loadDatabase();
 grupos = new Datastore("grupos.db");
 grupos.loadDatabase();
+perguntas = new Datastore("perguntas.db");
+perguntas.loadDatabase();
+
 
 
 // Ativa um utilizador (faz um Update)

@@ -123,7 +123,9 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contacts">Perguntas</a>
+            <button type="button" class="btn btn-primary" id="btnmodal4">
+              Perguntas
+            </button>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contacts">Modulos</a>
@@ -200,6 +202,45 @@
           </div>
         </div>
       </div>
+
+      <script type="text/javascript">
+        $("#btnmodal4").click(function () {
+          $("#myModalPerguntas").modal("show");
+        });
+      </script>
+  
+      <div class="modal" id="myModalPerguntas">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-overlay" id="modal-overlay"></div>
+            <div class="modal-header">
+              <h3>Registo de Perguntas para Questionários</h3>
+            </div>
+            <div class="modal-body">
+              <form action="enviarRegisto()">
+                  <label for="idQuestao">Numero da Questão:</label><br>
+                  <input id="idQuestao" type="text" name="nome" /><br>
+                  <label for="quest">Questão:</label><br>
+                  <input id="quest" type="text" name="num" /><br>
+                  <label for="ans">Resposta certa:</label><br>
+                  <input id="ans" type="text" name="contato" /><br>
+                  <label for="opt1">Opção 1:</label><br>
+                  <input id="opt1" type="text" name="nome" /><br>
+                  <label for="opt2">Opção 2:</label><br>
+                  <input id="opt2" type="text" name="nome" /><br>
+                  <label for="opt3">Opção 3:</label><br>
+                  <input id="opt3" type="text" name="nome" /><br>
+                  <label for="opt4">Opção 4:</label><br>
+                  <input id="opt4" type="text" name="nome" /><br>
+                  <button type="button" onclick="enviarQuestoes()">Registar</button>
+                </form>
+                <p id="resultado"></p>
+                <p id="falhou"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
 
     <script src="/views/javascript/create.js"></script>

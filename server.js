@@ -53,5 +53,7 @@ app.get("/admin", controlador.consult);
 
 app.post("/grupo", controlador.createGrupo);
 
+app.post("/questoes", controlador.createQuestoes);
+
 
 module.exports = app;

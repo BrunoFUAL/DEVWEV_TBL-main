@@ -173,3 +173,19 @@ exports.createGrupo = (req, res) => {
   console.log(resposta);
   return res.send(resposta);
 };
+
+// CREATE - cria um novo registo
+exports.createQuestoes = (req, res) => {
+  console.log("Create");
+  if (!req.body) {
+    return res.status(400).send({
+      message: "O conteúdo não pode ser vazio!",
+    });
+  }
+  const data = req.body;
+  perguntas.insert(data);
+  console.log(JSON.stringify(data));
+  const resposta = {message: "Criou um novo registo!"};
+  console.log(resposta);
+  return res.send(resposta);
+};
