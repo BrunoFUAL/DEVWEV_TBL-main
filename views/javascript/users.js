@@ -49,7 +49,7 @@ function validaRegisto() {
       "A senha tem de ter ao menos 4 carateres";
     return;
   }
-  fetch(`${urlBase}/registar`, {
+  fetch(`${urlBase}registar`, {
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },

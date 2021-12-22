@@ -1,13 +1,15 @@
-const database = require("nedb");
-users = new database("users.db");
+const Datastore = require("nedb");
+users = new Datastore("users.db");
 users.loadDatabase();
-alunos = new database("alunos.db");
+alunos = new Datastore("alunos.db");
 alunos.loadDatabase();
+grupos = new Datastore("grupos.db");
+grupos.loadDatabase();
 
 
 // Ativa um utilizador (faz um Update)
 exports.crUd_ativar = (confirmationToken) => {
-  db.users.update(
+  users.update(
     {
       confirmationToken: confirmationToken,
     },
@@ -27,7 +29,7 @@ exports.crUd_ativar = (confirmationToken) => {
 exports.cRud_login = (email) => {
   return new Promise((resolve, reject) => {
     // busca os registos que contêm a chave
-    db.users.findOne(
+    users.findOne(
       {
         _id: email,
       },
@@ -57,7 +59,7 @@ exports.Crud_registar = (email, password, confirmationToken) => {
       password: password,
       confirmationToken: confirmationToken,
     };
-    db.users.insert(data, (err, dados) => {
+    users.insert(data, (err, dados) => {
       if (err) {
         reject(null);
       } else {
@@ -71,7 +73,7 @@ exports.Crud_registar = (email, password, confirmationToken) => {
 exports.cRud_all = () => {
   return new Promise((resolve, reject) => {
     // lê todos os registos
-    db.alunos.find({}, (err, dados) => {
+    alunos.find({}, (err, dados) => {
       if (err) {
         reject("Não há disciplinas para mostrar!");
       } else {
@@ -84,7 +86,7 @@ exports.cRud_all = () => {
 exports.cRud_id = (id) => {
   return new Promise((resolve, reject) => {
     // busca os registos que contêm a chave
-    db.disciplinas.find(
+    disciplinas.find(
       {
         _id: id,
       },
@@ -102,7 +104,7 @@ exports.cRud_id = (id) => {
 exports.cRud_key = (criteria) => {
   return new Promise((resolve, reject) => {
     // busca os registos que contêm a chave
-    db.disciplinas.find(
+    disciplinas.find(
       {
         $or: [
           {

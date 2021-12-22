@@ -49,6 +49,9 @@ app.get("/auth/confirm/:confirmationCode", controlador.verificaUtilizador)
 
 app.post("/admin", controlador.create);
 
-app.get("/admin", controlador.findAll);
+app.get("/admin", controlador.consult);
+
+app.post("/grupo", controlador.createGrupo);
+
 
 module.exports = app;

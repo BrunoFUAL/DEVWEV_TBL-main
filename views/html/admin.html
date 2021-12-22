@@ -156,11 +156,11 @@
             <form action="enviarRegisto()">
                 <label for="name">Nome:</label><br>
                 <input id="des" type="text" name="nome" /><br>
-                <label for="id">ID:</label><br>
-                <input id="iden" type="text" name="nif" /><br>
+                <label for="id">ID do Aluno:</label><br>
+                <input id="iden" type="text" name="num" /><br>
                 <label for="contato">Contato:</label><br>
                 <input id="telf" type="text" name="contato" /><br>
-                <button type="button" onclick="enviarRegisto()">Registar</button>
+                <button type="button" onclick="enviarAluno()">Registar</button>
               </form>
               <p id="resultado"></p>
               <p id="falhou"></p>
@@ -185,13 +185,15 @@
             <div class="modal-body">
               <button type="button" onclick="getData()">Obter Dados</button>
               <div id="listaAlunos"></div>
-                <form action="/action_page.php">
-                    <label for="cars">Choose a car:</label>
-                    <select id="cars" name="cars">
-                      <option value="volvo">Volvo</option>
-                    </select>
-                    <input type="submit">
-                  </form>
+              <form action="enviarRegisto()">
+                <br>
+                <br>
+                <label for="name">Nº do grupo:</label><br>
+                <input id="grup" type="text" name="grupo" /><br>
+                <label for="id">ID do aluno:</label><br>
+                <input id="idaluno" type="text" name="num2" /><br>
+                <button type="button" onclick="enviarGrupo()">Registar</button>
+              </form>
                 <p id="resultado"></p>
                 <p id="falhou"></p>
             </div>
