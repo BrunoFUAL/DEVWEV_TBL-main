@@ -219,20 +219,21 @@
             <div class="modal-body">
               <form action="enviarRegisto()">
                   <label for="idQuestao">Numero da Questão:</label><br>
-                  <input id="idQuestao" type="text" name="nome" /><br>
+                  <input id="idQuestao" type="text" name="idq" /><br>
                   <label for="quest">Questão:</label><br>
-                  <input id="quest" type="text" name="num" /><br>
+                  <input id="quest" type="text" name="ques" /><br>
                   <label for="ans">Resposta certa:</label><br>
-                  <input id="ans" type="text" name="contato" /><br>
+                  <input id="ans" type="text" name="ans" /><br>
                   <label for="opt1">Opção 1:</label><br>
-                  <input id="opt1" type="text" name="nome" /><br>
+                  <input id="opt1" type="text" name="opt1" /><br>
                   <label for="opt2">Opção 2:</label><br>
-                  <input id="opt2" type="text" name="nome" /><br>
+                  <input id="opt2" type="text" name="opt2" /><br>
                   <label for="opt3">Opção 3:</label><br>
-                  <input id="opt3" type="text" name="nome" /><br>
+                  <input id="opt3" type="text" name="opt3" /><br>
                   <label for="opt4">Opção 4:</label><br>
-                  <input id="opt4" type="text" name="nome" /><br>
+                  <input id="opt4" type="text" name="opt4" /><br>
                   <button type="button" onclick="enviarQuestoes()">Registar</button>
+                  <button type="button" onclick="getPerguntas()">Obter Perguntas</button>
                 </form>
                 <p id="resultado"></p>
                 <p id="falhou"></p>

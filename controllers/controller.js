@@ -189,3 +189,14 @@ exports.createQuestoes = (req, res) => {
   console.log(resposta);
   return res.send(resposta);
 };
+
+exports.consultPerguntas = (req, res) => {
+  perguntas.find({},(err, data) =>{
+    if (err){
+      res.end();
+      return;
+    }
+    res.json(data);
+
+  });
+ };

@@ -84,9 +84,9 @@ async function enviarAluno() {
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
         _id: `${idQuestao}`,
-        questao: `${quest}`,
-        resposta: `${ans}`,
-        opcoes: `${opt1, opt2, opt3, opt4}`,
+        question: `${quest}`,
+        answer: `${ans}`,
+        options: [`${opt1}`,`${opt2}`,`${opt3}`,`${opt4}` ]
       }),
     };
     var myRequest = new Request(`${urlBase}`, myInit);

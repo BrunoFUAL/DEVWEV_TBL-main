@@ -55,5 +55,7 @@ app.post("/grupo", controlador.createGrupo);
 
 app.post("/questoes", controlador.createQuestoes);
 
+app.get("/questoes", controlador.consultPerguntas);
+
 
 module.exports = app;
