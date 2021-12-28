@@ -7,6 +7,8 @@ grupos = new Datastore("grupos.db");
 grupos.loadDatabase();
 perguntas = new Datastore("perguntas.db");
 perguntas.loadDatabase();
+atividades = new Datastore("atividades.db");
+atividades.loadDatabase();
 
 
 

@@ -14,17 +14,5 @@ async function getData(){
         listaAlunos.append(root);
 
     }
-    console.log(data)
-}
-
-async function getPerguntas(){
-    const response = await fetch('/questoes');
-    const data = await response.json();
-    const listaPerguntas = document.getElementById("listaPerguntas");
-    
-    for (pergunta of data){
-        listaAlunos.append(pergunta);
-
-    }
-    console.log(data)
+    console.log(listaAlunos)
 }

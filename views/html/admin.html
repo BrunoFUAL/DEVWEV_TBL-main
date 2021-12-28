@@ -115,25 +115,24 @@
               </button>
           </li>
           <li class="nav-item">
-            <a
-              id="aSponsors"
-              class="nav-link js-scroll-trigger"
-              href="#sponsors"
-              >Conquistas</a
-            >
-          </li>
-          <li class="nav-item">
             <button type="button" class="btn btn-primary" id="btnmodal4">
               Perguntas
             </button>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contacts">Modulos</a>
+            <button type="button" class="btn btn-primary" id="btnmodal5">
+              Atividades
+            </button>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contacts"
-              >Atividades</a
-            >
+            <button type="button" class="btn btn-primary" id="btnmodal6">
+              Modulos
+            </button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-primary" id="btnmodal7">
+              Conquistas
+            </button>
           </li>
         </ul>
       </div>
@@ -218,6 +217,8 @@
             </div>
             <div class="modal-body">
               <form action="enviarRegisto()">
+                  <label for="tema">Tema</label><br>
+                  <input id="tema" type="text" name="tema" /><br>
                   <label for="idQuestao">Numero da Questão:</label><br>
                   <input id="idQuestao" type="text" name="idq" /><br>
                   <label for="quest">Questão:</label><br>
@@ -242,9 +243,43 @@
         </div>
       </div>
 
+      <script type="text/javascript">
+        $("#btnmodal5").click(function () {
+          $("#myModalAtividades").modal("show");
+        });
+      </script>
+  
+      <div class="modal" id="myModalAtividades">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-overlay" id="modal-overlay"></div>
+            <div class="modal-header">
+              <h3>Registo de Atividades</h3>
+            </div>
+            <div class="modal-body">
+              <form action="enviarRegisto()">
+                  <label for="tematic">Tema</label><br>
+                  <input id="tematic" type="text" name="tematic" /><br>
+                  <label for="refativ">Ref. Atividade:</label><br>
+                  <input id="refativ" type="text" name="refativ" /><br>
+                  <label for="idpergunta">Nº da Questão:</label><br>
+                  <input id="idpergunta" type="text" name="idpergunta" /><br>
+                  <label for="tipo">Tipo (Grupo - G ou Individual - I):</label><br>
+                  <input id="tipo" type="text" name="tipo" /><br>
+                  <button type="button" onclick="enviarAtividades()">Registar</button>
+                  <button type="button" onclick="getPerguntas()">Obter Perguntas</button>
+                </form>
+                <p id="resultado"></p>
+                <p id="falhou"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
 
     <script src="/views/javascript/create.js"></script>
     <script src="/views/javascript/load.js"></script>
+    <script src="/views/javascript/script.js"></script>
   </body>
 </html>

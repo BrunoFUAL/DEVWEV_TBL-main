@@ -55,6 +55,8 @@ app.post("/grupo", controlador.createGrupo);
 
 app.post("/questoes", controlador.createQuestoes);
 
+app.post("/atividades", controlador.createAtividades);
+
 app.get("/questoes", controlador.consultPerguntas);
 
 

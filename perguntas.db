@@ -1,2 +1,2 @@
-{"_id":"5","questao":"Qual que?","resposta":"le","opcoes":["la","le","li","lu"]}
-{"_id":"What?","question":"yah","answer":"yah","option":["no","yes","bien","alright"]}
+{"_id":"1","question":"What?","answer":"yes","options":["no","right","left ","center"]}
+{"_id":"20","tema":"Algoritmos","question":"Qual o algoritmo?","answer":"dois","options":["dois","tres","quatro","cinco"]}

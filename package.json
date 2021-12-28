@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/BrunoFUAL/DEVWEV_TBL#readme",
   "dependencies": {
+    "audit": "^0.0.6",
     "bcrypt": "^5.0.1",
     "bcrypt-nodejs": "^0.0.3",
     "cookie-parser": "^1.4.6",
@@ -27,6 +28,7 @@
     "express-sanitizer": "^1.0.6",
     "express-session": "^1.17.2",
     "express-validator": "^5.3.0",
+    "fix": "^0.0.6",
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
@@ -35,8 +37,11 @@
     "nodemailer-smtp-transport": "^2.7.4",
     "passport": "^0.5.0",
     "passport-local": "^1.0.0",
+    "requirejs": "^2.3.6",
+    "scripts": "^0.1.0",
     "sequelize": "^5.22.3",
-    "session": "^0.1.0"
+    "session": "^0.1.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
