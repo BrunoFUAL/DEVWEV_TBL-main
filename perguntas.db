@@ -1,2 +1,1 @@
-{"_id":"1","question":"What?","answer":"yes","options":["no","right","left ","center"]}
-{"_id":"20","tema":"Algoritmos","question":"Qual o algoritmo?","answer":"dois","options":["dois","tres","quatro","cinco"]}
+{"_id":"1","tema":"Dev WEB","question":"Linguagem?","answer":"Javascript","options":["Javascript","Javascropt","Javascrupt","Javascrept"]}

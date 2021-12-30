@@ -234,7 +234,6 @@
                   <label for="opt4">Opção 4:</label><br>
                   <input id="opt4" type="text" name="opt4" /><br>
                   <button type="button" onclick="enviarQuestoes()">Registar</button>
-                  <button type="button" onclick="getPerguntas()">Obter Perguntas</button>
                 </form>
                 <p id="resultado"></p>
                 <p id="falhou"></p>
@@ -267,6 +266,40 @@
                   <label for="tipo">Tipo (Grupo - G ou Individual - I):</label><br>
                   <input id="tipo" type="text" name="tipo" /><br>
                   <button type="button" onclick="enviarAtividades()">Registar</button>
+                  <button type="button" onclick="getPerguntas()">Obter Perguntas</button>
+                  <br>
+                  <br>
+                  <div id="listaQuestoes"></div>
+                </form>
+                <p id="resultado"></p>
+                <p id="falhou"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script type="text/javascript">
+        $("#btnmodal6").click(function () {
+          $("#myModalModulos").modal("show");
+        });
+      </script>
+  
+      <div class="modal" id="myModalModulos">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-overlay" id="modal-overlay"></div>
+            <div class="modal-header">
+              <h3>Registo de Atividades</h3>
+            </div>
+            <div class="modal-body">
+              <form action="enviarRegisto()">
+                  <label for="design">Designação</label><br>
+                  <input id="design" type="text" name="design" /><br>
+                  <label for="refmodulo">Ref. Modulo:</label><br>
+                  <input id="refmodulo" type="text" name="refmodulo" /><br>
+                  <label for="idativ">Ref. Atividade:</label><br>
+                  <input id="idativ" type="text" name="idativ" /><br>
+                  <button type="button" onclick="enviarModulos()">Registar</button>
                   <button type="button" onclick="getPerguntas()">Obter Perguntas</button>
                 </form>
                 <p id="resultado"></p>

@@ -137,3 +137,36 @@ async function enviarAluno() {
       }
     });
   }
+
+  async function enviarModulos() {
+    const urlBase = "http://localhost:8080/modulos";
+    const design = document.getElementById("design").value;
+    const refmodulo = document.getElementById("refmodulo").value;
+    const idativ = document.getElementById("idativ").value;
+    const resultado = document.getElementById("resultado");
+    const falhou = document.getElementById("falhou");
+    if (tema == "" || refativ == ""|| idpergunta == ""){
+      falhou.innerHTML = "Deve completar todos os campos!";
+      return;
+    }
+    console.log(des);
+    var myInit = {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        _id: `${refmodulo}`,
+        designacao: `${design}`,
+        idatividade: `${idativ}`,
+      }),
+    };
+    var myRequest = new Request(`${urlBase}`, myInit);
+    await fetch(myRequest).then(async function (response) {
+      if (!response.ok) {
+        falhou.innerHTML = "Algo correu mal!";
+      } else {
+         resposta = await response.json();
+         console.log(resposta.message);
+         resultado.innerHTML = resposta.message;
+      }
+    });
+  }

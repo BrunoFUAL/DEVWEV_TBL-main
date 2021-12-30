@@ -9,6 +9,8 @@ perguntas = new Datastore("perguntas.db");
 perguntas.loadDatabase();
 atividades = new Datastore("atividades.db");
 atividades.loadDatabase();
+modulos= new Datastore("modulos.db");
+modulos.loadDatabase();
 
 
 
@@ -55,11 +57,12 @@ exports.cRud_login = (email) => {
   });
 };
 
-exports.Crud_registar = (email, password, confirmationToken) => {
+exports.Crud_registar = (idaluno, email, password, confirmationToken) => {
   // insere um novo utilizador
   return new Promise((resolve, reject) => {
     data = {
-      _id: email,
+      _id: idaluno,
+      email: email,
       confirm: 0,
       password: password,
       confirmationToken: confirmationToken,

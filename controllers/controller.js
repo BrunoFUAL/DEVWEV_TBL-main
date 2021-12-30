@@ -76,13 +76,14 @@ exports.registar = async (req, res) => {
   }
   const salt = await bcrypt.genSalt();
   const hashPassword = await bcrypt.hash(req.body.password, salt);
+  const idaluno = req.body.idaluno
   const email = req.body.email;
   const password = hashPassword;
   const confirmationToken = jwt.sign(
     req.body.email,
     process.env.ACCESS_TOKEN_SECRET
   );
-  db.Crud_registar(email, password, confirmationToken) // C: Create
+  db.Crud_registar(idaluno, email, password, confirmationToken) // C: Create
     .then((dados) => {
       enviaEmail(email, confirmationToken).catch(console.error);
       res.status(201).send({
@@ -211,6 +212,21 @@ exports.consultPerguntas = (req, res) => {
   }
   const data = req.body;
   atividades.insert(data);
+  console.log(JSON.stringify(data));
+  const resposta = {message: "Criou um novo registo!"};
+  console.log(resposta);
+  return res.send(resposta);
+};
+
+exports.createModulos = (req, res) => {
+  console.log("Create");
+  if (!req.body) {
+    return res.status(400).send({
+      message: "O conteúdo não pode ser vazio!",
+    });
+  }
+  const data = req.body;
+  modulos.insert(data);
   console.log(JSON.stringify(data));
   const resposta = {message: "Criou um novo registo!"};
   console.log(resposta);

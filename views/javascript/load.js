@@ -16,3 +16,28 @@ async function getData(){
     }
     console.log(listaAlunos)
 }
+
+
+async function getPerguntas(){
+    const response = await fetch('/questoes');
+    const data = await response.json();
+    const listaQuestoes = document.getElementById("listaQuestoes");
+    
+    for (pergunta of data){
+        const root2 = document.createElement('div');
+        const Tema = document.createElement('div');
+        const NumQuestão = document.createElement(`div`);
+        const Questão = document.createElement(`div`);
+  
+        Tema.textContent = `Tema: ${pergunta.tema}`;
+        NumQuestão.textContent = `ID: ${pergunta._id}`;
+        Questão.textContent = `ID: ${pergunta.question}`;
+        root2.append(Tema, NumQuestão, Questão)
+        listaQuestoes.append(root2);
+
+    }
+    console.log(listaQuestoes)
+}
+
+
+

@@ -41,6 +41,7 @@ btnLogoff.addEventListener("click", () => {
 });
 
 function validaRegisto() {
+  let idaluno = document.getElementById("idalunoRegistar").value
   let email = document.getElementById("usernameRegistar").value; // email é validado pelo próprio browser
   let senha = document.getElementById("senhaRegistar").value; // tem de ter uma senha
   const statReg = document.getElementById("statusRegistar");
@@ -54,7 +55,7 @@ function validaRegisto() {
       "Content-Type": "application/x-www-form-urlencoded",
     },
     method: "POST",
-    body: `email=${email}&password=${senha}`,
+    body: `idaluno=${idaluno}&email=${email}&password=${senha}`,
   })
     .then(async (response) => {
       if (!response.ok) {

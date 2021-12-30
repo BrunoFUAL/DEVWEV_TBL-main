@@ -730,6 +730,17 @@
             </div>
             <div class="modal-body">
               <div class="mb-3">
+                <label class="form-label">Nº de Aluno</label>
+                <input
+                  type="idaluno"
+                  class="form-control"
+                  id="idalunoRegistar"
+                  name="idalunoRegistar"
+                  placeholder="ID-Aluno"
+                />
+                <p id="statusRegistar"></p>
+              </div>
+              <div class="mb-3">
                 <label class="form-label">E-Mail</label>
                 <input
                   type="email"
@@ -793,6 +804,17 @@
               ></button>
             </div>
             <div class="modal-body">
+              <div class="mb-3">
+                <label class="form-label">Tipo de Acesso (Individual - I / Grupo - G)</label>
+                <input
+                  type="tipoacesso"
+                  class="form-control"
+                  id="tipoacessoLogin"
+                  name="tipoacessoLogin"
+                  placeholder="Tipo de Acesso"
+                />
+                <p id="emailErroLogin"></p>
+              </div>
               <div class="mb-3">
                 <label class="form-label">E-Mail</label>
                 <input
