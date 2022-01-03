@@ -1,93 +1,97 @@
-let questions = [
-    {
-    numb: 1,
-    question: "What does HTML stand for?",
-    answer: "Hyper Text Markup Language",
-    options: [
-      "Hyper Text Preprocessor",
-      "Hyper Text Markup Language",
-      "Hyper Text Multiple Language",
-      "Hyper Tool Multi Language"
-    ]
-  },
-    {
-    numb: 2,
-    question: "What does CSS stand for?",
-    answer: "Cascading Style Sheet",
-    options: [
-      "Common Style Sheet",
-      "Colorful Style Sheet",
-      "Computer Style Sheet",
-      "Cascading Style Sheet"
-    ]
-  },
-    {
-    numb: 3,
-    question: "What does PHP stand for?",
-    answer: "Hypertext Preprocessor",
-    options: [
-      "Hypertext Preprocessor",
-      "Hypertext Programming",
-      "Hypertext Preprogramming",
-      "Hometext Preprocessor"
-    ]
-  },
-    {
-    numb: 4,
-    question: "What does SQL stand for?",
-    answer: "Structured Query Language",
-    options: [
-      "Stylish Question Language",
-      "Stylesheet Query Language",
-      "Statement Question Language",
-      "Structured Query Language"
-    ]
-  },
-    {
-    numb: 5,
-    question: "What does XML stand for?",
-    answer: "eXtensible Markup Language",
-    options: [
-      "eXtensible Markup Language",
-      "eXecutable Multiple Language",
-      "eXTra Multi-Program Language",
-      "eXamine Multiple Language"
-    ]
-  },
+// let questions = [
+//     {
+//     numb: 1,
+//     question: "What does HTML stand for?",
+//     answer: "Hyper Text Markup Language",
+//     options: [
+//       "Hyper Text Preprocessor",
+//       "Hyper Text Markup Language",
+//       "Hyper Text Multiple Language",
+//       "Hyper Tool Multi Language"
+//     ]
+//   },
+//     {
+//     numb: 2,
+//     question: "What does CSS stand for?",
+//     answer: "Cascading Style Sheet",
+//     options: [
+//       "Common Style Sheet",
+//       "Colorful Style Sheet",
+//       "Computer Style Sheet",
+//       "Cascading Style Sheet"
+//     ]
+//   },
+//     {
+//     numb: 3,
+//     question: "What does PHP stand for?",
+//     answer: "Hypertext Preprocessor",
+//     options: [
+//       "Hypertext Preprocessor",
+//       "Hypertext Programming",
+//       "Hypertext Preprogramming",
+//       "Hometext Preprocessor"
+//     ]
+//   },
+//     {
+//     numb: 4,
+//     question: "What does SQL stand for?",
+//     answer: "Structured Query Language",
+//     options: [
+//       "Stylish Question Language",
+//       "Stylesheet Query Language",
+//       "Statement Question Language",
+//       "Structured Query Language"
+//     ]
+//   },
+//     {
+//     numb: 5,
+//     question: "What does XML stand for?",
+//     answer: "eXtensible Markup Language",
+//     options: [
+//       "eXtensible Markup Language",
+//       "eXecutable Multiple Language",
+//       "eXTra Multi-Program Language",
+//       "eXamine Multiple Language"
+//     ]
+//   },
   
 
-     {
-     numb: 6,
-     question: "Your Question is Here",
+//      {
+//      numb: 6,
+//      question: "Your Question is Here",
   
-     options: [
-       "Option 1",
-       "option 2",
-       "option 3",
-       "option 4"
-    ]
-   },
-];
+//      options: [
+//        "Option 1",
+//        "option 2",
+//        "option 3",
+//        "option 4"
+//     ]
+//    },
+// ];
 
-console.log(questions)
+let questions = []
+window.onload = async function getPerguntas2(){
+    const response = await fetch('/questoes');
+    const data = await response.json();
+    const listaQuestoes = []
+    
+    for (pergunta of data){
+        const root2 = {}
+        root2.numb = Number(pergunta._id);
+        root2.question = (pergunta.question);
+        root2.answer = pergunta.answer;
+        root2.option1 = pergunta.option1
+        root2.option2 = pergunta.option2
+        root2.option3 = pergunta.option3
+        root2.option4 = pergunta.option4
+        listaQuestoes.push(root2);
+        
+        
 
+    }questions= listaQuestoes
+    console.log(listaQuestoes)
+}
 
-    // let questions2 = [];
-    // async function getPerguntas(){
-    //   const response = await fetch('/questoes');
-    //   const data = await response.json();
-    
-      
-    //   for (pergunta of data){
-    //       questions2.push(pergunta);
-    
-    //   }
-    //   console.log(questions2)
-    //   return questions2;
-    // } 
-    
-    // let questions = getPerguntas();
-    // console.log(questions)
 
 
 
@@ -187,11 +191,11 @@ function showQuetions(index){
     const que_text = document.querySelector(".que_text");
 
     //creating a new span and div tag for question and option and passing the value using array index
-    let que_tag = '<span>'+ questions[index]._id + ". " + questions[index].question +'</span>';
-    let option_tag = '<div class="option"><span>'+ questions[index].options[0] +'</span></div>'
-    + '<div class="option"><span>'+ questions[index].options[1] +'</span></div>'
-    + '<div class="option"><span>'+ questions[index].options[2] +'</span></div>'
-    + '<div class="option"><span>'+ questions[index].options[3] +'</span></div>';
+    let que_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
+    let option_tag = '<div class="option"><span>'+ questions[index].option1 +'</span></div>'
+    + '<div class="option"><span>'+ questions[index].option2 +'</span></div>'
+    + '<div class="option"><span>'+ questions[index].option3 +'</span></div>'
+    + '<div class="option"><span>'+ questions[index].option4 +'</span></div>';
     que_text.innerHTML = que_tag; //adding new span tag inside que_tag
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     

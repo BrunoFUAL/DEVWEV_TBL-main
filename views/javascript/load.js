@@ -31,12 +31,12 @@ async function getPerguntas(){
   
         Tema.textContent = `Tema: ${pergunta.tema}`;
         NumQuestão.textContent = `ID: ${pergunta._id}`;
-        Questão.textContent = `ID: ${pergunta.question}`;
+        Questão.textContent = `Questão: ${pergunta.question}`;
         root2.append(Tema, NumQuestão, Questão)
         listaQuestoes.append(root2);
 
-    }
-    console.log(listaQuestoes)
+    }console.log(listaQuestoes)
+    
 }
 
 

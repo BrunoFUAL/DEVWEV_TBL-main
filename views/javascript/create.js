@@ -88,7 +88,10 @@ async function enviarAluno() {
         tema: `${tema}`,
         question: `${quest}`,
         answer: `${ans}`,
-        options: [`${opt1}`,`${opt2}`,`${opt3}`,`${opt4}` ]
+        option1: `${opt1}`,
+        option2: `${opt2}`,
+        option3: `${opt3}`,
+        option4: `${opt4}`,
       }),
     };
     var myRequest = new Request(`${urlBase}`, myInit);

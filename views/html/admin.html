@@ -130,8 +130,8 @@
             </button>
           </li>
           <li class="nav-item">
-            <button type="button" class="btn btn-primary" id="btnmodal7">
-              Conquistas
+            <button type="button" class="btn btn-primary" id="btnmodal8">
+              Upload Documentos
             </button>
           </li>
         </ul>
@@ -247,7 +247,7 @@
           $("#myModalAtividades").modal("show");
         });
       </script>
-  
+
       <div class="modal" id="myModalAtividades">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -266,7 +266,7 @@
                   <label for="tipo">Tipo (Grupo - G ou Individual - I):</label><br>
                   <input id="tipo" type="text" name="tipo" /><br>
                   <button type="button" onclick="enviarAtividades()">Registar</button>
-                  <button type="button" onclick="getPerguntas()">Obter Perguntas</button>
+                  <button type="button" onclick="getPerguntas2()">Obter Perguntas</button>
                   <br>
                   <br>
                   <div id="listaQuestoes"></div>
@@ -283,13 +283,13 @@
           $("#myModalModulos").modal("show");
         });
       </script>
-  
+
       <div class="modal" id="myModalModulos">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-overlay" id="modal-overlay"></div>
             <div class="modal-header">
-              <h3>Registo de Atividades</h3>
+              <h3>Registo de Módulos</h3>
             </div>
             <div class="modal-body">
               <form action="enviarRegisto()">
@@ -300,7 +300,6 @@
                   <label for="idativ">Ref. Atividade:</label><br>
                   <input id="idativ" type="text" name="idativ" /><br>
                   <button type="button" onclick="enviarModulos()">Registar</button>
-                  <button type="button" onclick="getPerguntas()">Obter Perguntas</button>
                 </form>
                 <p id="resultado"></p>
                 <p id="falhou"></p>
@@ -309,7 +308,47 @@
         </div>
       </div>
 
-
+      <script type="text/javascript">
+        $("#btnmodal8").click(function () {
+          $("#myModalDocs").modal("show");
+        });
+      </script>
+  
+      <div class="modal" id="myModalDocs">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-overlay" id="modal-overlay"></div>
+            <div class="modal-header">
+              <h3>Upload de Documentos</h3>
+            </div>
+            <div class="modal-body">
+              <div>
+                <form action="/multiple" method="POST"
+                enctype="multipart/form-data">
+                <input type="file" name="files" multiple/>
+                <button type="submit">Submeter</button>
+                <br>
+                <br>
+                <h5>Notas Importantes</h5>
+                  <br>
+                  <h6>
+                  > O nome do ficheiro deverá estar de acordo com a tipologia de documento(ver pontos infra)<br>
+                  > Apenas deverão ser anexados documentos em pdf<br>
+                    <br>
+                  1. Documentos para os Grupos - grupo.pdf<br>
+                  2. Documentos para Dev Web - devweb.pdf<br>
+                  3. Documentos para Inteligência Artificial - ia.pdf<br>
+                  4. Documentos para Gestão de Projetos - gp.pdf<br>
+                  5. Documentos para Controlo de Gestão - cg.pdf<br>
+                  6. Documentos para Gestão de Sistemas e Redes - redes.pdf<br>
+                </h6>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
 
     <script src="/views/javascript/create.js"></script>
     <script src="/views/javascript/load.js"></script>
