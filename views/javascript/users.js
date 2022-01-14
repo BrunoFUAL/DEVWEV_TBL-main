@@ -113,6 +113,6 @@ function validaLogin() {
       statLogin.innerHTML = error;
     }); 
     $('#myModal').modal('hide'); 
-    $('#modalGrupo').modal('show'); 
+    document.getElementById("btnGrupo").disabled = false
     document.getElementById("btnLoginClose").click();
 }

@@ -132,7 +132,7 @@ exports.login = async (req, res) => {
     });
 };
 
-// CREATE - cria um novo registo
+// CREATE - cria um novo aluno
 exports.create = (req, res) => {
   console.log("Create");
   if (!req.body) {
@@ -159,7 +159,7 @@ exports.consult = (req, res) => {
   });
  };
 
- // CREATE - cria um novo registo
+ // CREATE - cria um novo registo de Grupo
 exports.createGrupo = (req, res) => {
   console.log("Create");
   if (!req.body) {
