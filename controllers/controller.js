@@ -83,6 +83,12 @@ exports.registar = async (req, res) => {
     req.body.email,
     process.env.ACCESS_TOKEN_SECRET
   );
+  var existealuno = await verificaraluno(idaluno);
+  if (existealuno.length === 0){
+    console.log("Utilizador não matriculado, contatar secretaria de alunos")
+  
+  }else{
+  console.log("Utilizador matriculado, a efetuar registo");
   db.Crud_registar(idaluno, email, password, confirmationToken) // C: Create
     .then((dados) => {
       enviaEmail(email, confirmationToken).catch(console.error);
@@ -98,7 +104,40 @@ exports.registar = async (req, res) => {
       console.log(response);
       return res.status(400).send(response);
     });
+  }
+}
+
+
+
+
+// Verificar se existe aluno na bd
+
+
+function verificaraluno(id){
+  return new Promise((resolve, reject) => {
+    // busca os registos que contêm a chave
+    alunos.find(
+      {
+        _id: id,
+      },
+      (err, dados) => {
+        if (err) {
+          reject("Aluno não matriculado consultar secretaria");
+        } else {
+          resolve(dados);
+        }
+      }
+    );
+  });
 };
+
+
+
+
+
+
+
+
 
 // LOGIN - autentica um utilizador
 exports.login = async (req, res) => {
