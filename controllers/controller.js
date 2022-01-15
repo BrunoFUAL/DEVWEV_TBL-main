@@ -85,7 +85,10 @@ exports.registar = async (req, res) => {
   );
   var existealuno = await verificaraluno(idaluno);
   if (existealuno.length === 0){
-    console.log("Utilizador não matriculado, contatar secretaria de alunos")
+    res.status(201).send({
+      message:
+        "Utilizador não matriculado, contate a secretaria!",
+    });
   
   }else{
   console.log("Utilizador matriculado, a efetuar registo");
