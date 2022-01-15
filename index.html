@@ -162,7 +162,7 @@
                 <i class="fas fa-globe fa-stack-1x fa-inverse"></i>
               </span>
               <h4 class="topic-heading">Desenvolvimento WEB</h4>
-              <button type="button" class="btn btn-primary" data-toggle="modal"
+              <button id="btnDevWeb" type="button" class="btn btn-primary" data-toggle="modal"
                 data-target="#modalDEVWEB">Consultar</button>
               <p class="text-muted">Expandir a Web para fora do computador e ligá-la à Internet das Coisas!</p>
             </div>
@@ -172,7 +172,7 @@
                 <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
               </span>
               <h4 class="topic-heading">Inteligência Artificial</h4>
-              <button type="button" class="btn btn-primary" data-toggle="modal"
+              <button id="btnIA" type="button" class="btn btn-primary" data-toggle="modal"
                 data-target="#myModal">Consultar</button>
               <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em
                 termos de performance!</p>
@@ -183,7 +183,7 @@
                 <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
               </span>
               <h4 class="topic-heading">Gestão de Projetos</h4>
-              <button type="button" class="btn btn-primary" data-toggle="modal"
+              <button id="btnGP" type="button" class="btn btn-primary" data-toggle="modal"
                 data-target="#myModal">Consultar</button>
               <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em
                 termos de performance!</p>
@@ -194,7 +194,7 @@
                 <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
               </span>
               <h4 class="topic-heading">Controlo de Gestão</h4>
-              <button type="button" class="btn btn-primary" data-toggle="modal"
+              <button id="btnGC" type="button" class="btn btn-primary" data-toggle="modal"
                 data-target="#myModal">Consultar</button>
               <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em
                 termos de performance!</p>
@@ -205,7 +205,7 @@
                 <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
               </span>
               <h4 class="topic-heading">Gestão de Redes e Sistemas</h4>
-              <button type="button" class="btn btn-primary" data-toggle="modal"
+              <button id="btnGSR" type="button" class="btn btn-primary" data-toggle="modal"
                 data-target="#myModal">Consultar</button>
               <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em
                 termos de performance!</p>
@@ -861,7 +861,6 @@
       <script src="https://www.markuptag.com/bootstrap/5/js/bootstrap.bundle.min.js"></script>
 
       <!-- ###################### Equipas ########################## -->
-
       <script type="text/javascript">
         $('#btnGrupo').click(function() {
         $('#modalGrupo').modal('show');
@@ -869,11 +868,81 @@
       </script>
 
 
+      <div
+      class="modal fade"
+      id="modalGrupo"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+      data-backdrop="static"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Reservado a Grupos registados
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label">Nº do grupo</label>
+              <input
+                type="idaluno"
+                class="form-control"
+                id="idgrupoEntrar"
+                name="idgrupoEntrar"
+                placeholder="ID-Aluno"
+              />
+              <p id="statusRegistar"></p>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Senha</label>
+              <input
+                type="password"
+                class="form-control"
+                id="senhagrupoEntrar"
+                name="senhagrupoEntrar"
+                placeholder="Senha"
+              />
+              <p id="statusRegistar"></p>
+            </div>
+            <div class="modal-footer d-block">
+              <button id="btnCancelaRegistar" class="btn btn-warning float-end" data-dismiss="modal">
+                Cancelar
+              </button>
+              <button
+                class="btn btn-success float-end"
+                id="btnSubmitGrupo" 
+                onclick="validaGrupo()"
+              >
+                Submeter
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/views/javascript/users.js"></script>
 
 
+
+
+
+
+      <script type="text/javascript">
+        $('#btnEntrarGrupo').click(function() {
+        $('#modalEntrarGrupo').modal('show');
+        });
+      </script>
 
 <!-- The Modal -->
-<div id="modalGrupo" class="modal modal--animate-fade bg-contrast-higher bg-opacity-90% js-modal">
+<div id="modalEntrarGrupo" class="modal modal--animate-fade bg-contrast-higher bg-opacity-90% js-modal">
   <div class="modal-dialog modal-full">
     <div class="modal-content">
       <div class="modal-overlay" id="modal-overlay"></div>

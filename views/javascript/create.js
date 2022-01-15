@@ -35,6 +35,7 @@ async function enviarAluno() {
     const urlBase = "http://localhost:8080/grupo";
     const grup = document.getElementById("grup").value;
     const idaluno = document.getElementById("idaluno").value;
+    const pwgrupo = document.getElementById("pwgrupo").value;
     const resultado = document.getElementById("resultado");
     const falhou = document.getElementById("falhou");
     if (des == "" || iden == ""|| telf == ""){
@@ -48,6 +49,7 @@ async function enviarAluno() {
       body: JSON.stringify({
         _id: `${grup}`,
         aluno: `${idaluno}`,
+        pwgrupo: `${pwgrupo}`,
       }),
     };
     var myRequest = new Request(`${urlBase}`, myInit);

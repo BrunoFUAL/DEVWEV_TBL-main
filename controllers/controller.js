@@ -111,11 +111,7 @@ exports.registar = async (req, res) => {
 }
 
 
-
-
 // Verificar se existe aluno na bd
-
-
 function verificaraluno(id){
   return new Promise((resolve, reject) => {
     // busca os registos que contêm a chave
@@ -133,12 +129,6 @@ function verificaraluno(id){
     );
   });
 };
-
-
-
-
-
-
 
 
 

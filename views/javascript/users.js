@@ -104,15 +104,54 @@ function validaLogin() {
       const token = result.accessToken;
       localStorage.setItem("token", token);
       document.getElementById("statusLogin").innerHTML = "Sucesso!";
-      
-
-      
+    
       
     })
     .catch(async (error) => {
       statLogin.innerHTML = error;
     }); 
     $('#myModal').modal('hide'); 
-    document.getElementById("btnGrupo").disabled = false
+    document.getElementById("btnDevWeb").disabled = false
+    document.getElementById("btnIA").disabled = false
+    document.getElementById("btnGP").disabled = false
+    document.getElementById("btnGC").disabled = false
+    document.getElementById("btnGSR").disabled = false
     document.getElementById("btnLoginClose").click();
+}
+
+function validaGrupo() {
+  let idgrupo = document.getElementById("idgrupoEntrar").value; // email é validado pelo próprio browser
+  let senhagrupo = document.getElementById("senhagrupoEntrar").value; // tem de ter uma senha
+  var existegrupo = await verificarGrupo(senhagrupo);
+  if (existegrupo.length === 0){
+    res.status(201).send({
+      message:
+        "Grupo não registado, fale com o seu professor!",
+    });
+  
+  }else{
+  console.log("Grupo registado, a entrar");
+  $('#modalEntrarGrupo').modal('show');
+}
+}
+
+
+
+
+function verificarGrupo(pass){
+  return new Promise((resolve, reject) => {
+    // busca os registos que contêm a chave
+    alunos.find(
+      {
+        pwgrupo: pass,
+      },
+      (err, dados) => {
+        if (err) {
+          reject("Aluno não matriculado consultar secretaria");
+        } else {
+          resolve(dados);
+        }
+      }
+    );
+  });
 }

@@ -16,6 +16,10 @@ function showSlides() {
 }
 
 window.onload = function myFunction() {
-  document.getElementById("btnGrupo").disabled = true;
+  document.getElementById("btnDevWeb").disabled = true;
+  document.getElementById("btnIA").disabled = true;
+  document.getElementById("btnGP").disabled = true;
+  document.getElementById("btnGC").disabled = true;
+  document.getElementById("btnGSR").disabled = true;
 }
 
