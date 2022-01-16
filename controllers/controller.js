@@ -264,3 +264,14 @@ exports.createModulos = (req, res) => {
   console.log(resposta);
   return res.send(resposta);
 };
+
+exports.consultGrupos = (req, res) => {
+  grupos.find({},(err, data) =>{
+    if (err){
+      res.end();
+      return;
+    }
+    res.json(data);
+
+  });
+ };

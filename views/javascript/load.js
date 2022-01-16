@@ -39,4 +39,20 @@ async function getPerguntas(){
     
 }
 
+async function validaGrupo(req,res){
+    let senhagrupo = document.getElementById("senhagrupoEntrar").value; // tem de ter uma senha
+    const response = await fetch('/grupos');
+    const data = await response.json();
+    console.log(data)
+    for (grupo of data){
+        if (grupo.pwgrupo === senhagrupo){
+            console.log("Grupo registado, a entrar");
+            $('#modalEntrarGrupo').modal('show');
+
+        }else{
+            console.log("Grupo não registado,fale com o docente"); 
+                  
+              };
+        }
+    }
 
