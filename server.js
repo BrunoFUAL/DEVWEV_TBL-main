@@ -74,6 +74,8 @@ app.post("/grupo", controlador.createGrupo);
 
 app.get("/grupos", controlador.consultGrupos);
 
+app.get("/docentes", controlador.consultDocentes);
+
 app.post("/questoes", controlador.createQuestoes);
 
 app.post("/atividades", controlador.createAtividades);
@@ -81,6 +83,8 @@ app.post("/atividades", controlador.createAtividades);
 app.post("/modulos", controlador.createModulos);
 
 app.get("/questoes", controlador.consultPerguntas);
+
+app.post("/docentes", controlador.createDocentes);
 
 
 app.post("/upload", upload.any(), (req, res) => {

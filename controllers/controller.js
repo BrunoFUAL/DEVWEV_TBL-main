@@ -278,7 +278,7 @@ exports.consultGrupos = (req, res) => {
 
 
  // CREATE - cria um novo docente
-exports.create = (req, res) => {
+exports.createDocentes = (req, res) => {
   console.log("Create");
   if (!req.body) {
     return res.status(400).send({
@@ -292,3 +292,15 @@ exports.create = (req, res) => {
   console.log(resposta);
   return res.send(resposta);
 };
+
+
+exports.consultDocentes = (req, res) => {
+  docentes.find({},(err, data) =>{
+    if (err){
+      res.end();
+      return;
+    }
+    res.json(data);
+
+  });
+ };

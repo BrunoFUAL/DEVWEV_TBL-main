@@ -177,7 +177,7 @@ async function enviarAluno() {
   }
 
   async function enviarDocente() {
-    const urlBase = "http://localhost:8080/docente";
+    const urlBase = "http://localhost:8080/docentes";
     const nomedoc = document.getElementById("nomedoc").value;
     const iddoc = document.getElementById("iddoc").value;
     const contatodoc = document.getElementById("contatodoc").value;

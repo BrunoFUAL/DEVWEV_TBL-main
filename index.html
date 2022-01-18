@@ -84,7 +84,7 @@
           <a id="btnmodal" class="nav-link">Utilizadores</a>
         </li>
         <li class="nav-item">
-          <a id="btnLogin" class="nav-link" href='/views/html/admin.html'>Administrador</a>
+          <a id="btnadmin" class="nav-link" >Administrador</a>
         </li>
         <li>
           <button class="pushable" onclick="window.location.href='/views/html/indexeng.html';"></a>
@@ -904,6 +904,75 @@
       </div>
     </div>
     <script src="/views/javascript/load.js"></script>
+
+    <script type="text/javascript">
+      $('#btnadmin').click(function() {
+      $('#modalAdmin').modal('show');
+      });
+    </script>
+
+
+    <div
+    class="modal fade"
+    id="modalAdmin"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+    data-backdrop="static"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Reservado a Docentes/Administradores
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Id do Docente</label>
+            <input
+              type="iddocente"
+              class="form-control"
+              id="iddocente"
+              name="iddocente"
+              placeholder="ID-Docente"
+            />
+            <p id="statusRegistar"></p>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Senha</label>
+            <input
+              type="passworddocente"
+              class="form-control"
+              id="passworddocente"
+              name="passworddocente"
+              placeholder="Senha"
+            />
+            <p id="statusRegistar"></p>
+          </div>
+          <div class="modal-footer d-block">
+            <button id="btnCancelaRegistar" class="btn btn-warning float-end" data-dismiss="modal">
+              Cancelar
+            </button>
+            <button
+              class="btn btn-success float-end"
+              id="btnSubmitGrupo" 
+              onclick="validaDocente()"
+            >
+              Submeter
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
 
 
