@@ -175,3 +175,38 @@ async function enviarAluno() {
       }
     });
   }
+
+  async function enviarDocente() {
+    const urlBase = "http://localhost:8080/docente";
+    const nomedoc = document.getElementById("nomedoc").value;
+    const iddoc = document.getElementById("iddoc").value;
+    const contatodoc = document.getElementById("contatodoc").value;
+    const passworddoc = document.getElementById("passworddoc").value;
+    const resultado = document.getElementById("resultado");
+    const falhou = document.getElementById("falhou");
+    if (nomedoc == "" || iddoc == ""|| contatodoc == "" || passworddoc == ""){
+      falhou.innerHTML = "Deve completar todos os campos!";
+      return;
+    }
+    console.log(nomedoc);
+    var myInit = {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        _id: `${iddoc}`,
+        nomedocente: `${nomedoc}`,
+        contatodocente: `${contatodoc}`,
+        passworddocente: `${passworddoc}`,
+      }),
+    };
+    var myRequest = new Request(`${urlBase}`, myInit);
+    await fetch(myRequest).then(async function (response) {
+      if (!response.ok) {
+        falhou.innerHTML = "Algo correu mal!";
+      } else {
+         resposta = await response.json();
+         console.log(resposta.message);
+         resultado.innerHTML = resposta.message;
+      }
+    });
+  }

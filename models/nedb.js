@@ -11,6 +11,8 @@ atividades = new Datastore("atividades.db");
 atividades.loadDatabase();
 modulos= new Datastore("modulos.db");
 modulos.loadDatabase();
+docentes= new Datastore("docentes.db");
+docentes.loadDatabase();
 
 
 

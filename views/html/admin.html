@@ -105,6 +105,11 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
           <li class="nav-item">
+            <button type="button" class="btn btn-primary" id="btnmodal1">
+              Docentes
+            </button>
+          </li>
+          <li class="nav-item">
             <button type="button" class="btn btn-primary" id="btnmodal2">
               Alunos
             </button>
@@ -139,6 +144,40 @@
     </nav>
 
     <script src="/views/javascript/create.js"></script>
+
+    <script type="text/javascript">
+      $("#btnmodal1").click(function () {
+        $("#myModalDocentes").modal("show");
+      });
+    </script>
+
+    <div class="modal" id="myModalDocentes">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-overlay" id="modal-overlay"></div>
+          <div class="modal-header">
+            <h3>Registo de Docentes</h3>
+          </div>
+          <div class="modal-body">
+            <form action="enviarRegisto()">
+                <label for="nomedoc">Nome:</label><br>
+                <input id="des" type="text" name="nome" /><br>
+                <label for="iddoc">ID do Docente:</label><br>
+                <input id="iden" type="text" name="num" /><br>
+                <label for="contatodoc">Contato:</label><br>
+                <input id="telf" type="text" name="contato" /><br>
+                <label for="passworddoc">Password:</label><br>
+                <input id="telf" type="text" name="contato" /><br>
+                <button type="button" onclick="enviarDocente()">Registar</button>
+              </form>
+              <p id="resultado"></p>
+              <p id="falhou"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 
     <script type="text/javascript">
       $("#btnmodal2").click(function () {
