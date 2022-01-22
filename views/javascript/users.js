@@ -1,4 +1,4 @@
-const urlBase = "http://localhost:8080/";
+const urlBase = "https://localhost:8080/";
 const modalLogin = document.getElementById("modalLogin");
 const bsModalLogin = new bootstrap.Modal(modalLogin, (backdrop = "static")); // Pode passar opções
 const modalRegistar = document.getElementById("modalRegistar");
@@ -37,7 +37,7 @@ function chamaModalRegistar() {
 btnLogoff.addEventListener("click", () => {
   localStorage.removeItem("token");
   document.getElementById("btnLogoff").style.display = "none";
-  window.location.replace("http://localhost:8080/");
+  window.location.replace("https://localhost:8080/");
 });
 
 function validaRegisto() {

@@ -1,8 +1,9 @@
-const port = process.env.PORT || 8080;
-const host = process.env.HOST || '127.0.0.1';
+const PORTA = process.env.PORT || 8080;
 const express = require('express');
 const app = express();
 const multer = require('multer')
+const https = require('https')
+const fs = require('fs')
 app.set('view-engine', 'ejs')
 var router = require("express").Router();
 const controlador = require("../DEVWEV_TBL-main/controllers/controller");
@@ -20,6 +21,11 @@ const fileStorareEngine = multer.diskStorage({
 
 const upload = multer({storage: fileStorareEngine});
 
+const sslServer = https.createServer({
+  key: fs.readFileSync('cert/key.pem'),
+  cert:fs.readFileSync('cert/certificate.pem')
+}, app)
+
 const cors = require("cors");
 app.use(cors({
   exposedHeaders: ['Location'],
@@ -27,14 +33,10 @@ app.use(cors({
 
 app.use('/assets', express.static('assets'));
 app.use('/views', express.static('views'));
-app.listen(port, function(err) {
-  if (!err) {
-    console.log('Your app is listening on ' + host + ' and port ' + port);
-  }
-  else {
-    console.log(err);
-  }
-});
+
+sslServer.listen(PORTA, () => {
+  console.log(`O servidor está a ouvir na porta ${PORTA}`)
+})
 
 app.post('/single', upload.single("file"),(req,res) => {
   console.log(req.file);

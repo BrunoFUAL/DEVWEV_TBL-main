@@ -63,7 +63,7 @@
           <a class="nav-link js-scroll-trigger" href="#equipas">Equipas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#speakers">DISCIPLINAS</a>
+          <a class="nav-link js-scroll-trigger" href="#disciplinas">DISCIPLINAS</a>
         </li>
         <!--
             <li class="nav-item">
@@ -74,7 +74,7 @@
           <a id="aSponsors" class="nav-link js-scroll-trigger" href="#sponsors">LINKS UTEIS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#contacts">CONTACTOS</a>
+          <a class="nav-link js-scroll-trigger" href="#sobre">SOBRE</a>
         </li>
         <li class="nav-item">
           <a id="btnmodal" class="nav-link">Utilizadores</a>
@@ -101,7 +101,9 @@
       </div>
     </div>
   </header>
+        
 
+        
 
 
 
@@ -120,24 +122,45 @@
 
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
-          <div class="numbertext">1 / 3</div>
-          <img src="/views/img/tbl_1.jpg" style="width:100%">
-          <div class="text">Caption Text</div>
+          <div class="numbertext">1 / 6</div>
+          <img src="/views/img/Team_1.jpg" style="width:50%">
+          <div class="text"></div>
         </div>
 
         <div class="mySlides fade">
-          <div class="numbertext">2 / 3</div>
-          <img src="/views/img/tbl_2.jpg" style="width:100%">
-          <div class="text">Caption Two</div>
+          <div class="numbertext">2 / 6</div>
+          <img src="/views/img/Team_2.jpg" style="width:50%">
+          <div class="text"></div>
         </div>
 
         <div class="mySlides fade">
-          <div class="numbertext">3 / 3</div>
-          <img src="/views/img/tbl_3.jpg" style="width:100%">
-          <div class="text">Caption Three</div>
+          <div class="numbertext">3 / 6</div>
+          <img src="/views/img/Team_3.jpg" style="width:50%">
+          <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">4 / 6</div>
+          <img src="/views/img/Team_4.jpg" style="width:50%">
+          <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">5 / 6</div>
+          <img src="/views/img/Team_5.jpg" style="width:50%">
+          <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">6 / 6</div>
+          <img src="/views/img/Team_6.jpg" style="width:50%">
+          <div class="text"></div>
         </div>
       </div>
-                <button type="button" class="btn btn-primary" id="btnGrupo">Entrar</button>
+      <div>
+        <button type="button" class="btn btn-primary" id="btnGrupo">Entrar</button>
+      </div>
+                
               </div>
             </div>
 
@@ -145,7 +168,7 @@
   </section>
 
       <!-- ###################### SPEAKERS ####################### -->
-      <section class="bg-light" id="speakers">
+      <section class="bg-light" id="disciplinas">
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Disciplinas</h2>
@@ -159,9 +182,9 @@
                 <i class="fas fa-globe fa-stack-1x fa-inverse"></i>
               </span>
               <h4 class="topic-heading">Desenvolvimento WEB</h4>
-              <button id="btnDevWeb" type="button" class="btn btn-primary" data-toggle="modal"
+              <button id="btnDevWeb" type="button" disabled class="btn btn-primary" data-toggle="modal"
                 data-target="#modalDEVWEB">Consultar</button>
-              <p class="text-muted">Expandir a Web para fora do computador e ligá-la à Internet das Coisas!</p>
+              <p class="text-muted">Desenvolvimento Web visa formar profissionais aptos para conceber e implementar aplicações e serviços Web com conteúdos multimédia, autonomamente ou em equipa, recorrendo às novas tecnologias e ferramentas</p>
             </div>
             <div class="col-md-3">
               <span class="fa-stack fa-4x">
@@ -169,10 +192,11 @@
                 <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
               </span>
               <h4 class="topic-heading">Inteligência Artificial</h4>
-              <button id="btnIA" type="button" class="btn btn-primary" data-toggle="modal"
-                data-target="#myModal">Consultar</button>
-              <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em
-                termos de performance!</p>
+              <button id="btnIA" type="button" disabled class="btn btn-primary" data-toggle="modal"
+                data-target="#modalIA">Consultar</button>
+              <p class="text-muted">A disciplina analisa os algoritmos mais conhecidos e as suas aplicações à resolução de problemas.
+
+                O principal foco é na racionalização com conhecimento através de representações de lógicas Proposicional e de 1ª ordem, utilização de métodos estruturados para tomada de decisões automatizada, com modelos probabilísticos e inferências daí resultantes.</p>
             </div>
             <div class="col-md-3">
               <span class="fa-stack fa-4x">
@@ -180,10 +204,9 @@
                 <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
               </span>
               <h4 class="topic-heading">Gestão de Projetos</h4>
-              <button id="btnGP" type="button" class="btn btn-primary" data-toggle="modal"
-                data-target="#myModal">Consultar</button>
-              <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em
-                termos de performance!</p>
+              <button id="btnGP" type="button" disabled class="btn btn-primary" data-toggle="modal"
+                data-target="#modalGP">Consultar</button>
+              <p class="text-muted">Compreensão do papel dos Projectos e da Gestão de Projectos nas organizações e utilização do MS Project nas diferentes componentes de um projecto, fases, actividades, tarefas, sub-tarefas, milestones, restrições e calendários.</p>
             </div>
             <div class="col-md-3">
               <span class="fa-stack fa-4x">
@@ -191,10 +214,9 @@
                 <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
               </span>
               <h4 class="topic-heading">Controlo de Gestão</h4>
-              <button id="btnGC" type="button" class="btn btn-primary" data-toggle="modal"
-                data-target="#myModal">Consultar</button>
-              <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em
-                termos de performance!</p>
+              <button id="btnGC" type="button" disabled class="btn btn-primary" data-toggle="modal"
+                data-target="#modalGC">Consultar</button>
+              <p class="text-muted">Pretende-se refletir sobre a definição de instrumentos eficazes para gerir a performance das organizações, assegurando a prossecução dos objetivos estratégicos e operacionais, evitando atitudes e comportamentos disfuncionais.</p>
             </div>
             <div class="col-md-3">
               <span class="fa-stack fa-4x">
@@ -202,10 +224,9 @@
                 <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
               </span>
               <h4 class="topic-heading">Gestão de Redes e Sistemas</h4>
-              <button id="btnGSR" type="button" class="btn btn-primary" data-toggle="modal"
-                data-target="#myModal">Consultar</button>
-              <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em
-                termos de performance!</p>
+              <button id="btnGSR" type="button" disabled class="btn btn-primary" data-toggle="modal"
+                data-target="#modalGSR">Consultar</button>
+              <p class="text-muted">Adquirir os métodos e os conceitos que conduzem a uma gestão efectiva e eficiente dos sistemas distribuídos heterogéneos e totar os alunos de conhecimentos adequados para a elaboração de planos de implementação e monitorização de uma rede de sistemas</p>
             </div>
           </div>
           <div class="row" id="renderSpeakers">
@@ -238,70 +259,12 @@
             <div class="modal-footer">
               <a href="#" data-dismiss="modal" class="btn">Fechar</a>
             </div>
-        <div>
-          <!-- start Quiz button -->
-          <div class="start_btn"><button>Iniciar Teste</button></div>
-          <!-- Info Box -->
-          <div class="info_box">
-            <div class="info-title"><span>Regras do Teste</span></div>
-            <div class="info-list">
-              <div class="info">1. Terá apenas <span>15 segundos</span> por cada questãp.</div>
-              <div class="info">2. A partir do momento em que seleccionar uma opção ja nao poderá alterar.</div>
-              <div class="info">3. Não poderá selecionar qualquer opção após o término do tempo.</div>
-              <div class="info">4. Não poderá abandonar o teste enquanto o mesmo estiver a decorrer.</div>
-              <div class="info">5. Terá a sua classificação calculada com base nas respostas corretas.</div>
-            </div>
-            <div class="buttons">
-              <button class="quit">Sair</button>
-              <button class="restart">Continuar</button>
-            </div>
-          </div>
-          <!-- Quiz Box -->
-          <div class="quiz_box">
-            <header>
-              <div class="title">Teste Teórico</div>
-              <div class="timer">
-                <div class="time_left_txt">Tempo restante</div>
-                <div class="timer_sec">15</div>
-              </div>
-              <div class="time_line"></div>
-            </header>
-            <section>
-              <div class="que_text">
-                <!-- Here I've inserted question from JavaScript -->
-              </div>
-              <div class="option_list">
-                <!-- Here I've inserted options from JavaScript -->
-              </div>
-            </section>
-            <!-- footer of Quiz Box -->
-            <footer>
-              <div class="total_que">
-                <!-- Here I've inserted Question Count Number from JavaScript -->
-              </div>
-              <button class="next_btn">Proxima Questão</button>
-            </footer>
-          </div>
-          <!-- Result Box -->
-          <div class="result_box">
-            <div class="icon">
-              <i class="fas fa-crown"></i>
-            </div>
-            <div class="complete_text">Terminou o Teste</div>
-            <div class="score_text">
-              <!-- Here I've inserted Score Result from JavaScript -->
-            </div>
-            <div class="buttons">
-              <button class="restart">Repetir Teste</button>
-              <button class="quit">Sair do Teste</button>
-            </div>
-          </div>
-    </div>
+        
   </div>
 </div>
 </div>
 
-    <div class="modal" id="modalDEVWEBl2" data-backdrop="static">
+    <div class="modal" id="modalIA" data-backdrop="static">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -320,7 +283,7 @@
     </div>
 
 
-    <div class="modal" id="modalDEVWEBl3" data-backdrop="static">
+    <div class="modal" id="modalGP" data-backdrop="static">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -339,7 +302,7 @@
     </div>
 
 
-    <div class="modal" id="modalDEVWEBl4" data-backdrop="static">
+    <div class="modal" id="modalGC" data-backdrop="static">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -357,7 +320,7 @@
       </div>
     </div>
 
-    <div class="modal" id="modalDEVWEBl5" data-backdrop="static">
+    <div class="modal" id="modalGSR" data-backdrop="static">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -401,6 +364,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Links Uteis</h2>
+            <h3 class="section-subheading text-muted">Apresentamos alguns links para consulta de material auxiliar</h3>
             <div class="row row-cols-1 row-cols-md-3 g-4 container-fluid">
 
               <div class="flip-card">
@@ -564,21 +528,28 @@
       </div>
     </section>
 
-    <!-- ####################### CONTACTOS ######################### -->
-    <section id="contacts">
+    <!-- ####################### SOBRE ######################### -->
+    <section id="sobre">
       <div class="container">
-        <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Sobre</h2>
+          <h3 class="section-subheading text-muted">Página criada por um grupo de amigos do 3º ano do Curso de Informática de Gestão da Universidade Autónoma de Lisboa</h3>
+          <h3 class="section-subheading text-muted">Agradecimento: Prof. Laércio Cruvinel - Desenvolvimento WEB</h3>
           <div class="column">
-            <img src="/views/img/bruno.jpeg" alt="Bruno" style="width:100%">
+            <img src="/views/img/bruno.jpeg" alt="Bruno" style="width:75%">
+            <figcaption>Bruno Fernandes</figcaption>
           </div>
           <div class="column">
-            <img src="/views/img/carina.jpeg" alt="Carina" style="width:100%">
+            <img src="/views/img/carina.jpeg" alt="Carina" style="width:75%">
+            <figcaption>Carina Valadas</figcaption>
           </div>
           <div class="column">
-            <img src="/views/img/alexandre.jpeg" alt="Alexandre" style="width:100%">
+            <img src="/views/img/alexandre.jpeg" alt="Alexandre" style="width:75%">
+            <figcaption>Alexandre Alves</figcaption>
           </div>
           <div class="column">
-            <img src="/views/img/olga.jpeg" alt="Olga" style="width:100%">
+            <img src="/views/img/olga.jpeg" alt="Olga" style="width:75%">
+            <figcaption>Olga Rodrigues</figcaption>
           </div>
         </div>
         </div>
@@ -590,23 +561,19 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <span class="copyright">Copyright &copy; TBL - Virtual Classroom</span>
+            <span class="copyright">Copyright &copy; Projeto TBL - Flipped Classroom
+            </span>
           </div>
           <div class="col-md-6">
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
+                <a href="https://www.facebook.com/profile.php?id=100076285091322">
                   <i class="fab fa-facebook-f"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
+                <a href="https://www.instagram.com/tblearning2021/">
+                  <i class="fab fa-instagram"></i>
                 </a>
               </li>
             </ul>
@@ -989,12 +956,78 @@
       </div>
       <div class="container"></div>
       <div class="modal-body">
-        
         <div class="navbar">
           <h1> Tema em destaque na semana </h1>
-          <embed src="/views/docs/html_tutorial.pdf" frameborder="0" width="100%" height="400px">
+          <div class="start_btn"><button>Iniciar Teste</button></div>
+      
       </div>
       
+
+    <div class="one">
+      <embed src="/views/docs/html_tutorial.pdf" frameborder="0" width="100%" height="400px">
+    </div>
+    <div class="two">
+        <!-- start Quiz button -->
+        
+        <!-- Info Box -->
+        <div class="info_box">
+          <div class="info-title"><span>Regras do Teste</span></div>
+          <div class="info-list">
+            <div class="info">1. Terá apenas <span>15 segundos</span> por cada questãp.</div>
+            <div class="info">2. A partir do momento em que seleccionar uma opção ja nao poderá alterar.</div>
+            <div class="info">3. Não poderá selecionar qualquer opção após o término do tempo.</div>
+            <div class="info">4. Não poderá abandonar o teste enquanto o mesmo estiver a decorrer.</div>
+            <div class="info">5. Terá a sua classificação calculada com base nas respostas corretas.</div>
+          </div>
+          <div class="buttons">
+            <button class="quit">Sair</button>
+            <button class="restart">Continuar</button>
+          </div>
+        </div>
+        <!-- Quiz Box -->
+        <div class="quiz_box">
+          <header>
+            <div class="title">Teste Teórico</div>
+            <div class="timer">
+              <div class="time_left_txt">Tempo restante</div>
+              <div class="timer_sec">15</div>
+            </div>
+            <div class="time_line"></div>
+          </header>
+          <section>
+            <div class="que_text">
+              <!-- Here I've inserted question from JavaScript -->
+            </div>
+            <div class="option_list">
+              <!-- Here I've inserted options from JavaScript -->
+            </div>
+          </section>
+          <!-- footer of Quiz Box -->
+          <footer>
+            <div class="total_que">
+              <!-- Here I've inserted Question Count Number from JavaScript -->
+            </div>
+            <button class="next_btn">Proxima Questão</button>
+          </footer>
+        </div>
+        <!-- Result Box -->
+        <div class="result_box">
+          <div class="icon">
+            <i class="fas fa-crown"></i>
+          </div>
+          <div class="complete_text">Terminou o Teste</div>
+          <div class="score_text">
+            <!-- Here I've inserted Score Result from JavaScript -->
+          </div>
+          <div class="buttons">
+            <button class="restart">Repetir Teste</button>
+            <button class="quit">Sair do Teste</button>
+          </div>
+        </div>
+  </div>
+      <div>
+        
+      </div>
       <div class="app_body">
           <div class="activity">
             
@@ -1009,7 +1042,6 @@
                   </ul>
               </div>
           </div>
-          <div>
           <div class="question_form">
               <div class="new_form">
                   <h1>Bem vindos ao Portal de Discussão</h1>
@@ -1021,7 +1053,6 @@
                   </form>
               </div>
           </div>
-        </div>
       </div>
       </div>
       
@@ -1035,7 +1066,7 @@
 
 
       <div class="modal-footer">
-        <a href="#" data-dismiss="modal" class="btn">Fechar</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

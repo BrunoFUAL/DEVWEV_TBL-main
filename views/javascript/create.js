@@ -1,5 +1,5 @@
 async function enviarAluno() {
-    const urlBase = "http://localhost:8080/admin";
+    const urlBase = "https://localhost:8080/admin";
     const des = document.getElementById("des").value;
     const iden = document.getElementById("iden").value;
     const telf = document.getElementById("telf").value;
@@ -32,7 +32,7 @@ async function enviarAluno() {
   }
 
   async function enviarGrupo() {
-    const urlBase = "http://localhost:8080/grupo";
+    const urlBase = "https://localhost:8080/grupo";
     const grup = document.getElementById("grup").value;
     const idaluno = document.getElementById("idaluno").value;
     const pwgrupo = document.getElementById("pwgrupo").value;
@@ -66,7 +66,7 @@ async function enviarAluno() {
 
 
   async function enviarQuestoes() {
-    const urlBase = "http://localhost:8080/questoes";
+    const urlBase = "https://localhost:8080/questoes";
     const idQuestao = document.getElementById("idQuestao").value;
     const tema = document.getElementById("tema").value;
     const quest = document.getElementById("quest").value;
@@ -109,7 +109,7 @@ async function enviarAluno() {
   }
 
   async function enviarAtividades() {
-    const urlBase = "http://localhost:8080/atividades";
+    const urlBase = "https://localhost:8080/atividades";
     const tematic = document.getElementById("tematic").value;
     const refativ = document.getElementById("refativ").value;
     const idpergunta = document.getElementById("idpergunta").value;
@@ -144,7 +144,7 @@ async function enviarAluno() {
   }
 
   async function enviarModulos() {
-    const urlBase = "http://localhost:8080/modulos";
+    const urlBase = "https://localhost:8080/modulos";
     const design = document.getElementById("design").value;
     const refmodulo = document.getElementById("refmodulo").value;
     const idativ = document.getElementById("idativ").value;
@@ -177,7 +177,7 @@ async function enviarAluno() {
   }
 
   async function enviarDocente() {
-    const urlBase = "http://localhost:8080/docentes";
+    const urlBase = "https://localhost:8080/docentes";
     const nomedoc = document.getElementById("nomedoc").value;
     const iddoc = document.getElementById("iddoc").value;
     const contatodoc = document.getElementById("contatodoc").value;

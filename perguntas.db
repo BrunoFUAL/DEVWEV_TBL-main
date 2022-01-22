@@ -3,3 +3,4 @@
 {"_id":"3","tema":"Matematica","question":"2+2?","answer":"4","option1":"5","option2":"6","option3":"7","option4":"4"}
 {"_id":"4","tema":"Controlo de Gestão","question":"Qual a função do controller?","answer":"animador","option1":"cantor","option2":"ator","option3":"animador","option4":"agricultor"}
 {"_id":"5","tema":"Gestão de Projetos","question":"Qual o nome do software que estudámos?","answer":"microsoft project","option1":"microsoft project","option2":"excel","option3":"powerpoint","option4":"word"}
+{"_id":"6","tema":"Gestão de Projetos","question":"Qual o nome do software que estudámos?","answer":"microsoft project","option1":"microsoft project","option2":"excel","option3":"powerpoint","option4":"word"}

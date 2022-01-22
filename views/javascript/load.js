@@ -59,7 +59,7 @@ async function validaDocente(req, res) {
   for (docente of data) {
     if (docente.passworddocente === passworddocente) {
       console.log("Docente Registado, a entrar");
-      window.location.replace("http://localhost:8080/views/html/admin.html");
+      window.location.replace("https://localhost:8080/views/html/admin.html");
     } else {
       console.log("Docente não criado,fale com a secretaria do Docente");
     }
