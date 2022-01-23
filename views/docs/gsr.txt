@@ -1,0 +1,49 @@
+OBJECTIVOS DA DISCIPLINA
+
+ 
+
+A disciplina de Gestão de Sistemas e Redes proporciona aos alunos uma abordagem dos principais problemas que se colocam a um gestor de sistemas informáticos, abrangendo, entre outros, aspectos de administração de sistemas, interligação e funcionamento em rede, gestão de sistemas em rede, protecção e segurança.
+
+ 
+
+ 
+
+CONTEÚDO DA DISCIPLINA
+
+Programa Teórica
+
+PARTE I – ASPECTOS GERAIS DA GESTÃO DE SISTEMAS E REDES
+
+Cap. 1 – Gestão de sistemas e redes – motivação
+
+Cap. 2 – Fundamentos de sistemas de redes
+
+Cap. 3 – Requisitos para a gestão de sistemas e redes
+
+ 
+
+PARTE II – ARQUITETURAS DE GESTÃO
+
+Cap. 4 – Arquiteturas de gestão e seus sub-modelos
+
+Cap. 5 – Gestão OSI e TMN
+
+Cap. 6 – Gestão na Internet
+
+Cap. 7 – Arquiteturas de gestão baseadas na Web
+
+ 
+
+PARTE III – FERRAMENTAS E TÉCNICAS DE GESTÃO
+
+Cap. 8 – Classificação de ferramentas de gestão
+
+Cap. 9 – Ferramentas de teste e monitoria isolados
+
+Cap. 10 – Plataformas de gestão
+
+Cap. 11 – Ferramentas de integração
+
+Cap. 12 – Ferramentas de desenvolvimento
+
+Cap. 13 – Soluções e ferramentas para a gestão de serviços e redes
