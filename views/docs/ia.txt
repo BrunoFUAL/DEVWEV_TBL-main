@@ -1,0 +1,22 @@
+Objetivos
+Complementar e aprofundar os conhecimentos adquiridos nas disciplinas de "Desenho e Análise de Algoritmos" e de "Inteligência Artificial".
+Resultados de aprendizagem e competências
+Com esta disciplina espera-se que os estudantes adquiram uma melhor percepção de problemas mais complexos em inteligência artificial e sejam capazes de utilizar a metodologia correta para resolvê-los.
+Modo de trabalho
+Presencial
+Pré-requisitos (conhecimentos prévios) e co-requisitos (conhecimentos simultâneos)
+Desenho e Análise de Algoritmos, Inteligência Artificial
+Programa
+1. Aplicações de IA: passado, presente e futuro.
+2. Algoritmos de procura e otimização (meta-heurísticas): Alg. Genéticos, Tabu, Simulated Annealing, GRASP, Ant colony, particle swarm.
+3. Sistemas baseados em conhecimento. Primeira ordem para representação do conhecimento. Incerteza em sistemas de regras. Modelos fuzzy. Case based reasoning.
+4. Modelos probabilisticos. Redes Bayesianas: manipulação, construção e inferência. Indução de RB: parâmetros e topologia. Diagnóstico. Avaliação.
+5. Sistemas Multi-Agente: arquitecturas MA, interacção: coordenação e cooperação, negociação.
+6. Machine Learning. Reinforcement learning, integração de ML com métodos de otimização.
+7. Processamento de Língua Natural. Análise léxica e sintática (parsing), interpretação semântica, tradução automática.
+8. Robótica Inteligente: percepção, planeamento e acção.
+Bibliografia Obrigatória
+Haykin Simon S. 1931; Neural networks. ISBN: 9780132733502
+Russell Stuart J. (Stuart Jonathan); Artificial intelligence. ISBN: 9780132071482 pbk
+Bibliografia Complementar
+Hastie Trevor; The elements of statistical learning. ISBN: 9780387848570

@@ -116,7 +116,7 @@
           <br>
           <br>
           <h2 class="section-heading text-uppercase">Equipas</h2>
-          <h3 class="section-subheading text-center">Acesso restrito a utilizadores registados</h3>
+          <h3 class="section-subheading text-center">Acesso restrito a grupos registados pelos docentes</h3>
           <!-- Slideshow container -->
       <div class="slideshow-container">
 
@@ -150,7 +150,6 @@
           <img src="/views/img/Team_5.jpg" style="width:50%">
           <div class="text"></div>
         </div>
-
         <div class="mySlides fade">
           <div class="numbertext">6 / 6</div>
           <img src="/views/img/Team_6.jpg" style="width:50%">
@@ -172,6 +171,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Disciplinas</h2>
+            <h3 class="section-subheading text-center">Acesso restrito a alunos registados</h3>
             <h3 class="section-subheading text-muted">Estão disponiveis materiais de estudo para as seguintes unidades
               curriculares:.</h3>
           </div>
@@ -189,7 +189,7 @@
             <div class="col-md-3">
               <span class="fa-stack fa-4x">
                 <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                <i class="fa fa-bug fa-stack-1x fa-inverse"></i>
               </span>
               <h4 class="topic-heading">Inteligência Artificial</h4>
               <button id="btnIA" type="button" disabled class="btn btn-primary" data-toggle="modal"
@@ -201,7 +201,7 @@
             <div class="col-md-3">
               <span class="fa-stack fa-4x">
                 <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                <i class="fa fa-address-card fa-stack-1x fa-inverse"></i>
               </span>
               <h4 class="topic-heading">Gestão de Projetos</h4>
               <button id="btnGP" type="button" disabled class="btn btn-primary" data-toggle="modal"
@@ -211,7 +211,7 @@
             <div class="col-md-3">
               <span class="fa-stack fa-4x">
                 <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                <i class="fa fa-eye fa-stack-1x fa-inverse"></i>
               </span>
               <h4 class="topic-heading">Controlo de Gestão</h4>
               <button id="btnGC" type="button" disabled class="btn btn-primary" data-toggle="modal"
@@ -221,7 +221,7 @@
             <div class="col-md-3">
               <span class="fa-stack fa-4x">
                 <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                <i class="fa fa-wifi fa-stack-1x fa-inverse"></i>
               </span>
               <h4 class="topic-heading">Gestão de Redes e Sistemas</h4>
               <button id="btnGSR" type="button" disabled class="btn btn-primary" data-toggle="modal"
@@ -249,8 +249,7 @@
               <object data="/views/docs/debweb.txt" width="800" height="400">
                 Not supported
               </object width="95%"></iframe></p>
-              <a data-toggle="modal" href="#modalDEVWEBl2" class="btn btn-primary" data-dismiss="modal">Aula nº1</a>
-              <a data-toggle="modal" href="#modalDEVWEBl3" class="btn btn-primary" data-dismiss="modal">Aula nº2</a>
+              <a data-toggle="modal" href="#modalDEVWEBl2" class="btn btn-primary" data-dismiss="modal">Aula</a>
               <a data-toggle="modal" href="#modalDEVWEBl4" class="btn btn-primary" data-dismiss="modal">Trabalho de
                 Grupo</a>
               <a data-toggle="modal" href="#modalDEVWEBl5" class="btn btn-primary" data-dismiss="modal">Links Uteis</a>
@@ -264,16 +263,16 @@
 </div>
 </div>
 
-    <div class="modal" id="modalIA" data-backdrop="static">
+    <div class="modal" id="modalDEVWEBl2" data-backdrop="static">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">Aula nº 1 - HTML</h4>
+            <h4 class="modal-title">Aula</h4>
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
           </div>
           <div class="container"></div>
           <div class="modal-body">
-            <embed src="/views/docs/html_tutorial.pdf" frameborder="0" width="100%" height="400px">
+            <embed src="/views/docs/devwebaula.pdf" frameborder="0" width="100%" height="400px">
           </div>
           <div class="modal-footer">
             <a href="#" data-dismiss="modal" class="btn">Fechar</a>
@@ -283,26 +282,7 @@
     </div>
 
 
-    <div class="modal" id="modalGP" data-backdrop="static">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Aula nº 2 - Javascript</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          </div>
-          <div class="container"></div>
-          <div class="modal-body">
-            <embed src="/views/docs/javascript_tutorial.pdf" frameborder="0" width="100%" height="400px">
-          </div>
-          <div class="modal-footer">
-            <a href="#" data-dismiss="modal" class="btn">Fechar</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="modal" id="modalGC" data-backdrop="static">
+    <div class="modal" id="modalDEVWEBl4" data-backdrop="static">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -311,7 +291,7 @@
           </div>
           <div class="container"></div>
           <div class="modal-body">
-            <embed src="/views/docs/trabalhodevweb.pdf" frameborder="0" width="100%" height="400px">
+            <embed src="/views/docs/devwebtrab.pdf" frameborder="0" width="100%" height="400px">
           </div>
           <div class="modal-footer">
             <a href="#" data-dismiss="modal" class="btn">Fechar</a>
@@ -320,7 +300,7 @@
       </div>
     </div>
 
-    <div class="modal" id="modalGSR" data-backdrop="static">
+    <div class="modal" id="modalDEVWEBl5" data-backdrop="static">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -356,6 +336,217 @@
         </div>
       </div>
     </div>
+
+    <div class="modal" id="modalIA">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-overlay" id="modal-overlay"></div>
+          <div class="modal-header">
+            <h4 class="modal-title">Inteligência Artificial</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          </div>
+          <div class="container"></div>
+          <div class="modal-body">
+            <img src="/views/img/IA.png" style="width:50%" alt="Dev Web">
+            <object data="/views/docs/ia.txt" width="800" height="400">
+              Not supported
+            </object width="95%"></iframe></p>
+            <a data-toggle="modal" href="#modalIA2" class="btn btn-primary" data-dismiss="modal">Aula</a>
+            <a data-toggle="modal" href="#modalIA4" class="btn btn-primary" data-dismiss="modal">Trabalho de
+              Grupo</a>
+            <a data-toggle="modal" href="#modalIA5" class="btn btn-primary" data-dismiss="modal">Links Uteis</a>
+
+          </div>
+          <div class="modal-footer">
+            <a href="#" data-dismiss="modal" class="btn">Fechar</a>
+          </div>
+      
+</div>
+</div>
+</div>
+
+  <div class="modal" id="modalIA2" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Aula</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="container"></div>
+        <div class="modal-body">
+          <embed src="/views/docs/IAaula.pdf" frameborder="0" width="100%" height="400px">
+        </div>
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn">Fechar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="modal" id="modalIA4" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Trabalho de Grupo</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="container"></div>
+        <div class="modal-body">
+          <embed src="/views/docs/IAtrab.pdf" frameborder="0" width="100%" height="400px">
+        </div>
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn">Fechar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modalIA5" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Links Uteis</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="container"></div>
+        <div class="modal-body">
+          <img src="/views/img/linksuteis.png" alt="Dev Web">
+          <br>
+          <br>
+          Apresentamos alguns links uteis para consulta que servem de complemento
+          ao material disponibilizado nas aulas:
+          <br>
+          <br>
+          <li>
+            Associação Portuguesa para a Inteligência Artificial
+            <a href="http://www.appia.pt/">
+              <img src="/views/img/logoAPPIA_long.png" width="75%" alt="Logotipo mozilla que liga a página inicial do mozilla">
+            </a>
+          </li>
+          <li>
+            Accenture
+            <a href="https://www.accenture.com/pt-pt/insight-artificial-intelligence-future-growth">
+              <img src="/views/img/Acc_Logo_Black_Purple_RGB.PNG" alt="Logotipo mozilla que liga a página inicial do mozilla">
+            </a>
+          </li>
+
+        </div>
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn">Fechar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modalGP">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-header">
+          <h4 class="modal-title">Inteligência Artificial</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="container"></div>
+        <div class="modal-body">
+          <img src="/views/img/GP.png" style="width:50%" alt="Dev Web">
+          <object data="/views/docs/gp.txt" width="800" height="400">
+            Not supported
+          </object width="95%"></iframe></p>
+          <a data-toggle="modal" href="#modalGP2" class="btn btn-primary" data-dismiss="modal">Aula</a>
+          <a data-toggle="modal" href="#modalGP4" class="btn btn-primary" data-dismiss="modal">Trabalho de
+            Grupo</a>
+          <a data-toggle="modal" href="#modalGP5" class="btn btn-primary" data-dismiss="modal">Links Uteis</a>
+
+        </div>
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn">Fechar</a>
+        </div>
+    
+</div>
+</div>
+</div>
+
+<div class="modal" id="modalGP2" data-backdrop="static">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Aula</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="container"></div>
+      <div class="modal-body">
+        <embed src="/views/docs/GPaula.pdf" frameborder="0" width="100%" height="400px">
+      </div>
+      <div class="modal-footer">
+        <a href="#" data-dismiss="modal" class="btn">Fechar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="modal" id="modalGP4" data-backdrop="static">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Trabalho de Grupo</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="container"></div>
+      <div class="modal-body">
+        <embed src="/views/docs/GPtrab.pdf" frameborder="0" width="100%" height="400px">
+      </div>
+      <div class="modal-footer">
+        <a href="#" data-dismiss="modal" class="btn">Fechar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modalGP5" data-backdrop="static">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Links Uteis</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="container"></div>
+      <div class="modal-body">
+        <img src="/views/img/linksuteis.png" alt="Dev Web">
+        <br>
+        <br>
+        Apresentamos alguns links uteis para consulta que servem de complemento
+        ao material disponibilizado nas aulas:
+        <br>
+        <br>
+        <li>
+          PPlware
+          <a href="https://pplware.sapo.pt/software/top-5-ferramentas-gestao-de-projetos/#:~:text=A%20plataforma%20Jira%20%C3%A9%20uma%20das%20que%20mais,gestores%20podem%20facilmente%20criar%20gr%C3%A1ficos%20e%20relat%C3%B3rios%20detalhados.">
+            <img src="/views/img/GPlogo.png" width="75%" alt="Logotipo mozilla que liga a página inicial do mozilla">
+          </a>
+        </li>
+        <li>
+          PMI - Project Management Institute - Portugal
+          <a href="https://pmi-portugal.org/">
+            <img src="/views/img/PMI.png" alt="Logotipo mozilla que liga a página inicial do mozilla">
+          </a>
+        </li>
+
+      </div>
+      <div class="modal-footer">
+        <a href="#" data-dismiss="modal" class="btn">Fechar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
     <!-- ###################### LINKS UTEIS ########################## -->
@@ -533,7 +724,7 @@
       <div class="container">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">Sobre</h2>
-          <h3 class="section-subheading text-muted">Página criada por um grupo de amigos do 3º ano do Curso de Informática de Gestão da Universidade Autónoma de Lisboa</h3>
+          <h3 class="section-subheading text-muted">Página criada por um grupo de alunos do 3º ano do Curso de Informática de Gestão da Universidade Autónoma de Lisboa</h3>
           <h3 class="section-subheading text-muted">Agradecimento: Prof. Laércio Cruvinel - Desenvolvimento WEB</h3>
           <div class="column">
             <img src="/views/img/bruno.jpeg" alt="Bruno" style="width:75%">
