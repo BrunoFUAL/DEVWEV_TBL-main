@@ -6,8 +6,11 @@ const jwt = require("jsonwebtoken");
 
 function authenticateToken(req, res) {
   console.log("A autorizar...");
-  const authHeader = req.headers["authorization"];
-  const token = authHeader && authHeader.split(" ")[1];
+  const cookies = req.cookies
+  console.log('Cookies:')
+  console.log(cookies)
+  // const authHeader = req.headers["authorization"];
+  const token = req.cookies.jwt   //authHeader && authHeader.split(" ")[1];
   if (token == null) {
     console.log("Token nula");
     return res.sendStatus(401);
@@ -17,7 +20,6 @@ function authenticateToken(req, res) {
     req.email = user;
   });
 }
-
 const nodemailer = require("nodemailer");
 const { response } = require("express");
 
@@ -43,8 +45,8 @@ async function enviaEmail(recipients, confirmationToken) {
     from: '"Fred Foo 👻" <foo@example.com>', // endereço do originador
     to: recipients, // lista de destinatários
     subject: "Hello ✔", // assunto
-    text: "Token: " + confirmationToken, // corpo do email
-    html: "<b>Token: " + confirmationToken + "</b>", // corpo do email em html
+    text: "Clique aqui para ativar sua conta: " + confirmationToken, // corpo do email
+    html: "<b>Clique aqui para ativar sua conta: " + confirmationToken + "</b>", // corpo do email em html
   });
 
   console.log("Mensagem enviada: %s", info.messageId);
@@ -65,6 +67,50 @@ exports.verificaUtilizador = async (req, res) => {
   console.log(resposta);
   return res.send(resposta);
 };
+
+// // REGISTAR - cria um novo utilizador
+// exports.registar = async (req, res) => {
+//   console.log("Registar novo utilizador");
+//   if (!req.body) {
+//     return res.status(400).send({
+//       message: "O conteúdo não pode ser vazio!",
+//     });
+//   }
+//   const salt = await bcrypt.genSalt();
+//   const hashPassword = await bcrypt.hash(req.body.password, salt);
+//   const idaluno = req.body.idaluno
+//   const email = req.body.email;
+//   const password = hashPassword;
+//   const confirmationToken = jwt.sign(
+//     req.body.email,
+//     process.env.ACCESS_TOKEN_SECRET
+//   );
+//   var existealuno = await verificaraluno(idaluno);
+//   if (existealuno.length === 0){
+//     res.status(201).send({
+//       message:
+//         "Utilizador não matriculado, contate a secretaria!",
+//     });
+  
+//   }else{
+//   console.log("Utilizador matriculado, a efetuar registo");
+//   db.Crud_registar(idaluno, email, password, confirmationToken) // C: Create
+//     .then((dados) => {
+//       enviaEmail(email, confirmationToken).catch(console.error);
+//       res.status(201).send({
+//         message:
+//           "Utilizador criado com sucesso, confira sua caixa de correio para ativar!",
+//       });
+//       console.log("Controller - utilizador registado: ");
+//       console.log(JSON.stringify(dados)); // para debug
+//     })
+//     .catch((response) => {
+//       console.log("controller - registar:");
+//       console.log(response);
+//       return res.status(400).send(response);
+//     });
+//   }
+// }
 
 // REGISTAR - cria um novo utilizador
 exports.registar = async (req, res) => {
@@ -92,9 +138,10 @@ exports.registar = async (req, res) => {
   
   }else{
   console.log("Utilizador matriculado, a efetuar registo");
+  const confirmURL = `https://localhost:${process.env.PORT}/auth/confirm/${confirmationToken}`
   db.Crud_registar(idaluno, email, password, confirmationToken) // C: Create
     .then((dados) => {
-      enviaEmail(email, confirmationToken).catch(console.error);
+      enviaEmail(email, confirmURL).catch(console.error);
       res.status(201).send({
         message:
           "Utilizador criado com sucesso, confira sua caixa de correio para ativar!",
@@ -148,8 +195,10 @@ exports.login = async (req, res) => {
     .then(async (dados) => {
       if (await bcrypt.compare(req.body.password, dados.password)) {
         const user = { name: email };
-        const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
-        res.json({ accessToken: accessToken }); // aqui temos de enviar a token de autorização
+        const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 2*60 });
+        // res.setHeader('Set-Cookie','novoUser=true')
+        res.cookie('jwt', accessToken, {maxAge: 1000*60*2, httpOnly: true})
+        res.json({ user: email }); // aqui temos de enviar a token de autorização
         console.log("Resposta da consulta à base de dados: ");
         console.log(JSON.stringify(dados)); // para debug
       } else {
