@@ -1167,6 +1167,14 @@ body{
   display: table;
 }
 
+.modal-header {
+  background-image: url(../img/tblmodal.png);
+}
+
+.modal-footer {
+  background-image: url(../img/tblmodal.png);
+}
+
 
 
 /****************** Grupos **********************/

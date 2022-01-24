@@ -3,10 +3,10 @@ async function enviarAluno() {
     const des = document.getElementById("des").value;
     const iden = document.getElementById("iden").value;
     const telf = document.getElementById("telf").value;
-    const resultado = document.getElementById("resultado");
-    const falhou = document.getElementById("falhou");
+    const resultado1 = document.getElementById("resultado1");
+    const falhou1 = document.getElementById("falhou1");
     if (des == "" || iden == ""|| telf == ""){
-      falhou.innerHTML = "Deve completar todos os campos!";
+      falhou1.innerHTML = "Deve completar todos os campos!";
       return;
     }
     console.log(des);
@@ -22,11 +22,11 @@ async function enviarAluno() {
     var myRequest = new Request(`${urlBase}`, myInit);
     await fetch(myRequest).then(async function (response) {
       if (!response.ok) {
-        falhou.innerHTML = "Algo correu mal!";
+        falhou1.innerHTML = "Algo correu mal!";
       } else {
          resposta = await response.json();
          console.log(resposta.message);
-         resultado.innerHTML = resposta.message;
+         resultado1.innerHTML = resposta.message;
       }
     });
   }
@@ -36,10 +36,10 @@ async function enviarAluno() {
     const grup = document.getElementById("grup").value;
     const idaluno = document.getElementById("idaluno").value;
     const pwgrupo = document.getElementById("pwgrupo").value;
-    const resultado = document.getElementById("resultado");
-    const falhou = document.getElementById("falhou");
-    if (des == "" || iden == ""|| telf == ""){
-      falhou.innerHTML = "Deve completar todos os campos!";
+    const resultado2 = document.getElementById("resultado2");
+    const falhou2 = document.getElementById("falhou2");
+    if (grup == "" || idaluno == ""|| pwgrupo == ""){
+      falhou2.innerHTML = "Deve completar todos os campos!";
       return;
     }
     console.log(des);
@@ -55,11 +55,11 @@ async function enviarAluno() {
     var myRequest = new Request(`${urlBase}`, myInit);
     await fetch(myRequest).then(async function (response) {
       if (!response.ok) {
-        falhou.innerHTML = "Algo correu mal!";
+        falhou2.innerHTML = "Algo correu mal!";
       } else {
          resposta = await response.json();
          console.log(resposta.message);
-         resultado.innerHTML = resposta.message;
+         resultado2.innerHTML = resposta.message;
       }
     });
   }
@@ -75,10 +75,10 @@ async function enviarAluno() {
     const opt2 = document.getElementById("opt2").value;
     const opt3 = document.getElementById("opt3").value;
     const opt4 = document.getElementById("opt4").value;
-    const resultado = document.getElementById("resultado");
-    const falhou = document.getElementById("falhou");
+    const resultado3 = document.getElementById("resultado3");
+    const falhou3 = document.getElementById("falhou3");
     if (idQuestao == "" || quest == ""|| ans == ""){
-      falhou.innerHTML = "Deve completar todos os campos!";
+      falhou3.innerHTML = "Deve completar todos os campos!";
       return;
     }
     console.log(des);
@@ -99,11 +99,11 @@ async function enviarAluno() {
     var myRequest = new Request(`${urlBase}`, myInit);
     await fetch(myRequest).then(async function (response) {
       if (!response.ok) {
-        falhou.innerHTML = "Algo correu mal!";
+        falhou3.innerHTML = "Algo correu mal!";
       } else {
          resposta = await response.json();
          console.log(resposta.message);
-         resultado.innerHTML = resposta.message;
+         resultado3.innerHTML = resposta.message;
       }
     });
   }
@@ -114,10 +114,10 @@ async function enviarAluno() {
     const refativ = document.getElementById("refativ").value;
     const idpergunta = document.getElementById("idpergunta").value;
     const tipo = document.getElementById("tipo").value;
-    const resultado = document.getElementById("resultado");
-    const falhou = document.getElementById("falhou");
-    if (tema == "" || refativ == ""|| idpergunta == ""){
-      falhou.innerHTML = "Deve completar todos os campos!";
+    const resultado4 = document.getElementById("resultado4");
+    const falhou4 = document.getElementById("falhou4");
+    if (tematic == "" || refativ == ""|| idpergunta == ""){
+      falhou4.innerHTML = "Deve completar todos os campos!";
       return;
     }
     console.log(des);
@@ -134,11 +134,11 @@ async function enviarAluno() {
     var myRequest = new Request(`${urlBase}`, myInit);
     await fetch(myRequest).then(async function (response) {
       if (!response.ok) {
-        falhou.innerHTML = "Algo correu mal!";
+        falhou4.innerHTML = "Algo correu mal!";
       } else {
          resposta = await response.json();
          console.log(resposta.message);
-         resultado.innerHTML = resposta.message;
+         resultado4.innerHTML = resposta.message;
       }
     });
   }
@@ -148,10 +148,10 @@ async function enviarAluno() {
     const design = document.getElementById("design").value;
     const refmodulo = document.getElementById("refmodulo").value;
     const idativ = document.getElementById("idativ").value;
-    const resultado = document.getElementById("resultado");
-    const falhou = document.getElementById("falhou");
-    if (tema == "" || refativ == ""|| idpergunta == ""){
-      falhou.innerHTML = "Deve completar todos os campos!";
+    const resultado5 = document.getElementById("resultado5");
+    const falhou5 = document.getElementById("falhou5");
+    if (design == "" || refmodulo == ""|| idativ == ""){
+      falhou5.innerHTML = "Deve completar todos os campos!";
       return;
     }
     console.log(des);
@@ -167,11 +167,11 @@ async function enviarAluno() {
     var myRequest = new Request(`${urlBase}`, myInit);
     await fetch(myRequest).then(async function (response) {
       if (!response.ok) {
-        falhou.innerHTML = "Algo correu mal!";
+        falhou5.innerHTML = "Algo correu mal!";
       } else {
          resposta = await response.json();
          console.log(resposta.message);
-         resultado.innerHTML = resposta.message;
+         resultado5.innerHTML = resposta.message;
       }
     });
   }
@@ -182,10 +182,10 @@ async function enviarAluno() {
     const iddoc = document.getElementById("iddoc").value;
     const contatodoc = document.getElementById("contatodoc").value;
     const passworddoc = document.getElementById("passworddoc").value;
-    const resultado = document.getElementById("resultado");
-    const falhou = document.getElementById("falhou");
+    const resultado6 = document.getElementById("resultado6");
+    const falhou6 = document.getElementById("falhou6");
     if (nomedoc == "" || iddoc == ""|| contatodoc == "" || passworddoc == ""){
-      falhou.innerHTML = "Deve completar todos os campos!";
+      falhou6.innerHTML = "Deve completar todos os campos!";
       return;
     }
     console.log(nomedoc);
@@ -206,7 +206,7 @@ async function enviarAluno() {
       } else {
          resposta = await response.json();
          console.log(resposta.message);
-         resultado.innerHTML = resposta.message;
+         resultado6.innerHTML = resposta.message;
       }
     });
   }

@@ -40,7 +40,7 @@ exports.cRud_login = (email) => {
     // busca os registos que contêm a chave
     users.findOne(
       {
-        _id: email,
+        email: email,
       },
       (err, user) => {
         if (err) {
