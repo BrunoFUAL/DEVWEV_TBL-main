@@ -1,8 +1,56 @@
 require("dotenv").config();
+const mysql = require("mysql2/promise");
+const config = require("../config");
 
-const db = require("../models/nedb"); // Define o MODEL que vamos usar
+// const db = require("../models/nedb"); // Define o MODEL que vamos usar
+const dbmySQL = require("../models/mysql"); // Define o MODEL mySQL
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+
+function connect() {
+  return new Promise((resolve, reject) => {
+    if (!global.connection || global.connection.state == "disconnected") {
+      mysql
+        .createConnection(config.db)
+        .then((connection) => {
+          global.connection = connection;
+          console.log("Nova conexão ao mySQL");
+          resolve(connection);
+        })
+        .catch((error) => {
+          console.log("Erro na ligação ao mySQL:");
+          console.log(error);
+          reject(error.code);
+        });
+    } else {
+      connection = global.connection;
+      resolve(connection);
+    }
+  });
+}
+
+function query(sql, params) {
+  return new Promise((resolve, reject) => {
+    connect() // Acionado quando fazemos uma query
+      .then((conn) => {
+        conn
+          .execute(sql, params)
+          .then(([result]) => {
+            console.log("Model: Query");
+            console.log(result);
+            resolve(result);
+          })
+          .catch((error) => {
+            reject(error.sqlMessage);
+          });
+      })
+      .catch((error) => {
+        console.log("Query:");
+        console.log(error);
+        reject(error);
+      });
+  });
+}
 
 function authenticateToken(req, res) {
   console.log("A autorizar...");
@@ -62,10 +110,19 @@ async function enviaEmail(recipients, confirmationToken) {
 
 exports.verificaUtilizador = async (req, res) => {
   const confirmationCode = req.params.confirmationCode;
-  db.crUd_ativar(confirmationCode);
-  const resposta = { message: "O utilizador está ativo!" };
-  console.log(resposta);
-  return res.send(resposta);
+  dbmySQL
+    .crUd_ativar(confirmationCode)
+    .then(() => {
+      const resposta = { message: "O utilizador está ativo!" };
+      console.log(resposta);
+      return res.send(resposta);
+    })
+    .catch((error) => {
+      console.log(error);
+      return res.status(400).send({
+        message: JSON.stringify(response),
+      });
+    });
 };
 
 // // REGISTAR - cria um novo utilizador
@@ -139,7 +196,8 @@ exports.registar = async (req, res) => {
   }else{
   console.log("Utilizador matriculado, a efetuar registo");
   const confirmURL = `https://localhost:${process.env.PORT}/auth/confirm/${confirmationToken}`
-  db.Crud_registar(idaluno, email, password, confirmationToken) // C: Create
+  dbmySQL
+    .Crud_registar(idaluno, email, password, confirmationToken) // C: Create
     .then((dados) => {
       enviaEmail(email, confirmURL).catch(console.error);
       res.status(201).send({
@@ -150,30 +208,45 @@ exports.registar = async (req, res) => {
       console.log(JSON.stringify(dados)); // para debug
     })
     .catch((response) => {
-      console.log("controller - registar:");
+      console.log("Controller - problema ao registar:");
       console.log(response);
-      return res.status(400).send(response);
+      return res.status(400).send({
+        message: JSON.stringify(response),
+      });
     });
-  }
+};
 }
 
 
 // Verificar se existe aluno na bd
+// function verificaraluno(id){
+//   return new Promise((resolve, reject) => {
+//     // busca os registos que contêm a chave
+//     alunos.find(
+//       {
+//         _id: id,
+//       },
+//       (err, dados) => {
+//         if (err) {
+//           reject("Aluno não matriculado consultar secretaria");
+//         } else {
+//           resolve(dados);
+//         }
+//       }
+//     );
+//   });
+// };
+
 function verificaraluno(id){
   return new Promise((resolve, reject) => {
     // busca os registos que contêm a chave
-    alunos.find(
-      {
-        _id: id,
-      },
-      (err, dados) => {
-        if (err) {
-          reject("Aluno não matriculado consultar secretaria");
-        } else {
-          resolve(dados);
-        }
-      }
-    );
+    query("SELECT * FROM ALUNOS WHERE id=?", [id])
+      .then((result) => {
+        resolve(result);
+      })
+      .catch((error) => {
+        reject(error);
+      });
   });
 };
 
@@ -191,14 +264,20 @@ exports.login = async (req, res) => {
   const hashPassword = await bcrypt.hash(req.body.password, salt);
   const email = req.body.email;
   const password = hashPassword;
-  db.cRud_login(email) //
+  dbmySQL
+    .cRud_login(email) //
     .then(async (dados) => {
       if (await bcrypt.compare(req.body.password, dados.password)) {
         const user = { name: email };
-        const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 2*60 });
+        const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
+          expiresIn: 20 * 60,
+        });
         // res.setHeader('Set-Cookie','novoUser=true')
-        res.cookie('jwt', accessToken, {maxAge: 1000*60*2, httpOnly: true})
-        res.json({ user: email }); // aqui temos de enviar a token de autorização
+        res.cookie("jwt", accessToken, {
+          maxAge: 1000 * 60 * 2,
+          httpOnly: true,
+        });
+        res.status(200).send({ user: email }); // aqui temos de enviar a token de autorização
         console.log("Resposta da consulta à base de dados: ");
         console.log(JSON.stringify(dados)); // para debug
       } else {
@@ -207,9 +286,11 @@ exports.login = async (req, res) => {
       }
     })
     .catch((response) => {
-      console.log("controller:");
+      console.log("Controller:");
       console.log(response);
-      return res.status(400).send(response);
+      return res.status(401).send({
+        message: JSON.stringify(response),
+      });
     });
 };
 
@@ -222,7 +303,10 @@ exports.create = (req, res) => {
     });
   }
   const data = req.body;
-  alunos.insert(data);
+  query(
+    "INSERT INTO ALUNOS (id,nome,contato) values (?,?,?)",
+    [data.id, data.nome, data.contato]
+  )
   console.log(JSON.stringify(data));
   const resposta = {message: "Criou um novo registo!"};
   console.log(resposta);
@@ -256,7 +340,7 @@ exports.createGrupo = (req, res) => {
   return res.send(resposta);
 };
 
-// CREATE - cria um novo registo
+// CREATE - cria um novo registo de Questões
 exports.createQuestoes = (req, res) => {
   console.log("Create");
   if (!req.body) {

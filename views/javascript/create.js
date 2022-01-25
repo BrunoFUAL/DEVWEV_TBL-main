@@ -14,7 +14,7 @@ async function enviarAluno() {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
-        _id: `${iden}`,
+        id: `${iden}`,
         nome: `${des}`,
         contato: `${telf}`,
       }),
