@@ -33,14 +33,14 @@ async function getPerguntas() {
     root2.append(Tema, NumQuestão, Questão);
     listaQuestoes.append(root2);
   }
-  console.log(listaQuestoes);
+  // console.log(listaQuestoes);
 }
 
 async function validaGrupo(req, res) {
   let senhagrupo = document.getElementById("senhagrupoEntrar").value; // tem de ter uma senha
   const response = await fetch("/grupos");
   const data = await response.json();
-  console.log(data);
+  // console.log(data);
   for (grupo of data) {
     if (grupo.pwgrupo === senhagrupo) {
       console.log("Grupo registado, a entrar");

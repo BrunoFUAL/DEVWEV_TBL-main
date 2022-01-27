@@ -89,9 +89,6 @@ window.onload = async function getPerguntas2(){
         
 
     }questions= listaQuestoes
-    console.log(listaQuestoes)
-    console.log(listaQuestoes)
-
 
 }
 

@@ -1,6 +1,6 @@
 require("dotenv").config();
-const mysql = require("mysql2/promise");
-const config = require("../config");
+// const mysql = require("mysql2/promise");
+// const config = require("../config");
 
 // const db = require("../models/nedb"); // Define o MODEL que vamos usar
 const dbmySQL = require("../models/mysql"); // Define o MODEL mySQL
@@ -37,7 +37,7 @@ function query(sql, params) {
           .execute(sql, params)
           .then(([result]) => {
             console.log("Model: Query");
-            console.log(result);
+            // console.log(result);
             resolve(result);
           })
           .catch((error) => {
@@ -333,7 +333,10 @@ exports.createGrupo = (req, res) => {
     });
   }
   const data = req.body;
-  grupos.insert(data);
+  query(
+    "INSERT INTO GRUPOS (id,aluno,pwgrupo) values (?,?,?)",
+    [data.id, data.aluno, data.pwgrupo]
+  )
   console.log(JSON.stringify(data));
   const resposta = {message: "Criou um novo registo!"};
   console.log(resposta);
@@ -349,23 +352,40 @@ exports.createQuestoes = (req, res) => {
     });
   }
   const data = req.body;
-  perguntas.insert(data);
+  query(
+    "INSERT INTO PERGUNTAS (tema,id, question, answer, option1, option2, option3, option4) values (?,?,?,?,?,?,?,?)",
+    [data.tema, data.id, data.question, data.answer, data.option1, data.option2, data.option3, data.option4]
+  )
   console.log(JSON.stringify(data));
   const resposta = {message: "Criou um novo registo!"};
   console.log(resposta);
   return res.send(resposta);
 };
 
-exports.consultPerguntas = (req, res) => {
-  perguntas.find({},(err, data) =>{
-    if (err){
-      res.end();
-      return;
-    }
-    res.json(data);
+// exports.consultPerguntas = (req, res) => {
+//   perguntas.find({},(err, data) =>{
+//     if (err){
+//       res.end();
+//       return;
+//     }
+//     res.json(data);
 
-  });
- };
+//   });
+//  };
+
+exports.consultPerguntas = (req, res) => {
+  dbmySQL
+    .cRud_Perguntas() // R: Read
+    .then((dados) => {
+      res.send(dados);
+      // console.log("Dados: " + JSON.stringify(dados)); // para debug
+    })
+    .catch((err) => {
+      return res
+        .status(400)
+        .send({ message: "Não há Grupos para mostrar!" });
+    });
+}
 
 
  exports.createAtividades = (req, res) => {
@@ -376,7 +396,11 @@ exports.consultPerguntas = (req, res) => {
     });
   }
   const data = req.body;
-  atividades.insert(data);
+  query(
+    "INSERT INTO ATIVIDADES (id, tema, idpergunta, tipo) values (?,?,?,?)",
+    [data.id, data.tema, data.idpergunta, data.tipo]
+  )
+
   console.log(JSON.stringify(data));
   const resposta = {message: "Criou um novo registo!"};
   console.log(resposta);
@@ -391,23 +415,41 @@ exports.createModulos = (req, res) => {
     });
   }
   const data = req.body;
-  modulos.insert(data);
+  query(
+    "INSERT INTO MODULOS (id, designacao, idatividade) values (?,?,?)",
+    [data.id, data.designacao, data.idatividade]
+  )
   console.log(JSON.stringify(data));
   const resposta = {message: "Criou um novo registo!"};
   console.log(resposta);
   return res.send(resposta);
 };
 
-exports.consultGrupos = (req, res) => {
-  grupos.find({},(err, data) =>{
-    if (err){
-      res.end();
-      return;
-    }
-    res.json(data);
+// exports.consultGrupos = (req, res) => {
+//   grupos.find({},(err, data) =>{
+//     if (err){
+//       res.end();
+//       return;
+//     }
+//     res.json(data);
 
-  });
- };
+//   });
+//  };
+
+
+exports.consultGrupos = (req, res) => {
+    dbmySQL
+      .cRud_Grupos() // R: Read
+      .then((dados) => {
+        res.send(dados);
+        // console.log("Dados: " + JSON.stringify(dados)); // para debug
+      })
+      .catch((err) => {
+        return res
+          .status(400)
+          .send({ message: "Não há Grupos para mostrar!" });
+      });
+  }
 
 
  // CREATE - cria um novo docente
@@ -419,7 +461,10 @@ exports.createDocentes = (req, res) => {
     });
   }
   const data = req.body;
-  docentes.insert(data);
+  query(
+    "INSERT INTO DOCENTES (id, nomedocente, contatodocente, passworddocente) values (?,?,?,?)",
+    [data.id, data.nomedocente, data.contatodocente,]
+  )
   console.log(JSON.stringify(data));
   const resposta = {message: "Criou um novo registo!"};
   console.log(resposta);
@@ -427,13 +472,28 @@ exports.createDocentes = (req, res) => {
 };
 
 
-exports.consultDocentes = (req, res) => {
-  docentes.find({},(err, data) =>{
-    if (err){
-      res.end();
-      return;
-    }
-    res.json(data);
+// exports.consultDocentes = (req, res) => {
+//   docentes.find({},(err, data) =>{
+//     if (err){
+//       res.end();
+//       return;
+//     }
+//     res.json(data);
 
-  });
- };
+//   });
+//  };
+
+
+ exports.consultDocentes = (req, res) => {
+  dbmySQL
+    .cRud_Docentes() // R: Read
+    .then((dados) => {
+      res.send(dados);
+      // console.log("Dados: " + JSON.stringify(dados)); // para debug
+    })
+    .catch((err) => {
+      return res
+        .status(400)
+        .send({ message: "Não há Grupos para mostrar!" });
+    });
+}

@@ -122,10 +122,11 @@ exports.cRud_login = (email) => {
   });
 };
 
-exports.cRud_all = () => {
+
+exports.cRud_Grupos = () => {
   return new Promise((resolve, reject) => {
     // lê todos os registos
-    query("SELECT * from disciplinas")
+    query("SELECT * from GRUPOS")
       .then((result) => {
         resolve(result);
       })
@@ -134,6 +135,33 @@ exports.cRud_all = () => {
       });
   });
 };
+
+exports.cRud_Docentes = () => {
+  return new Promise((resolve, reject) => {
+    // lê todos os registos
+    query("SELECT * from DOCENTES")
+      .then((result) => {
+        resolve(result);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+};
+
+exports.cRud_Perguntas = () => {
+  return new Promise((resolve, reject) => {
+    // lê todos os registos
+    query("SELECT * from PERGUNTAS")
+      .then((result) => {
+        resolve(result);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+};
+
 
 exports.cRud_id = (id) => {
   return new Promise((resolve, reject) => {

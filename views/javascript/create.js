@@ -47,7 +47,7 @@ async function enviarAluno() {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
-        _id: `${grup}`,
+        id: `${grup}`,
         aluno: `${idaluno}`,
         pwgrupo: `${pwgrupo}`,
       }),
@@ -86,8 +86,8 @@ async function enviarAluno() {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
-        _id: `${Number(idQuestao)}`,
         tema: `${tema}`,
+        id: `${Number(idQuestao)}`,
         question: `${quest}`,
         answer: `${ans}`,
         option1: `${opt1}`,
@@ -125,7 +125,7 @@ async function enviarAluno() {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
-        _id: `${refativ}`,
+        id: `${refativ}`,
         tema: `${tematic}`,
         idpergunta: `${idpergunta}`,
         tipo: `${tipo}`,
@@ -159,7 +159,7 @@ async function enviarAluno() {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
-        _id: `${refmodulo}`,
+        id: `${refmodulo}`,
         designacao: `${design}`,
         idatividade: `${idativ}`,
       }),
@@ -193,7 +193,7 @@ async function enviarAluno() {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
-        _id: `${iddoc}`,
+        id: `${iddoc}`,
         nomedocente: `${nomedoc}`,
         contatodocente: `${contatodoc}`,
         passworddocente: `${passworddoc}`,
