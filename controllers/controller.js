@@ -1,6 +1,6 @@
 require("dotenv").config();
-// const mysql = require("mysql2/promise");
-// const config = require("../config");
+const mysql = require("mysql2/promise");
+const config = require("../config");
 
 // const db = require("../models/nedb"); // Define o MODEL que vamos usar
 const dbmySQL = require("../models/mysql"); // Define o MODEL mySQL
@@ -252,6 +252,8 @@ function verificaraluno(id){
 
 
 
+
+
 // LOGIN - autentica um utilizador
 exports.login = async (req, res) => {
   console.log("Autenticação de um utilizador");
@@ -451,6 +453,21 @@ exports.consultGrupos = (req, res) => {
       });
   }
 
+  exports.removerDocentes = (req, res) => {
+    const id = req.body.id;
+    dbmySQL
+      .cruD_remDocentes(id) // D: Delete
+      .then((dados) => {
+        res.send("Docentes eliminados");
+        // console.log("Dados: " + JSON.stringify(dados)); // para debug
+      })
+      .catch((err) => {
+        return res
+          .status(400)
+          .send({ message: "Não existe o docente escolhido!" });
+      });
+  }
+
 
  // CREATE - cria um novo docente
 exports.createDocentes = (req, res) => {
@@ -463,7 +480,7 @@ exports.createDocentes = (req, res) => {
   const data = req.body;
   query(
     "INSERT INTO DOCENTES (id, nomedocente, contatodocente, passworddocente) values (?,?,?,?)",
-    [data.id, data.nomedocente, data.contatodocente,]
+    [data.id, data.nomedocente, data.contatodocente, data.passworddocente]
   )
   console.log(JSON.stringify(data));
   const resposta = {message: "Criou um novo registo!"};

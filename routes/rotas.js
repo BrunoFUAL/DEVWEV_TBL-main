@@ -49,6 +49,8 @@ module.exports = (app) => {
 
   router.get("/admin", controlador.consult);
 
+  router.post("/remdocentes", controlador.removerDocentes);
+
   router.post("/grupo", controlador.createGrupo);
 
   router.get("/grupos", controlador.consultGrupos);

@@ -46,6 +46,8 @@ function query(sql, params) {
   });
 }
 
+
+
 exports.Crud_registar = (idaluno, email, password, confirmationToken) => {
   // insere um novo utilizador
   return new Promise((resolve, reject) => {
@@ -122,6 +124,20 @@ exports.cRud_login = (email) => {
   });
 };
 
+exports.cruD_remDocentes = (id) => {
+  return new Promise((resolve, reject) => {
+  query(
+    "DELETE FROM DOCENTES where id=?", [id]
+  )
+  .then((result) => {
+    resolve(result);
+  })
+  .catch((error) => {
+    reject(error);
+  });
+});
+};
+
 
 exports.cRud_Grupos = () => {
   return new Promise((resolve, reject) => {
@@ -163,39 +179,4 @@ exports.cRud_Perguntas = () => {
 };
 
 
-exports.cRud_id = (id) => {
-  return new Promise((resolve, reject) => {
-    // busca os registos que contêm a chave
-    query("SELECT * FROM disciplinas WHERE id=?", [id])
-      .then((result) => {
-        resolve(result);
-      })
-      .catch((error) => {
-        reject(error);
-      });
-  });
-};
 
-exports.cRud_key = (criteria) => {
-  return new Promise((resolve, reject) => {
-    // busca os registos que contêm a chave
-    console.log("Model - criteria:")
-    console.log(criteria)
-    // OR docente LIKE '%' + ? + '%' OR curso LIKE '%' + ? + '%'
-    query(
-      "SELECT * FROM disciplinas WHERE ano=? OR disciplina LIKE CONCAT('%',?,'%') OR docente LIKE CONCAT('%',?,'%') OR curso LIKE CONCAT('%',?,'%')", [criteria,criteria,criteria,criteria])
-      .then((result) => {
-        console.log("Model - result:")
-        console.log(result)
-        if (Object.keys(result).length == 0) {
-          console.log("Model - sem resultados")
-          reject("Não posso mostrar disciplinas!");
-        } else {
-          resolve(result);
-        }
-      })
-      .catch((error) => {
-        reject(error);
-      });
-  });
-};

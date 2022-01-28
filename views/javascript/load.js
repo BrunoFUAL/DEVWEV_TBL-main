@@ -36,6 +36,19 @@ async function getPerguntas() {
   // console.log(listaQuestoes);
 }
 
+async function removerDocente(req,res) {
+  const id = document.getElementById("iddoc").value;
+  const response = await fetch(`/remdocentes`, {
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    method: "POST", // o login não vai criar nada, só ver se o user existe e a pass está correta
+    body: `id=${id}`,
+  })
+  const data = await response.json();
+  console.log(data);
+}
+
 async function validaGrupo(req, res) {
   let senhagrupo = document.getElementById("senhagrupoEntrar").value; // tem de ter uma senha
   const response = await fetch("/grupos");
