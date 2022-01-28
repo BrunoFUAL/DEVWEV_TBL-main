@@ -94,27 +94,29 @@ function validaLogin() {
     method: "POST", // o login não vai criar nada, só ver se o user existe e a pass está correta
     body: `email=${email}&password=${senha}`,
   })
-    .then(async (response) => {
-      if (!response.ok) {
-        erro = await response.json();
-        throw new Error(erro.msg);
+  .then((response) => {
+    return response.json().then((body) => {
+      if (response.status == 200) {
+        console.log(body.user);
+        document.getElementById("statusLogin").innerHTML = "Sucesso!";
+        $('#myModal').modal('hide'); 
+      document.getElementById("btnDevWeb").disabled = false
+      document.getElementById("btnIA").disabled = false
+      document.getElementById("btnGP").disabled = false
+      document.getElementById("btnGC").disabled = false
+      document.getElementById("btnGSR").disabled = false
+      document.getElementById("btnLoginClose").click();
+      } else {
+        throw body;
       }
-      result = await response.json();
-      console.log(result.accessToken);
-      const token = result.accessToken;
-      localStorage.setItem("token", token);
-      document.getElementById("statusLogin").innerHTML = "Sucesso!";
-    
-      
-    })
-    .catch(async (error) => {
-      statLogin.innerHTML = error;
-    }); 
-    $('#myModal').modal('hide'); 
-    document.getElementById("btnDevWeb").disabled = false
-    document.getElementById("btnIA").disabled = false
-    document.getElementById("btnGP").disabled = false
-    document.getElementById("btnGC").disabled = false
-    document.getElementById("btnGSR").disabled = false
-    document.getElementById("btnLoginClose").click();
+    });
+  })
+  .catch((body) => {
+    result = body.message;
+    document.getElementById(
+      "statusLogin"
+    ).innerHTML = `Pedido falhado: ${result}`;
+    console.log("Catch:");
+    console.log(result);
+  });
 }

@@ -138,6 +138,90 @@ exports.cruD_remDocentes = (id) => {
 });
 };
 
+exports.cruD_remAlunos = (id) => {
+  return new Promise((resolve, reject) => {
+  query(
+    "DELETE FROM ALUNOS where id=?", [id]
+  )
+  .then((result) => {
+    resolve(result);
+  })
+  .catch((error) => {
+    reject(error);
+  });
+});
+};
+
+exports.cruD_remGrupos = (id) => {
+  return new Promise((resolve, reject) => {
+  query(
+    "DELETE FROM GRUPOS where id=?", [id]
+  )
+  .then((result) => {
+    resolve(result);
+  })
+  .catch((error) => {
+    reject(error);
+  });
+});
+};
+
+exports.cruD_remQuestao= (id) => {
+  return new Promise((resolve, reject) => {
+  query(
+    "DELETE FROM PERGUNTAS where id=?", [id]
+  )
+  .then((result) => {
+    resolve(result);
+  })
+  .catch((error) => {
+    reject(error);
+  });
+});
+};
+
+exports.cruD_remQuestoes = () => {
+  return new Promise((resolve, reject) => {
+  query(
+    "DELETE FROM PERGUNTAS"
+  )
+  .then((result) => {
+    resolve(result);
+  })
+  .catch((error) => {
+    reject(error);
+  });
+});
+}
+
+exports.cruD_remAtividade= (id) => {
+  return new Promise((resolve, reject) => {
+  query(
+    "DELETE FROM ATIVIDADES where id=?", [id]
+  )
+  .then((result) => {
+    resolve(result);
+  })
+  .catch((error) => {
+    reject(error);
+  });
+});
+};
+
+exports.cruD_remAtividade= (id) => {
+  return new Promise((resolve, reject) => {
+  query(
+    "DELETE FROM MODULOS where id=?", [id]
+  )
+  .then((result) => {
+    resolve(result);
+  })
+  .catch((error) => {
+    reject(error);
+  });
+});
+};
+
 
 exports.cRud_Grupos = () => {
   return new Promise((resolve, reject) => {

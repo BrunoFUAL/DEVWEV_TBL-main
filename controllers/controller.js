@@ -458,13 +458,102 @@ exports.consultGrupos = (req, res) => {
     dbmySQL
       .cruD_remDocentes(id) // D: Delete
       .then((dados) => {
-        res.send("Docentes eliminados");
+        res.send("Docente eliminado");
         // console.log("Dados: " + JSON.stringify(dados)); // para debug
       })
       .catch((err) => {
         return res
           .status(400)
           .send({ message: "Não existe o docente escolhido!" });
+      });
+  }
+
+  exports.removerAlunos = (req, res) => {
+    const id = req.body.id;
+    dbmySQL
+      .cruD_remAlunos(id) // D: Delete
+      .then((dados) => {
+        res.send("Aluno eliminado");
+        // console.log("Dados: " + JSON.stringify(dados)); // para debug
+      })
+      .catch((err) => {
+        return res
+          .status(400)
+          .send({ message: "Não existe o aluno escolhido!" });
+      });
+  }
+
+  exports.removerGrupos = (req, res) => {
+    const id = req.body.id;
+    dbmySQL
+      .cruD_remGrupos(id) // D: Delete
+      .then((dados) => {
+        res.send("Grupo eliminado");
+        // console.log("Dados: " + JSON.stringify(dados)); // para debug
+      })
+      .catch((err) => {
+        return res
+          .status(400)
+          .send({ message: "Não existe o grupo escolhido!" });
+      });
+  }
+
+  exports.removerQuestão = (req, res) => {
+    const id = req.body.id;
+    dbmySQL
+      .cruD_remQuestao(id) // D: Delete
+      .then((dados) => {
+        res.send("Questão eliminada");
+        // console.log("Dados: " + JSON.stringify(dados)); // para debug
+      })
+      .catch((err) => {
+        return res
+          .status(400)
+          .send({ message: "Não existe o questão escolhida!" });
+      });
+  }
+
+  exports.removerQuestões = (req, res) => {
+    dbmySQL
+      .cruD_remQuestoes() // D: Delete
+      .then((dados) => {
+        res.send("Questões eliminadas");
+        // console.log("Dados: " + JSON.stringify(dados)); // para debug
+      })
+      .catch((err) => {
+        return res
+          .status(400)
+          .send({ message: "Não existem questões!" });
+      });
+  }
+
+  exports.removerAtividades = (req, res) => {
+    const id = req.body.id;
+    dbmySQL
+      .cruD_remAtividade(id) // D: Delete
+      .then((dados) => {
+        res.send("Atividade eliminada");
+        // console.log("Dados: " + JSON.stringify(dados)); // para debug
+      })
+      .catch((err) => {
+        return res
+          .status(400)
+          .send({ message: "Não existe a atividade escolhida!" });
+      });
+  }
+
+  exports.removerModulos = (req, res) => {
+    const id = req.body.id;
+    dbmySQL
+      .cruD_remModulo(id) // D: Delete
+      .then((dados) => {
+        res.send("Modulo eliminado");
+        // console.log("Dados: " + JSON.stringify(dados)); // para debug
+      })
+      .catch((err) => {
+        return res
+          .status(400)
+          .send({ message: "Não existe o modulo escolhida!" });
       });
   }
 
@@ -509,8 +598,7 @@ exports.createDocentes = (req, res) => {
       // console.log("Dados: " + JSON.stringify(dados)); // para debug
     })
     .catch((err) => {
-      return res
-        .status(400)
-        .send({ message: "Não há Grupos para mostrar!" });
+      console.log(err);
+      return res.send(err);
     });
 }

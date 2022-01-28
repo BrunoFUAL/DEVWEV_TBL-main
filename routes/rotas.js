@@ -51,6 +51,18 @@ module.exports = (app) => {
 
   router.post("/remdocentes", controlador.removerDocentes);
 
+  router.post("/remalunos", controlador.removerAlunos);
+
+  router.post("/remgrupos", controlador.removerGrupos);
+
+  router.post("/remquestao", controlador.removerQuestão);
+
+  router.post("/remquestoes", controlador.removerQuestões);
+
+  router.post("/rematividades", controlador.removerAtividades);
+
+  router.post("/remmodulos", controlador.removerModulos);
+
   router.post("/grupo", controlador.createGrupo);
 
   router.get("/grupos", controlador.consultGrupos);

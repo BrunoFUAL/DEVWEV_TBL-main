@@ -146,7 +146,6 @@
     </nav>
 
     <script src="/views/javascript/create.js"></script>
-    <script src="/models/mysql.js"></script>
 
     <script type="text/javascript">
       $("#btnmodal1").click(function () {
@@ -174,7 +173,10 @@
                 <br>
                 <br>
                 <button type="button" class="btn btn-primary" onclick="enviarDocente()">Registar</button>
-                <button type="button" class="btn btn-warning" onclick="removerDocente()">Apagar Registo</button>
+                <button type="button" class="btn btn-warning" onclick="removerDocente()">Apagar Registo*</button>
+                <br>
+                <h6>*Para apagar um registo deverá preencher somente o id do Docente</h6>
+                <p id="statusremoverDocente"></p>
               </form>
               <p id="resultado6"></p>
               <p id="falhou6"></p>
@@ -212,6 +214,10 @@
                 <label for="contato">Contato:</label><br>
                 <input id="telf" type="text" name="contato" /><br>
                 <button type="button" class="btn btn-primary" onclick="enviarAluno()">Registar</button>
+                <button type="button" class="btn btn-warning" onclick="removerAluno()">Apagar Registo*</button>
+                <br>
+                <h6>*Para apagar um registo deverá preencher somente o id do Aluno</h6>
+                <p id="statusremoverAluno"></p>
               </form>
               <p id="resultado1"></p>
               <p id="falhou1"></p>
@@ -251,6 +257,10 @@
                 <label for="pass">Password a atribuir ao Grupo:</label><br>
                 <input id="pwgrupo" type="text" name="pgrupo" /><br>
                 <button type="button" class="btn btn-primary" onclick="enviarGrupo()">Registar</button>
+                <button type="button" class="btn btn-warning" onclick="removerGrupo()">Apagar Registo*</button>
+                <br>
+                <h6>*Para apagar os registos deverá preencher somente o id do Grupo</h6>
+                <p id="statusremoverGrupo"></p>
               </form>
                 <p id="resultado2"></p>
                 <p id="falhou2"></p>
@@ -296,6 +306,12 @@
                   <label for="opt4">Opção 4:</label><br>
                   <input id="opt4" type="text" name="opt4" /><br>
                   <button type="button" class="btn btn-primary" onclick="enviarQuestoes()">Registar</button>
+                  <button type="button" class="btn btn-warning" onclick="removerQuestão()">Apagar Registo*</button>
+                  <button type="button" class="btn btn-danger" onclick="removerQuestões()">Apagar todos Registos*</button>
+                <br>
+                <h6>*Para apagar os registos deverá preencher somente o id do Grupo</h6>
+                <p id="statusremoverQuestão"></p>
+                <p id="statusremoverQuestões"></p>
                 </form>
                 <p id="resultado3"></p>
                 <p id="falhou3"></p>
@@ -333,10 +349,10 @@
                   <label for="tipo">Tipo (Grupo - G ou Individual - I):</label><br>
                   <input id="tipo" type="text" name="tipo" /><br>
                   <button type="button" class="btn btn-primary" onclick="enviarAtividades()">Registar</button>
-                  <button type="button" class="btn btn-primary" onclick="getPerguntas2()">Obter Perguntas</button>
-                  <br>
-                  <br>
-                  <div id="listaQuestoes"></div>
+                  <button type="button" class="btn btn-warning" onclick="removerAtividade()">Apagar Registo*</button>
+                <br>
+                <h6>*Para apagar os registos deverá preencher somente o id da Atividade</h6>
+                <p id="statusremoverAtividade"></p>
                 </form>
                 <p id="resultado4"></p>
                 <p id="falhou4"></p>
@@ -372,6 +388,10 @@
                   <label for="idativ">Ref. Atividade:</label><br>
                   <input id="idativ" type="text" name="idativ" /><br>
                   <button type="button" class="btn btn-primary" onclick="enviarModulos()">Registar</button>
+                  <button type="button" class="btn btn-warning" onclick="removerModulo()">Apagar Registo*</button>
+                <br>
+                <h6>*Para apagar os registos deverá preencher somente o id do Modulo</h6>
+                <p id="statusremoverModulo"></p>
                 </form>
                 <p id="resultado5"></p>
                 <p id="falhou5"></p>
@@ -450,7 +470,6 @@
     <script src="/views/javascript/create.js"></script>
     <script src="/views/javascript/load.js"></script>
     <!-- <script src="/views/javascript/script.js"></script> -->
-    <script src="/models/mysql.js"></script>
 
   </body>
 </html>
