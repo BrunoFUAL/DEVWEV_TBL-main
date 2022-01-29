@@ -108,6 +108,7 @@ async function enviaEmail(recipients, confirmationToken) {
   // URL para visualização prévia: https://ethereal.email/message/WaQKMgKddxQDoou...
 }
 
+// Verificar utilizador
 exports.verificaUtilizador = async (req, res) => {
   const confirmationCode = req.params.confirmationCode;
   dbmySQL
@@ -125,49 +126,6 @@ exports.verificaUtilizador = async (req, res) => {
     });
 };
 
-// // REGISTAR - cria um novo utilizador
-// exports.registar = async (req, res) => {
-//   console.log("Registar novo utilizador");
-//   if (!req.body) {
-//     return res.status(400).send({
-//       message: "O conteúdo não pode ser vazio!",
-//     });
-//   }
-//   const salt = await bcrypt.genSalt();
-//   const hashPassword = await bcrypt.hash(req.body.password, salt);
-//   const idaluno = req.body.idaluno
-//   const email = req.body.email;
-//   const password = hashPassword;
-//   const confirmationToken = jwt.sign(
-//     req.body.email,
-//     process.env.ACCESS_TOKEN_SECRET
-//   );
-//   var existealuno = await verificaraluno(idaluno);
-//   if (existealuno.length === 0){
-//     res.status(201).send({
-//       message:
-//         "Utilizador não matriculado, contate a secretaria!",
-//     });
-  
-//   }else{
-//   console.log("Utilizador matriculado, a efetuar registo");
-//   db.Crud_registar(idaluno, email, password, confirmationToken) // C: Create
-//     .then((dados) => {
-//       enviaEmail(email, confirmationToken).catch(console.error);
-//       res.status(201).send({
-//         message:
-//           "Utilizador criado com sucesso, confira sua caixa de correio para ativar!",
-//       });
-//       console.log("Controller - utilizador registado: ");
-//       console.log(JSON.stringify(dados)); // para debug
-//     })
-//     .catch((response) => {
-//       console.log("controller - registar:");
-//       console.log(response);
-//       return res.status(400).send(response);
-//     });
-//   }
-// }
 
 // REGISTAR - cria um novo utilizador
 exports.registar = async (req, res) => {
@@ -217,26 +175,7 @@ exports.registar = async (req, res) => {
 };
 }
 
-
-// Verificar se existe aluno na bd
-// function verificaraluno(id){
-//   return new Promise((resolve, reject) => {
-//     // busca os registos que contêm a chave
-//     alunos.find(
-//       {
-//         _id: id,
-//       },
-//       (err, dados) => {
-//         if (err) {
-//           reject("Aluno não matriculado consultar secretaria");
-//         } else {
-//           resolve(dados);
-//         }
-//       }
-//     );
-//   });
-// };
-
+// Verificar se o utilizador registado está inscrito como aluno
 function verificaraluno(id){
   return new Promise((resolve, reject) => {
     // busca os registos que contêm a chave
@@ -249,8 +188,6 @@ function verificaraluno(id){
       });
   });
 };
-
-
 
 
 
@@ -326,6 +263,23 @@ exports.consult = (req, res) => {
   });
  };
 
+ 
+// Remove alunos
+ exports.removerAlunos = (req, res) => {
+  const id = req.body.id;
+  dbmySQL
+    .cruD_remAlunos(id) // D: Delete
+    .then((dados) => {
+      res.send("Aluno eliminado");
+      // console.log("Dados: " + JSON.stringify(dados)); // para debug
+    })
+    .catch((err) => {
+      return res
+        .status(400)
+        .send({ message: "Não existe o aluno escolhido!" });
+    });
+}
+
  // CREATE - cria um novo registo de Grupo
 exports.createGrupo = (req, res) => {
   console.log("Create");
@@ -344,6 +298,38 @@ exports.createGrupo = (req, res) => {
   console.log(resposta);
   return res.send(resposta);
 };
+
+// Efetua consulta a grupos existentes
+exports.consultGrupos = (req, res) => {
+  dbmySQL
+    .cRud_Grupos() // R: Read
+    .then((dados) => {
+      res.send(dados);
+      // console.log("Dados: " + JSON.stringify(dados)); // para debug
+    })
+    .catch((err) => {
+      return res
+        .status(400)
+        .send({ message: "Não há Grupos para mostrar!" });
+    });
+}
+
+// Remover Grupos
+exports.removerGrupos = (req, res) => {
+  const id = req.body.id;
+  dbmySQL
+    .cruD_remGrupos(id) // D: Delete
+    .then((dados) => {
+      res.send("Grupo eliminado");
+      // console.log("Dados: " + JSON.stringify(dados)); // para debug
+    })
+    .catch((err) => {
+      return res
+        .status(400)
+        .send({ message: "Não existe o grupo escolhido!" });
+    });
+}
+
 
 // CREATE - cria um novo registo de Questões
 exports.createQuestoes = (req, res) => {
@@ -364,17 +350,7 @@ exports.createQuestoes = (req, res) => {
   return res.send(resposta);
 };
 
-// exports.consultPerguntas = (req, res) => {
-//   perguntas.find({},(err, data) =>{
-//     if (err){
-//       res.end();
-//       return;
-//     }
-//     res.json(data);
-
-//   });
-//  };
-
+// Consultar Perguntas
 exports.consultPerguntas = (req, res) => {
   dbmySQL
     .cRud_Perguntas() // R: Read
@@ -389,7 +365,38 @@ exports.consultPerguntas = (req, res) => {
     });
 }
 
+// Remover Questão por id
+exports.removerQuestão = (req, res) => {
+  const id = req.body.id;
+  dbmySQL
+    .cruD_remQuestao(id) // D: Delete
+    .then((dados) => {
+      res.send("Questão eliminada");
+      // console.log("Dados: " + JSON.stringify(dados)); // para debug
+    })
+    .catch((err) => {
+      return res
+        .status(400)
+        .send({ message: "Não existe o questão escolhida!" });
+    });
+}
 
+// Remover todas as questões
+exports.removerQuestões = (req, res) => {
+  dbmySQL
+    .cruD_remQuestoes() // D: Delete
+    .then((dados) => {
+      res.send("Questões eliminadas");
+      // console.log("Dados: " + JSON.stringify(dados)); // para debug
+    })
+    .catch((err) => {
+      return res
+        .status(400)
+        .send({ message: "Não existem questões!" });
+    });
+}
+
+// Criar atividades
  exports.createAtividades = (req, res) => {
   console.log("Create");
   if (!req.body) {
@@ -409,6 +416,23 @@ exports.consultPerguntas = (req, res) => {
   return res.send(resposta);
 };
 
+// Remover atividades
+exports.removerAtividades = (req, res) => {
+  const id = req.body.id;
+  dbmySQL
+    .cruD_remAtividade(id) // D: Delete
+    .then((dados) => {
+      res.send("Atividade eliminada");
+      // console.log("Dados: " + JSON.stringify(dados)); // para debug
+    })
+    .catch((err) => {
+      return res
+        .status(400)
+        .send({ message: "Não existe a atividade escolhida!" });
+    });
+}
+
+// Criar Modulos
 exports.createModulos = (req, res) => {
   console.log("Create");
   if (!req.body) {
@@ -427,136 +451,21 @@ exports.createModulos = (req, res) => {
   return res.send(resposta);
 };
 
-// exports.consultGrupos = (req, res) => {
-//   grupos.find({},(err, data) =>{
-//     if (err){
-//       res.end();
-//       return;
-//     }
-//     res.json(data);
-
-//   });
-//  };
-
-
-exports.consultGrupos = (req, res) => {
-    dbmySQL
-      .cRud_Grupos() // R: Read
-      .then((dados) => {
-        res.send(dados);
-        // console.log("Dados: " + JSON.stringify(dados)); // para debug
-      })
-      .catch((err) => {
-        return res
-          .status(400)
-          .send({ message: "Não há Grupos para mostrar!" });
-      });
-  }
-
-  exports.removerDocentes = (req, res) => {
-    const id = req.body.id;
-    dbmySQL
-      .cruD_remDocentes(id) // D: Delete
-      .then((dados) => {
-        res.send("Docente eliminado");
-        // console.log("Dados: " + JSON.stringify(dados)); // para debug
-      })
-      .catch((err) => {
-        return res
-          .status(400)
-          .send({ message: "Não existe o docente escolhido!" });
-      });
-  }
-
-  exports.removerAlunos = (req, res) => {
-    const id = req.body.id;
-    dbmySQL
-      .cruD_remAlunos(id) // D: Delete
-      .then((dados) => {
-        res.send("Aluno eliminado");
-        // console.log("Dados: " + JSON.stringify(dados)); // para debug
-      })
-      .catch((err) => {
-        return res
-          .status(400)
-          .send({ message: "Não existe o aluno escolhido!" });
-      });
-  }
-
-  exports.removerGrupos = (req, res) => {
-    const id = req.body.id;
-    dbmySQL
-      .cruD_remGrupos(id) // D: Delete
-      .then((dados) => {
-        res.send("Grupo eliminado");
-        // console.log("Dados: " + JSON.stringify(dados)); // para debug
-      })
-      .catch((err) => {
-        return res
-          .status(400)
-          .send({ message: "Não existe o grupo escolhido!" });
-      });
-  }
-
-  exports.removerQuestão = (req, res) => {
-    const id = req.body.id;
-    dbmySQL
-      .cruD_remQuestao(id) // D: Delete
-      .then((dados) => {
-        res.send("Questão eliminada");
-        // console.log("Dados: " + JSON.stringify(dados)); // para debug
-      })
-      .catch((err) => {
-        return res
-          .status(400)
-          .send({ message: "Não existe o questão escolhida!" });
-      });
-  }
-
-  exports.removerQuestões = (req, res) => {
-    dbmySQL
-      .cruD_remQuestoes() // D: Delete
-      .then((dados) => {
-        res.send("Questões eliminadas");
-        // console.log("Dados: " + JSON.stringify(dados)); // para debug
-      })
-      .catch((err) => {
-        return res
-          .status(400)
-          .send({ message: "Não existem questões!" });
-      });
-  }
-
-  exports.removerAtividades = (req, res) => {
-    const id = req.body.id;
-    dbmySQL
-      .cruD_remAtividade(id) // D: Delete
-      .then((dados) => {
-        res.send("Atividade eliminada");
-        // console.log("Dados: " + JSON.stringify(dados)); // para debug
-      })
-      .catch((err) => {
-        return res
-          .status(400)
-          .send({ message: "Não existe a atividade escolhida!" });
-      });
-  }
-
-  exports.removerModulos = (req, res) => {
-    const id = req.body.id;
-    dbmySQL
-      .cruD_remModulo(id) // D: Delete
-      .then((dados) => {
-        res.send("Modulo eliminado");
-        // console.log("Dados: " + JSON.stringify(dados)); // para debug
-      })
-      .catch((err) => {
-        return res
-          .status(400)
-          .send({ message: "Não existe o modulo escolhida!" });
-      });
-  }
-
+// Remover modulos
+exports.removerModulos = (req, res) => {
+  const id = req.body.id;
+  dbmySQL
+    .cruD_remModulo(id) // D: Delete
+    .then((dados) => {
+      res.send("Modulo eliminado");
+      // console.log("Dados: " + JSON.stringify(dados)); // para debug
+    })
+    .catch((err) => {
+      return res
+        .status(400)
+        .send({ message: "Não existe o modulo escolhida!" });
+    });
+}
 
  // CREATE - cria um novo docente
 exports.createDocentes = (req, res) => {
@@ -577,19 +486,7 @@ exports.createDocentes = (req, res) => {
   return res.send(resposta);
 };
 
-
-// exports.consultDocentes = (req, res) => {
-//   docentes.find({},(err, data) =>{
-//     if (err){
-//       res.end();
-//       return;
-//     }
-//     res.json(data);
-
-//   });
-//  };
-
-
+// Consultar Docentes
  exports.consultDocentes = (req, res) => {
   dbmySQL
     .cRud_Docentes() // R: Read
@@ -600,5 +497,22 @@ exports.createDocentes = (req, res) => {
     .catch((err) => {
       console.log(err);
       return res.send(err);
+    });
+}
+
+
+// Remover Docentes
+exports.removerDocentes = (req, res) => {
+  const id = req.body.id;
+  dbmySQL
+    .cruD_remDocentes(id) // D: Delete
+    .then((dados) => {
+      res.send("Docente eliminado");
+      // console.log("Dados: " + JSON.stringify(dados)); // para debug
+    })
+    .catch((err) => {
+      return res
+        .status(400)
+        .send({ message: "Não existe o docente escolhido!" });
     });
 }

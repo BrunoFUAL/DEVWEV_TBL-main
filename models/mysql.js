@@ -46,7 +46,7 @@ function query(sql, params) {
   });
 }
 
-
+// Registo utilizador
 
 exports.Crud_registar = (idaluno, email, password, confirmationToken) => {
   // insere um novo utilizador
@@ -124,6 +124,7 @@ exports.cRud_login = (email) => {
   });
 };
 
+// Remover Docentes da BD
 exports.cruD_remDocentes = (id) => {
   return new Promise((resolve, reject) => {
   query(
@@ -138,6 +139,7 @@ exports.cruD_remDocentes = (id) => {
 });
 };
 
+// Remover Alunos da BD
 exports.cruD_remAlunos = (id) => {
   return new Promise((resolve, reject) => {
   query(
@@ -152,6 +154,7 @@ exports.cruD_remAlunos = (id) => {
 });
 };
 
+// Remover Grupos da BD
 exports.cruD_remGrupos = (id) => {
   return new Promise((resolve, reject) => {
   query(
@@ -166,6 +169,7 @@ exports.cruD_remGrupos = (id) => {
 });
 };
 
+// Remover Perguntas da BD por ID
 exports.cruD_remQuestao= (id) => {
   return new Promise((resolve, reject) => {
   query(
@@ -180,6 +184,7 @@ exports.cruD_remQuestao= (id) => {
 });
 };
 
+// Remover todas as Perguntas da BD
 exports.cruD_remQuestoes = () => {
   return new Promise((resolve, reject) => {
   query(
@@ -194,6 +199,7 @@ exports.cruD_remQuestoes = () => {
 });
 }
 
+// Remover Atividade
 exports.cruD_remAtividade= (id) => {
   return new Promise((resolve, reject) => {
   query(
@@ -208,7 +214,8 @@ exports.cruD_remAtividade= (id) => {
 });
 };
 
-exports.cruD_remAtividade= (id) => {
+// Remover Modulo
+exports.cruD_remModulo= (id) => {
   return new Promise((resolve, reject) => {
   query(
     "DELETE FROM MODULOS where id=?", [id]
@@ -222,7 +229,7 @@ exports.cruD_remAtividade= (id) => {
 });
 };
 
-
+// Obter Grupos da BD
 exports.cRud_Grupos = () => {
   return new Promise((resolve, reject) => {
     // lê todos os registos
@@ -236,6 +243,7 @@ exports.cRud_Grupos = () => {
   });
 };
 
+// Obter Docentes da BD
 exports.cRud_Docentes = () => {
   return new Promise((resolve, reject) => {
     // lê todos os registos
@@ -249,6 +257,7 @@ exports.cRud_Docentes = () => {
   });
 };
 
+// Obter Perguntas da BD
 exports.cRud_Perguntas = () => {
   return new Promise((resolve, reject) => {
     // lê todos os registos
@@ -261,6 +270,3 @@ exports.cRud_Perguntas = () => {
       });
   });
 };
-
-
-
