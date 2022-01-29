@@ -1,385 +1,1476 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
-  <head>
-    <link rel="icon" href="/views/img/tbl4.png">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Site de uma Conferência Web">
-    <meta name="author" content="Ricardo Queirós">
+<head>
+  <link rel="icon" href="/views/img/tbl4.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Site de uma plataforma TBL">
+  <meta name="author" content="Grupo: Bruno Fernandes, Carina Valadas, Alexandre Alves, Olga Rodrigues">
 
-    <title>TBL - Virtual Classroom</title>
+  <title>TBL & Flipped Classroom</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="/views/css/webconf.css">
-    
-    <!-- Custom fonts for this template -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" type="text/css" href="/views/css/webconf.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    
-    <style>
-        #googleMap {
-            width: 100%; /* Span the entire width of the screen */
-            height: 400px; /* Set the height to 400 pixels */
-            -webkit-filter: grayscale(100%);
-            filter: grayscale(100%); /* Change the color of the map to black and white */
-        }
-      </style>
+  <!-- Custom fonts for this template -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
-  </head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
-  <body id="page-top">
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-        <img src="/views/img/tbl4.png" alt="Dev Web">
-        <a class="navbar-brand " href="#page-top">TBL - Virtual Classroom</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>          
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#sobre">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#speakers">SUBJECTS</a>
-            </li>
-            <!--
+
+  <style>
+    #googleMap {
+      width: 100%;
+      /* Span the entire width of the screen */
+      height: 400px;
+      /* Set the height to 400 pixels */
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      /* Change the color of the map to black and white */
+    }
+  </style>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+
+    <img src="/views/img/tbl4.png" alt="Dev Web">
+    <a class="navbar-brand" href="#page-top"><strong>Projeto TBL - Flipped Classroom</strong></a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav text-uppercase ml-auto">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#equipas">Equipas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#disciplinas">DISCIPLINAS</a>
+        </li>
+        <!--
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">PROGRAMA</a>
             </li>
             -->
-            <li class="nav-item">
-              <a id="aSponsors" class="nav-link js-scroll-trigger" href="#sponsors">WEBSITE LINKS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contacts">CONTACTS</a>
-            </li>
-            <li class="nav-item">
-              <a id="btnLogin" class="nav-link" href="#">TEACHERS</a>
-            </li>
-            <li>
-              <button class="pushable" onclick="window.location.href='https://localhost:8080/';"></a>
-                <span class="front">
-                  Portuguese Version
-                </span>
-              </button>
-          </li>
-          </ul>
+        <li class="nav-item">
+          <a id="aSponsors" class="nav-link js-scroll-trigger" href="#sponsors">LINKS UTEIS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#sobre">SOBRE</a>
+        </li>
+        <li class="nav-item">
+          <a id="btnmodal" class="nav-link">Utilizadores</a>
+        </li>
+        <li class="nav-item">
+          <a id="btnadmin" class="nav-link" >Administrador</a>
+        </li>
+        <li>
+          <button class="pushable" onclick="window.location.href='https://localhost:8080/'"></a>
+            <span class="front">
+              Portuguese Version
+            </span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+        <div class="intro-lead-in">Vamos a isto!</div>
+        <div class="intro-heading text-uppercase">Equipas Unidas, sucesso alcançado!</div>
+      </div>
+    </div>
+  </header>
+      
+  <!-- ######################### Equipas ########################## -->
+  <section id="equipas">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <br>
+          <br>
+          <br>
+          <h2 class="section-heading text-uppercase">Equipas</h2>
+          <h3 class="section-subheading text-center">Acesso restrito a grupos registados pelos docentes</h3>
+          <!-- Slideshow container -->
+      <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 6</div>
+          <img src="/views/img/Team_1.jpg" style="width:50%">
+          <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 6</div>
+          <img src="/views/img/Team_2.jpg" style="width:50%">
+          <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 6</div>
+          <img src="/views/img/Team_3.jpg" style="width:50%">
+          <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">4 / 6</div>
+          <img src="/views/img/Team_4.jpg" style="width:50%">
+          <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">5 / 6</div>
+          <img src="/views/img/Team_5.jpg" style="width:50%">
+          <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+          <div class="numbertext">6 / 6</div>
+          <img src="/views/img/Team_6.jpg" style="width:50%">
+          <div class="text"></div>
         </div>
       </div>
-    </nav>
-
-    <!-- Header -->
-    <header class="masthead">
-      <div class="container">
-        <div class="intro-text">
-          <div class="intro-lead-in">Lets Go!</div>
-          <div class="intro-heading text-uppercase">Your Virtual Classroom</div>
-          <a id="btnRegister" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Subscribe</a>
-        </div>
+      <div>
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" id="btnGrupo">Entrar</button>
       </div>
-    </header>
+                
+              </div>
+            </div>
 
-    <!-- ######################### SOBRE ########################## -->
-    <section id="sobre">
-      <div class="container">
+    </div>
+  </section>
+
+      <!-- ###################### DISCIPLINAS ####################### -->
+      <section class="bg-light" id="disciplinas">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">About</h2>
-            <h3 class="section-subheading ">Sala de aula virtual destinada à aprendizagem em grupo e partilha de informação entre alunos e docentes</h3>      
-            <h3 class="section-subheading ">Estão disponiveis materiais para as seguintes unidades curriculares</h3>        
+            <h2 class="section-heading text-uppercase">Disciplinas</h2>
+            <h3 class="section-subheading text-center">Acesso restrito a alunos registados</h3>
+            <h3 class="section-subheading text-muted">Estão disponiveis materiais de estudo para as seguintes unidades
+              curriculares:.</h3>
           </div>
-        </div>
-        
-        </div>
-      </div>
-    </section>
-
-       <!-- ###################### SPEAKERS ####################### -->
-       <section class="bg-light" id="speakers">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 text-center">
-              <h2 class="section-heading text-uppercase">Disciplinas</h2>
-              <h3 class="section-subheading text-muted">Estão disponiveis materiais de estudo para as seguintes unidades curriculares:.</h3>
+          <div class="row text-center">
+            <div class="col-md-3">
+              <span class="fa-stack fa-4x">
+                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                <i class="fas fa-globe fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4 class="topic-heading">Desenvolvimento WEB</h4>
+              <button id="btnDevWeb" type="button" disabled class="btn btn-primary" data-toggle="modal"
+                data-target="#modalDEVWEB">Consultar</button>
+              <p class="text-muted">Desenvolvimento Web visa formar profissionais aptos para conceber e implementar aplicações e serviços Web com conteúdos multimédia, autonomamente ou em equipa, recorrendo às novas tecnologias e ferramentas</p>
             </div>
-            <div class="row text-center">
-              <div class="col-md-6">
-                <span class="fa-stack fa-4x">
-                  <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                  <i class="fas fa-globe fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="topic-heading">Desenvolvimento WEB</h4>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDEVWEB">DEV WEB</button>
-                <p class="text-muted">Expandir a Web para fora do computador e ligá-la à Internet das Coisas!</p>
-              </div>
-              <div class="col-md-6">
-                <span class="fa-stack fa-4x">
-                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                  <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="topic-heading">Inteligência Artificial</h4>
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">IA</button>
-                <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em termos de performance!</p>
-              </div>      
-              <div class="col-md-6">
-                <span class="fa-stack fa-4x">
-                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                  <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="topic-heading">Gestão de Projetos</h4>
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">GP</button>
-                <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em termos de performance!</p>
-              </div> 
-              <div class="col-md-6">
-                <span class="fa-stack fa-4x">
-                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                  <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="topic-heading">Controlo de Gestão</h4>
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">CG</button>
-                <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em termos de performance!</p>
-              </div> 
-              <div class="col-md-6">
-                <span class="fa-stack fa-4x">
-                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                  <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="topic-heading">Gestão de Redes e Sistemas</h4>
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">GRS</button>
-                <p class="text-muted">Adaptar as aplicações Web a múltiplos dispositivos e torná-las mais responsivas em termos de performance!</p>
-              </div>     
+            <div class="col-md-3">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-bug fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4 class="topic-heading">Inteligência Artificial</h4>
+              <button id="btnIA" type="button" disabled class="btn btn-primary" data-toggle="modal"
+                data-target="#modalIA">Consultar</button>
+              <p class="text-muted">A disciplina analisa os algoritmos mais conhecidos e as suas aplicações à resolução de problemas.
+
+                O principal foco é na racionalização com conhecimento através de representações de lógicas Proposicional e de 1ª ordem, utilização de métodos estruturados para tomada de decisões automatizada, com modelos probabilísticos e inferências daí resultantes.</p>
+            </div>
+            <div class="col-md-3">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-address-card fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4 class="topic-heading">Gestão de Projetos</h4>
+              <button id="btnGP" type="button" disabled class="btn btn-primary" data-toggle="modal"
+                data-target="#modalGP">Consultar</button>
+              <p class="text-muted">Compreensão do papel dos Projectos e da Gestão de Projectos nas organizações e utilização do MS Project nas diferentes componentes de um projecto, fases, actividades, tarefas, sub-tarefas, milestones, restrições e calendários.</p>
+            </div>
+            <div class="col-md-3">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-eye fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4 class="topic-heading">Controlo de Gestão</h4>
+              <button id="btnGC" type="button" disabled class="btn btn-primary" data-toggle="modal"
+                data-target="#modalCG">Consultar</button>
+              <p class="text-muted">Pretende-se refletir sobre a definição de instrumentos eficazes para gerir a performance das organizações, assegurando a prossecução dos objetivos estratégicos e operacionais, evitando atitudes e comportamentos disfuncionais.</p>
+            </div>
+            <div class="col-md-3">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-wifi fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4 class="topic-heading">Gestão de Sistemas e Redes</h4>
+              <button id="btnGSR" type="button" disabled class="btn btn-primary" data-toggle="modal"
+                data-target="#modalGSR">Consultar</button>
+              <p class="text-muted">Adquirir os métodos e os conceitos que conduzem a uma gestão efectiva e eficiente dos sistemas distribuídos heterogéneos e totar os alunos de conhecimentos adequados para a elaboração de planos de implementação e monitorização de uma rede de sistemas</p>
+            </div>
           </div>
           <div class="row" id="renderSpeakers">
           </div>
-          </div>
         </div>
       </section>
-  
+
+      
+      <div class="modal" id="modalDEVWEB">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-overlay" id="modal-overlay"></div>
+            <div class="modal-header">
+              <h4 class="modal-title">Desenvolvimento WEB</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="container"></div>
+            <div class="modal-body">
+              <img src="/views/img/DEVWEB.png" alt="Dev Web">
+              <object data="/views/docs/debweb.txt" width="800" height="400">
+                Not supported
+              </object width="95%"></iframe></p>
+              <a data-toggle="modal" href="#modalDEVWEBl2" class="btn btn-primary" data-dismiss="modal">Aula</a>
+              <a data-toggle="modal" href="#modalDEVWEBl4" class="btn btn-primary" data-dismiss="modal">Trabalho de
+                Grupo</a>
+              <a data-toggle="modal" href="#modalDEVWEBl5" class="btn btn-primary" data-dismiss="modal">Links Uteis</a>
+
+            </div>
+            <div class="modal-footer">
+              <a href="#" data-dismiss="modal" class="btn">Fechar</a>
+            </div>
+  </div>
+</div>
+</div>
 
 
 
-<div class="modal" id="modalDEVWEB">
-	<div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-overlay" id="modal-overlay"></div>
-        <div class="modal-header">
-          <h4 class="modal-title">Desenvolvimento WEB</h4>    
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        </div><div class="container"></div>
-        <div class="modal-body">
-          <object data="/views/docs/debweb.txt" width="800" height="400">
-            Not supported
-            </object
-            width="95%"></iframe></p>
-          <a data-toggle="modal" href="#modalDEVWEBl2" class="btn btn-primary">Aula nº1</a>
-          <a data-toggle="modal" href="#modalDEVWEBl3" class="btn btn-primary">Aula nº2</a>
-          <a data-toggle="modal" href="#modalDEVWEBl4" class="btn btn-primary">Trabalho de Grupo</a>
-          <a data-toggle="modal" href="#modalDEVWEBl5" class="btn btn-primary">Links Uteis</a>
-        </div>
-        <div class="modal-footer">
-          <a href="#" data-dismiss="modal" class="btn">Close</a>
+    <div class="modal" id="modalDEVWEBl2" data-backdrop="static">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Aula</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          </div>
+          <div class="container"></div>
+          <div class="modal-body">
+            <embed src="/views/docs/devwebaula.pdf" frameborder="0" width="100%" height="400px">
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success" 
+            data-toggle="modal" 
+            data-target="#modalDEVWEB" 
+            data-dismiss="modal">Fechar</button>
+          </div>
         </div>
       </div>
     </div>
-</div>
-<div class="modal" id="modalDEVWEBl2" data-backdrop="static">
-	<div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Aula nº 1 - HTML</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        </div><div class="container"></div>
-        <div class="modal-body">
-          <embed src="/views/docs/html_tutorial.pdf" frameborder="0" width="100%" height="400px">
-        </div>
-        <div class="modal-footer">
-          <a href="#" data-dismiss="modal" class="btn">Close</a>
-          <a href="#" class="btn btn-primary">Save changes</a>
-        </div>
-      </div>
-    </div>
-</div>
-<div class="modal" id="modalDEVWEBl3" data-backdrop="static">
-	<div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Aula nº 2 - Javascript</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        </div><div class="container"></div>
-        <div class="modal-body">
-          <embed src="/views/docs/javascript_tutorial.pdf" frameborder="0" width="100%" height="400px">
-        </div>
-        <div class="modal-footer">
-          <a href="#" data-dismiss="modal" class="btn">Close</a>
-          <a href="#" class="btn btn-primary">Save changes</a>
+
+
+    <div class="modal" id="modalDEVWEBl4" data-backdrop="static">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Trabalho de Grupo</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          </div>
+          <div class="container"></div>
+          <div class="modal-body">
+            <embed src="/views/docs/devwebtrab.pdf" frameborder="0" width="100%" height="400px">
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success" 
+            data-toggle="modal" 
+            data-target="#modalDEVWEB" 
+            data-dismiss="modal">Fechar</button>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="modal" id="modalDEVWEBl5" data-backdrop="static">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Links Uteis</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          </div>
+          <div class="container"></div>
+          <div class="modal-body">
+            <img src="/views/img/linksuteis.png" alt="Dev Web">
+            <br>
+            <br>
+            Apresentamos alguns links uteis para consulta que servem de complemento
+            ao material disponibilizado nas aulas:
+            <br>
+            <br>
+            <li>
+              Developer Mozilla
+              <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web">
+                <img src="/views/img/mdn.jpg" alt="Logotipo mozilla que liga a página inicial do mozilla">
+              </a>
+            </li>
+            <li>
+              Dev Media
+              <a href="https://www.devmedia.com.br/javascript-tutorial/37257">
+                <img src="/views/img/devmedia.jpg" alt="Logotipo mozilla que liga a página inicial do mozilla">
+              </a>
+            </li>
+
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success" 
+            data-toggle="modal" 
+            data-target="#modalDEVWEB" 
+            data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modalIA">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-overlay" id="modal-overlay"></div>
+          <div class="modal-header">
+            <h4 class="modal-title">Inteligência Artificial</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          </div>
+          <div class="container"></div>
+          <div class="modal-body">
+            <img src="/views/img/IA.png" style="width:50%" alt="Dev Web">
+            <object data="/views/docs/ia.txt" width="800" height="400">
+              Not supported
+            </object width="95%"></iframe></p>
+            <a data-toggle="modal" href="#modalIA2" class="btn btn-primary" data-dismiss="modal">Aula</a>
+            <a data-toggle="modal" href="#modalIA4" class="btn btn-primary" data-dismiss="modal">Trabalho de
+              Grupo</a>
+            <a data-toggle="modal" href="#modalIA5" class="btn btn-primary" data-dismiss="modal">Links Uteis</a>
+
+          </div>
+          <div class="modal-footer">
+            <a href="#" data-dismiss="modal" class="btn">Fechar</a>
+          </div>
+      
 </div>
-<div class="modal" id="modalDEVWEBl4" data-backdrop="static">
-	<div class="modal-dialog modal-lg">
+</div>
+</div>
+
+  <div class="modal" id="modalIA2" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Aula</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="container"></div>
+        <div class="modal-body">
+          <embed src="/views/docs/IAaula.pdf" frameborder="0" width="100%" height="400px">
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success" 
+          data-toggle="modal" 
+          data-target="#modalIA" 
+          data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="modal" id="modalIA4" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Trabalho de Grupo</h4>
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        </div><div class="container"></div>
+        </div>
+        <div class="container"></div>
         <div class="modal-body">
-          <embed src="/views/docs/trabalhodevweb.pdf" frameborder="0" width="100%" height="400px">
+          <embed src="/views/docs/IAtrab.pdf" frameborder="0" width="100%" height="400px">
         </div>
         <div class="modal-footer">
-          <a href="#" data-dismiss="modal" class="btn">Close</a>
-          <a href="#" class="btn btn-primary">Save changes</a>
+          <button class="btn btn-success" 
+          data-toggle="modal" 
+          data-target="#modalIA" 
+          data-dismiss="modal">Fechar</button>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="modal" id="modalIA5" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Links Uteis</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="container"></div>
+        <div class="modal-body">
+          <img src="/views/img/linksuteis.png" alt="Dev Web">
+          <br>
+          <br>
+          Apresentamos alguns links uteis para consulta que servem de complemento
+          ao material disponibilizado nas aulas:
+          <br>
+          <br>
+          <li>
+            Associação Portuguesa para a Inteligência Artificial
+            <a href="http://www.appia.pt/">
+              <img src="/views/img/logoAPPIA_long.png" width="75%" alt="Logotipo mozilla que liga a página inicial do mozilla">
+            </a>
+          </li>
+          <li>
+            Accenture
+            <a href="https://www.accenture.com/pt-pt/insight-artificial-intelligence-future-growth">
+              <img src="/views/img/Acc_Logo_Black_Purple_RGB.PNG" alt="Logotipo mozilla que liga a página inicial do mozilla">
+            </a>
+          </li>
+
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success" 
+          data-toggle="modal" 
+          data-target="#modalIA" 
+          data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modalGP">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-header">
+          <h4 class="modal-title">Gestão de Projetos</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="container"></div>
+        <div class="modal-body">
+          <img src="/views/img/GP.png" style="width:50%" alt="Dev Web">
+          <object data="/views/docs/gp.txt" width="800" height="400">
+            Not supported
+          </object width="95%"></iframe></p>
+          <a data-toggle="modal" href="#modalGP2" class="btn btn-primary" data-dismiss="modal">Aula</a>
+          <a data-toggle="modal" href="#modalGP4" class="btn btn-primary" data-dismiss="modal">Trabalho de
+            Grupo</a>
+          <a data-toggle="modal" href="#modalGP5" class="btn btn-primary" data-dismiss="modal">Links Uteis</a>
+
+        </div>
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn">Fechar</a>
+        </div>
+    
+</div>
+</div>
+</div>
+
+<div class="modal" id="modalGP2" data-backdrop="static">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Aula</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="container"></div>
+      <div class="modal-body">
+        <embed src="/views/docs/GPaula.pdf" frameborder="0" width="100%" height="400px">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" 
+        data-toggle="modal" 
+        data-target="#modalGP" 
+        data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 
-    <!-- ###################### SPONSORS ########################## -->
-    <section id="sponsors" class="py-5">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">Links Uteis</h2>                
-              </div>
-            </div>
-            
-        <div class="row" id="renderSponsors">        
-        </div>
-      </div>
-    </section>
 
-    <!-- ####################### CONTACTOS ######################### -->
-    <section id="contacts">
-      <div class="container">
+
+
+<div class="modal" id="modalGP4" data-backdrop="static">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Trabalho de Grupo</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="container"></div>
+      <div class="modal-body">
+        <embed src="/views/docs/GPtrab.pdf" frameborder="0" width="100%" height="400px">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" 
+        data-toggle="modal" 
+        data-target="#modalGP" 
+        data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modalGP5" data-backdrop="static">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Links Uteis</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="container"></div>
+      <div class="modal-body">
+        <img src="/views/img/linksuteis.png" alt="Dev Web">
+        <br>
+        <br>
+        Apresentamos alguns links uteis para consulta que servem de complemento
+        ao material disponibilizado nas aulas:
+        <br>
+        <br>
+        <li>
+          PPlware
+          <a href="https://pplware.sapo.pt/software/top-5-ferramentas-gestao-de-projetos/#:~:text=A%20plataforma%20Jira%20%C3%A9%20uma%20das%20que%20mais,gestores%20podem%20facilmente%20criar%20gr%C3%A1ficos%20e%20relat%C3%B3rios%20detalhados.">
+            <img src="/views/img/GPlogo.png" width="75%" alt="Logotipo mozilla que liga a página inicial do mozilla">
+          </a>
+        </li>
+        <li>
+          PMI - Project Management Institute - Portugal
+          <a href="https://pmi-portugal.org/">
+            <img src="/views/img/PMI.png" alt="Logotipo mozilla que liga a página inicial do mozilla">
+          </a>
+        </li>
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" 
+        data-toggle="modal" 
+        data-target="#modalGP" 
+        data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modalCG">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-overlay" id="modal-overlay"></div>
+      <div class="modal-header">
+        <h4 class="modal-title">Controlo de Gestão</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="container"></div>
+      <div class="modal-body">
+        <img src="/views/img/CG.png" style="width:50%" alt="Dev Web">
+        <object data="/views/docs/cg.txt" width="800" height="400">
+          Not supported
+        </object width="95%"></iframe></p>
+        <a data-toggle="modal" href="#modalCG2" class="btn btn-primary" data-dismiss="modal">Aula</a>
+        <a data-toggle="modal" href="#modalCG4" class="btn btn-primary" data-dismiss="modal">Trabalho de
+          Grupo</a>
+        <a data-toggle="modal" href="#modalCG5" class="btn btn-primary" data-dismiss="modal">Links Uteis</a>
+
+      </div>
+      <div class="modal-footer">
+        <a href="#" data-dismiss="modal" class="btn">Fechar</a>
+      </div>
+  
+</div>
+</div>
+</div>
+
+<div class="modal" id="modalCG2" data-backdrop="static">
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Aula</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    </div>
+    <div class="container"></div>
+    <div class="modal-body">
+      <embed src="/views/docs/CGaula.pdf" frameborder="0" width="100%" height="400px">
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success" 
+      data-toggle="modal" 
+      data-target="#modalCG" 
+      data-dismiss="modal">Fechar</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal" id="modalCG4" data-backdrop="static">
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Trabalho de Grupo</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    </div>
+    <div class="container"></div>
+    <div class="modal-body">
+      <embed src="/views/docs/CGtrab.pdf" frameborder="0" width="100%" height="400px">
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success" 
+      data-toggle="modal" 
+      data-target="#modalCG" 
+      data-dismiss="modal">Fechar</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal" id="modalCG5" data-backdrop="static">
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Links Uteis</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    </div>
+    <div class="container"></div>
+    <div class="modal-body">
+      <img src="/views/img/linksuteis.png" alt="Dev Web">
+      <br>
+      <br>
+      Apresentamos alguns links uteis para consulta que servem de complemento
+      ao material disponibilizado nas aulas:
+      <br>
+      <br>
+      <li>
+        EduPortugal
+        <a href="https://eduportugal.eu/opcoes-de-estudo/controlo-de-gestao/">
+          <img src="/views/img/eduportugal.png" alt="Logotipo mozilla que liga a página inicial do mozilla">
+        </a>
+      </li>
+      <li>
+        PWC
+        <a href="https://www.pwc.pt/pt/formacao/portefolios/curso-cf/lisboa/controlo-gestao.html">
+          <img src="/views/img/Pwc.PNG" alt="Logotipo mozilla que liga a página inicial do mozilla">
+        </a>
+      </li>
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success" 
+      data-toggle="modal" 
+      data-target="#modalCG" 
+      data-dismiss="modal">Fechar</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal" id="modalGSR">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-overlay" id="modal-overlay"></div>
+      <div class="modal-header">
+        <h4 class="modal-title">Gestão de Sistemas e Redes</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="container"></div>
+      <div class="modal-body">
+        <img src="/views/img/GSR.png" style="width:50%" alt="Dev Web">
+        <object data="/views/docs/gsr.txt" width="800" height="400">
+          Not supported
+        </object width="95%"></iframe></p>
+        <a data-toggle="modal" href="#modalGSR2" class="btn btn-primary" data-dismiss="modal">Aula</a>
+        <a data-toggle="modal" href="#modalGSR4" class="btn btn-primary" data-dismiss="modal">Trabalho de
+          Grupo</a>
+        <a data-toggle="modal" href="#modalGSR5" class="btn btn-primary" data-dismiss="modal">Links Uteis</a>
+
+      </div>
+      <div class="modal-footer">
+        <a href="#" data-dismiss="modal" class="btn">Fechar</a>
+      </div>
+  
+</div>
+</div>
+</div>
+
+<div class="modal" id="modalGSR2" data-backdrop="static">
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Aula</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    </div>
+    <div class="container"></div>
+    <div class="modal-body">
+      <embed src="/views/docs/GSRaula.pdf" frameborder="0" width="100%" height="400px">
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success" 
+      data-toggle="modal" 
+      data-target="#modalGSR" 
+      data-dismiss="modal">Fechar</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal" id="modalGSR4" data-backdrop="static">
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Trabalho de Grupo</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    </div>
+    <div class="container"></div>
+    <div class="modal-body">
+      <embed src="/views/docs/GSRtrab.pdf" frameborder="0" width="100%" height="400px">
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success" 
+      data-toggle="modal" 
+      data-target="#modalGSR" 
+      data-dismiss="modal">Fechar</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal" id="modalGSR5" data-backdrop="static">
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Links Uteis</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    </div>
+    <div class="container"></div>
+    <div class="modal-body">
+      <img src="/views/img/linksuteis.png" alt="Dev Web">
+      <br>
+      <br>
+      Apresentamos alguns links uteis para consulta que servem de complemento
+      ao material disponibilizado nas aulas:
+      <br>
+      <br>
+      <li>
+        PPlware
+        <a href="https://pplware.sapo.pt/microsoft/windows/redes-vamos-conhecer-melhor-o-servico-dhcp/">
+          <img src="/views/img/GPlogo.PNG" alt="Logotipo mozilla que liga a página inicial do mozilla">
+        </a>
+      </li>
+      <li>
+        PCGUIA
+        <a href="https://www.pcguia.pt/2020/04/como-alterar-as-definicoes-de-dns-num-computador-com-windows-10/">
+          <img src="/views/img/PCGUIA.PNG" alt="Logotipo mozilla que liga a página inicial do mozilla">
+        </a>
+      </li>
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success" 
+      data-toggle="modal" 
+      data-target="#modalGSR" 
+      data-dismiss="modal">Fechar</button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+    <!-- ###################### LINKS UTEIS ########################## -->
+    <section id="sponsors" class="py-5">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Contactos</h2>
-            <h3 class="section-subheading text-muted">Deixe-nos a sua suesgtão/dúvida e nós rapidamente entraremos em contacto consigo!</h3>
+            <h2 class="section-heading text-uppercase">Links Uteis</h2>
+            <h3 class="section-subheading text-muted">Apresentamos alguns links para consulta de material auxiliar</h3>
+            <div class="row row-cols-1 row-cols-md-3 g-4 container-fluid">
+
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <br></br>
+                    <br></br>
+
+                    <img src="/views/img/bibliotecaportuguesa.png" alt="covid" style="width:100%;">
+                  </div>
+
+                  <div class="flip-card-back">
+                    <br></br>
+                    <br></br>
+                    <button type="button" class="button-51"><a
+                        href="https://bibliotronicaportuguesa.pt/">Website</a></button></p>
+
+                  </div>
+                </div>
+              </div>`;
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <br></br>
+                    <br></br>
+                    <img src="/views/img/projetoadamastor.png" alt="covid" style="width:100%;">
+                  </div>
+
+                  <div class="flip-card-back">
+                    <br></br>
+                    <br></br>
+                    <button type="button" class="button-51"><a
+                        href="https://projectoadamastor.org/">Website</a></button></p>
+
+                  </div>
+                </div>
+              </div>`;
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <br></br>
+                    <br></br>
+                    <img src="/views/img/camoes.png" alt="covid" style="width:100%;">
+                  </div>
+
+                  <div class="flip-card-back">
+                    <br></br>
+                    <br></br>
+                    <button type="button" class="button-51"><a
+                        href="http://cvc.instituto-camoes.pt/conhecer/biblioteca-digital-camoes.html">Website</a></button>
+                    </p>
+
+                  </div>
+                </div>
+              </div>`;
+
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <br></br>
+                    <br></br>
+                    <img src="/views/img/freeeboks.png" alt="covid" style="width:100%;">
+                  </div>
+
+                  <div class="flip-card-back">
+                    <br></br>
+                    <br></br>
+                    <button type="button" class="button-51"><a
+                        href="https://portugues.free-ebooks.net/">Website</a></button></p>
+
+                  </div>
+                </div>
+              </div>`;
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <br></br>
+                    <br></br>
+                    <img src="/views/img/open.png" alt="covid" style="width:100%;">
+                  </div>
+
+                  <div class="flip-card-back">
+                    <br></br>
+                    <br></br>
+                    <button type="button" class="button-51"><a
+                        href="https://open.umn.edu/opentextbooks">Website</a></button></p>
+
+                  </div>
+                </div>
+              </div>`;
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <br></br>
+                    <br></br>
+                    <img src="/views/img/universia.png" alt="covid" style="width:100%;">
+                  </div>
+
+                  <div class="flip-card-back">
+                    <br></br>
+                    <br></br>
+                    <button type="button" class="button-51"><a
+                        href="https://www.universia.net/pt/home.html">Website</a></button></p>
+
+                  </div>
+                </div>
+              </div>`;
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <br></br>
+                    <br></br>
+                    <img src="/views/img/logo.svg" alt="covid" style="width:100%;">
+                  </div>
+
+                  <div class="flip-card-back">
+                    <br></br>
+                    <br></br>
+                    <button type="button" class="button-51"><a href="https://openstax.org/">Ver Website</a></button></p>
+
+                  </div>
+                </div>
+              </div>`;
+
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <form id="contactForm" name="sentMessage">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input class="form-control" id="name" type="text" placeholder="o seu nome" required>                    
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control" id="email" type="email" placeholder="o seu email" required>
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control" id="phone" type="tel" placeholder="o seu nº de telemóvel">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <textarea class="form-control" id="message" placeholder="a sua mensagem" required></textarea>
-                  </div>
-                </div>
-                
-                <div class="col-lg-12 text-center">                  
-                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Enviar mensagem</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>      
       </div>
-      <br><br>
-      <div class="container-fluid" id="googleMap">
-        <div class="row">
-        </div>
-        </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="">    
+    <!-- ####################### SOBRE ######################### -->
+    <section id="sobre">
       <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <span class="copyright">Copyright &copy; TBL - Virtual Classroom</span>
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Sobre</h2>
+          <h3 class="section-subheading text-muted">Página criada por um grupo de alunos do 3º ano do Curso de Informática de Gestão da Universidade Autónoma de Lisboa</h3>
+          <h3 class="section-subheading text-muted">Agradecimento: Prof. Laércio Cruvinel - Desenvolvimento WEB</h3>
+          <div class="column">
+            <img src="/views/img/bruno.jpeg" alt="Bruno" style="width:75%">
+            <figcaption>Bruno Fernandes</figcaption>
           </div>
-          <div class="col-md-6">
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
+          <div class="column">
+            <img src="/views/img/carina.jpeg" alt="Carina" style="width:75%">
+            <figcaption>Carina Valadas</figcaption>
           </div>
-          
+          <div class="column">
+            <img src="/views/img/alexandre.jpeg" alt="Alexandre" style="width:75%">
+            <figcaption>Alexandre Alves</figcaption>
+          </div>
+          <div class="column">
+            <img src="/views/img/olga.jpeg" alt="Olga" style="width:75%">
+            <figcaption>Olga Rodrigues</figcaption>
+          </div>
+        </div>
         </div>
       </div>
-    </footer>
-   
+    </section>
 
-    <!-- Modal para autenticação -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+    
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+    <script src="/views/javascript/animation.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.9/sweetalert2.all.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/views/javascript/tbl.js"></script>
+
+
+    <!-- ###################### LOGIN ########################## -->
+
+    <script type="text/javascript">
+      $('#btnmodal').click(function() {
+      $('#myModal').modal('show');
+      });
+    </script>
+
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-overlay" id="modal-overlay"></div>
+      <div class="modal-header">
+        <h3>Menu Login</h3>
+    </div>
+      <div class="modal-body">
+        <button
+        type="button"
+        class="btn btn-primary mx-auto d-block mt-5"
+        id="btnModalLogin" data-dismiss="modal">
+        Fazer login
+      </button>
+  
+      <button
+        type="button"
+        class="btn btn-primary mx-auto d-block mt-5"
+        id="btnModalRegistar" data-dismiss="modal"
+      >
+        Registar
+      </button>
+  
+      <button
+        type="button"
+        class="btn btn-warning mx-auto d-block mt-5"
+        id="btnLogoff" data-dismiss="modal"
+      >
+        Fazer logoff
+      </button>
+      </div>
+     </div>
+    </div>
+  </div>
+      <!-- Modal para registar novo utilizador -->
+      <!-- se retirar o data-bs-backdrop, o modal desaparece ao clicar no fundo da página -->
+      <div
+        class="modal fade"
+        id="modalRegistar"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        data-backdrop="static"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Registo de novo utilizador
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >X</button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label class="form-label">Nº de Aluno</label>
+                <input
+                  type="idaluno"
+                  class="form-control"
+                  id="idalunoRegistar"
+                  name="idalunoRegistar"
+                  placeholder="ID-Aluno"
+                />
+                <p id="statusRegistar"></p>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">E-Mail</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="usernameRegistar"
+                  name="usernameRegistar"
+                  placeholder="E-Mail"
+                />
+                <p id="emailErroLoginRegistar"></p>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Senha</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="senhaRegistar"
+                  name="senhaRegistar"
+                  placeholder="Senha"
+                />
+                <p id="statusRegistar"></p>
+              </div>
+              <div class="modal-footer d-block">
+                <button id="btnCancelaRegistar" class="btn btn-warning float-end" data-dismiss="modal">
+                  Cancelar
+                </button>
+                <button
+                  class="btn btn-success float-end"
+                  id="btnSubmitRegistar" 
+                  onclick="validaRegisto()"
+                >
+                  Submeter
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Modal para fazer login -->
+      <!-- se retirar o data-bs-backdrop, o modal desaparece ao clicar no fundo da página -->
+      <div
+        class="modal fade"
+        id="modalLogin"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        data-backdrop="static"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Insira suas credenciais
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                id="btnLoginClose"
+              >X</button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label class="form-label">E-Mail</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="usernameLogin"
+                  name="usernameLogin"
+                  placeholder="E-Mail"
+                />
+                <p id="emailErroLogin"></p>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Senha</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="senhaLogin"
+                  name="senhaLogin"
+                  placeholder="Senha"
+                />
+                <p id="passErroLogin"></p>
+                <p id="statusLogin"></p>
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="rememberMe" />
+                <label class="form-check-label" for="rememberMe"
+                  >Lembrar-me</label
+                >
+              </div>
+              <div class="modal-footer d-block">
+                <p id='pRegistar' class="float-start">
+                  Sem conta ainda? <a href="#">Registe-se</a>
+                </p>
+                <button class="btn btn-warning float-end" data-dismiss="modal">
+                  Cancelar
+                </button>
+                <button
+                  class="btn btn-success float-end"
+                  id="btnSubmitLogin"
+                  onclick="validaLogin()"
+                >
+                  Submeter
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="/views/javascript/users.js"></script>
+      <script src="https://www.markuptag.com/bootstrap/5/js/bootstrap.bundle.min.js"></script>
+
+      <!-- ###################### Equipas ########################## -->
+      <script type="text/javascript">
+        $('#btnGrupo').click(function() {
+        $('#modalGrupo').modal('show');
+        });
+      </script>
+
+
+      <div
+      class="modal fade"
+      id="modalGrupo"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+      data-backdrop="static"
+    >
+      <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Entrar na Área privada</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+            <h5 class="modal-title" id="exampleModalLabel">
+              Reservado a Grupos registados
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >X</button>
           </div>
           <div class="modal-body">
-            
-              <form role="form">
-                <div class="form-group">
-                  <input type="email" class="form-control" placeholder="Email"/><br>
-                  <input type="password" class="form-control" placeholder="Password" />
-                </div>
-              </form>
-            
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Entrar</button>
+            <div class="mb-3">
+              <label class="form-label">Nº do grupo</label>
+              <input
+                type="idaluno"
+                class="form-control"
+                id="idgrupoEntrar"
+                name="idgrupoEntrar"
+                placeholder="ID-Aluno"
+              />
+              <p id="statusRegistar"></p>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Senha</label>
+              <input
+                type="password"
+                class="form-control"
+                id="senhagrupoEntrar"
+                name="senhagrupoEntrar"
+                placeholder="Senha"
+              />
+              <p id="statusRegistar"></p>
+              <p id="statusGrupo"></p>
+            </div>
+            <div class="modal-footer d-block">
+              <button id="btnCancelaRegistar" class="btn btn-warning float-end" data-bs-dismiss="modal">
+                Cancelar
+              </button>
+              <button
+                class="btn btn-success float-end"
+                id="btnSubmitGrupo" 
+                onclick="validaGrupo()"
+              >
+                Submeter
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <script src="/views/javascript/load.js"></script>
 
-    <!-- Bootstrap core JavaScript -->    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="/views/javascript/animation.js"></script>
-    
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.9/sweetalert2.all.min.js"></script>
-    
-    <!-- Custom scripts for this template -->
-    <script src="/views/javascript/webconfeng.js"></script>
+    <script type="text/javascript">
+      $('#btnadmin').click(function() {
+      $('#modalAdmin').modal('show');
+      });
+    </script>
 
 
-  </body>
+    <div
+    class="modal fade"
+    id="modalAdmin"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+    data-backdrop="static"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Reservado a Docentes/Administradores
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >X</button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Id do Docente</label>
+            <input
+              type="iddocente"
+              class="form-control"
+              id="iddocente"
+              name="iddocente"
+              placeholder="ID-Docente"
+            />
+            <p id="statusRegistar"></p>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Senha</label>
+            <input
+              type="password"
+              class="form-control"
+              id="passworddocente"
+              name="passworddocente"
+              placeholder="Senha"
+            />
+            <p id="statusRegistar"></p>
+            <p id="statusDocente"></p>
+          </div>
+          <div class="modal-footer d-block">
+            <button id="btnCancelaRegistar" class="btn btn-warning float-end" data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button
+              class="btn btn-success float-end"
+              id="btnSubmitGrupo" 
+              onclick="validaDocente()"
+            >
+              Submeter
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <script type="text/javascript">
+        $('#btnEntrarGrupo').click(function() {
+        $('#modalEntrarGrupo').modal('show');
+        });
+      </script>
+
+<!-- The Modal -->
+<div id="modalEntrarGrupo" class="modal modal--animate-fade bg-contrast-higher bg-opacity-90% js-modal">
+  <div class="modal-dialog modal-full">
+    <div class="modal-content">
+      <div class="modal-overlay" id="modal-overlay"></div>
+      <div class="modal-header">
+        <h4 class="modal-title">Forum Discussão em Grupo</h4>
+      </div>
+      <div class="container"></div>
+      <div class="modal-body">
+        <div class="navbar">
+          <h1> Tema em destaque na semana </h1>
+          <div class="start_btn"><button>Iniciar Teste</button></div>
+      
+      </div>
+      
+
+    <div class="one">
+      <embed src="/views/docs/grupo.pdf" frameborder="0" width="100%" height="400px">
+    </div>
+    <div class="two">
+        <!-- start Quiz button -->
+        
+        <!-- Info Box -->
+        <div class="info_box">
+          <div class="info-title"><span>Regras do Teste</span></div>
+          <div class="info-list">
+            <div class="info">1. Terá apenas <span>15 segundos</span> por cada questãp.</div>
+            <div class="info">2. A partir do momento em que seleccionar uma opção ja nao poderá alterar.</div>
+            <div class="info">3. Não poderá selecionar qualquer opção após o término do tempo.</div>
+            <div class="info">4. Não poderá abandonar o teste enquanto o mesmo estiver a decorrer.</div>
+            <div class="info">5. Terá a sua classificação calculada com base nas respostas corretas.</div>
+          </div>
+          <div class="buttons">
+            <button class="quit">Sair</button>
+            <button class="restart">Continuar</button>
+          </div>
+        </div>
+        <!-- Quiz Box -->
+        <div class="quiz_box">
+          <header>
+            <div class="title">Teste Teórico</div>
+            <div class="timer">
+              <div class="time_left_txt">Tempo restante</div>
+              <div class="timer_sec">15</div>
+            </div>
+            <div class="time_line"></div>
+          </header>
+          <section>
+            <div class="que_text">
+              <!-- Here I've inserted question from JavaScript -->
+            </div>
+            <div class="option_list">
+              <!-- Here I've inserted options from JavaScript -->
+            </div>
+          </section>
+          <!-- footer of Quiz Box -->
+          <footer>
+            <div class="total_que">
+              <!-- Here I've inserted Question Count Number from JavaScript -->
+            </div>
+            <button class="next_btn">Proxima Questão</button>
+          </footer>
+        </div>
+        <!-- Result Box -->
+        <div class="result_box">
+          <div class="icon">
+            <i class="fas fa-crown"></i>
+          </div>
+          <div class="complete_text">Terminou o Teste</div>
+          <div class="score_text">
+            <!-- Here I've inserted Score Result from JavaScript -->
+          </div>
+          <div class="buttons">
+            <button class="restart">Repetir Teste</button>
+            <button class="quit">Sair do Teste</button>
+          </div>
+        </div>
+  </div>
+      <div>
+        
+      </div>
+      <div class="app_body">
+          <div class="activity">
+            
+              <div class="actions">
+                  <button> Novo Tema </button>
+                  <input type="text" placeholder="search questions..."/>
+              </div>
+              </div>
+              <div class="questions">
+                  <ul>
+                      <div id="not_found" class="filtered_out">No match found</div>
+                  </ul>
+              </div>
+          </div>
+          <div class="question_form">
+              <div class="new_form">
+                  <h1>Bem vindos ao Portal de Discussão</h1>
+                  <p>Introduza o tema a ser discutido</p>
+                  <form>
+                      <input type="text" name="subject" placeholder="Subject" required />
+                      <textarea name="question" placeholder="Question" required ></textarea>
+                      <input type="submit" value="Submit" />
+                  </form>
+              </div>
+          </div>
+      </div>
+      </div>
+      
+    </div>
+
+      <script src="./views/javascript/app.js"></script>
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="/views/javascript/script.js"></script>
+
+
+<!-------------------------------Footer ----------------------------->
+<footer class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <span class="copyright">Copyright &copy; Projeto TBL - Flipped Classroom
+        </span>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-inline social-buttons">
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/profile.php?id=100076285091322">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://www.instagram.com/tblearning2021/">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+</body>
 
 </html>

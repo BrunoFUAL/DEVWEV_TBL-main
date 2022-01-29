@@ -105,6 +105,7 @@ function validaLogin() {
       document.getElementById("btnGP").disabled = false
       document.getElementById("btnGC").disabled = false
       document.getElementById("btnGSR").disabled = false
+
       document.getElementById("btnLoginClose").click();
       } else {
         throw body;
