@@ -1,0 +1,31 @@
+Introduction to the Web
+Introduction to the Web is a concise series that introduces the practical aspects of web development. You will configure the tools needed to build a simple web page and publish your own code.
+
+The story of your first website
+It's a lot of work to create a professional website, so if you're new to web development, we encourage you to start small. You won't build another Facebook right away, but it's not hard to get your own website online, so let's start there.
+
+Through the articles listed below, you will come out of nowhere and build your first page online. Come on!
+
+Installing the basic programs
+When it comes to tools to build a website, there is a lot to choose from. If you're just starting out, you might be confused by the variety of code editors, frameworks, and testing tools out there. In Installing the Basic Programs we will show you step by step how to install just the necessary software to start basic web development.
+
+What will your website look like?
+Before you start writing your website code, you should plan it first. What information will you provide? What fonts and colors will you use? In What will your website look like? We provide a simple method that you can follow to plan your site's content and design.
+
+Dealing with files
+A website consists of many files: text content, code, style sheets, media content, etc. When creating a website, you need to put these files together into a structure that makes sense and ensure they can connect. Handling files explains how to set up a file structure for your site and what issues you should be aware of.
+
+Basic HTML
+Hypertext Markup Language (HTML) is the code you use to structure your web content, giving it meaning and purpose. For example, is my content organized in paragraphs, or in a bulleted list? Do I have images on my page? I have a data table? Without pressing you, Basic HTML provides enough information to get you familiar with HTML.
+
+Basic css
+Cascading Stylesheets (CSS) is the code you use to style your website. For example, do you want your text to be black or red? Where should the content appear on the screen? What images or background colors should you use to decorate your website? Basic CSS provides what you need to get you started.
+
+Basic JavaScript
+JavaScript is the programming language you use to add interactive features to your website. Some examples could be games, things that happen when buttons are pressed or data that is entered into forms, dynamic styling effects, animation and much more. Basic JavaScript will give you an idea of ​​what's possible with this exciting programming language and how to get started with it.
+
+Publishing your website
+Once you've finished writing your code and organizing the files that make up your site, you need to make it all online so people can find it. Publishing Your Website describes how to get your code online with the least amount of effort.
+
+How the web works
+When you go to your favorite website, a lot of complicated stuff happens in the background that you might not know about. How the Web Works shows what happens when you view a website on your computer.

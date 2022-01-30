@@ -28,13 +28,6 @@ module.exports = (app) => {
 
   const path = require("path");
 
-//   router.get("/", function (req, res) {
-//     res.sendFile(path.join(__dirname + "/index.html"));
-//   });
-
-//   router.get("/", (req, res) => {
-//     res.render("index");
-//   });
 
   // Cria um novo utilizador
   router.post("/registar", controlador.registar);
@@ -85,9 +78,6 @@ module.exports = (app) => {
     res.send("Done.");
   });
 
-//   router.get("/", (req, res) => {
-//     res.render;
-//   });
 
   app.use('/', router);
 };

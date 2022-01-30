@@ -1,0 +1,49 @@
+SUBJECT OBJECTIVES
+
+ 
+
+The discipline of Systems and Network Management provides students with an approach to the main problems faced by a computer systems manager, covering, among others, aspects of systems administration, interconnection and networking, management of networked systems, protection and security.
+
+ 
+
+ 
+
+SUBJECT CONTENT
+
+Theoretical Program
+
+PART I - GENERAL ASPECTS OF SYSTEMS AND NETWORKS MANAGEMENT
+
+Chapter 1 - Management of systems and networks - motivation
+
+Chapter 2 - Fundamentals of Network Systems
+
+Chapter 3 – Requirements for managing systems and networks
+
+ 
+
+PART II - MANAGEMENT ARCHITECTURES
+
+Chapter 4 – Management architectures and their sub-models
+
+Chapter 5 - OSI and TMN Management
+
+Chapter 6 - Management on the Internet
+
+Chapter 7 - Web-based management architectures
+
+ 
+
+PART III - MANAGEMENT TOOLS AND TECHNIQUES
+
+Chapter 8 - Classification of management tools
+
+Chapter 9 - Isolated Testing and Monitoring Tools
+
+Chapter 10 - Management Platforms
+
+Chapter 11 - Integration tools
+
+Chapter 12 - Development Tools
+
+Chapter 13 – Solutions and tools for managing services and networks

@@ -1,0 +1,22 @@
+Goals
+Complement and deepen the knowledge acquired in the subjects of "Design and Analysis of Algorithms" and "Artificial Intelligence".
+Learning outcomes and competencies
+With this course, students are expected to acquire a better understanding of more complex problems in artificial intelligence and be able to use the correct methodology to solve them.
+work mode
+In person
+Prerequisites (prior knowledge) and co-requisites (concurrent knowledge)
+Design and Analysis of Algorithms, Artificial Intelligence
+Program
+1. AI applications: past, present and future.
+2. Search and optimization algorithms (meta-heuristics): Genetic Algorithms, Tabu, Simulated Annealing, GRASP, Ant colony, particle swarm.
+3. Knowledge-based systems. First order for knowledge representation. Uncertainty in rule systems. fuzzy models. Case based reasoning.
+4. Probabilistic models. Bayesian networks: manipulation, construction and inference. RB induction: parameters and topology. Diagnosis. Assessment.
+5. Multi-Agent Systems: MA architectures, interaction: coordination and cooperation, negotiation.
+6. Machine Learning. Reinforcement learning, ML integration with optimization methods.
+7. Natural Language Processing. Lexical and syntactic analysis (parsing), semantic interpretation, automatic translation.
+8. Intelligent Robotics: perception, planning and action.
+Mandatory Bibliography
+Haykin Simon S. 1931; neural networks. ISBN: 9780132733502
+Russell Stuart J. (Stuart Jonathan); Artificial intelligence. ISBN: 9780132071482 pbk
+Complementary Bibliography
+Hastie Trevor; The elements of statistical learning. ISBN: 9780387848570
