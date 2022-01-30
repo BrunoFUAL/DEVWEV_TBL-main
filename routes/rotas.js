@@ -21,7 +21,7 @@ module.exports = (app) => {
     res.send("File uploaded with sucess");
   });
 
-  router.post("/multiple", upload.array("files", 3), (req, res) => {
+  router.post("/multiple", upload.array("files", 5), (req, res) => {
     console.log(req.file);
     res.send("Files uploaded with sucess");
   });
