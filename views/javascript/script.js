@@ -8,7 +8,7 @@ window.onload = async function getPerguntas2(){
     
     for (pergunta of data){
         const root2 = {}
-        root2.numb = Number(pergunta._id);
+        root2.numb = Number(pergunta.id);
         root2.question = (pergunta.question);
         root2.answer = pergunta.answer;
         root2.option1 = pergunta.option1
@@ -183,7 +183,7 @@ function showResult(){
         scoreText.innerHTML = scoreTag;
     }
     else{ // if user scored less than 5
-        let scoreTag = '<span>e foi um desaste 😐, Acertaste <p>'+ userScore +'</p> de um total de <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>e foi um desastre 😐, Acertaste <p>'+ userScore +'</p> de um total de <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
     }
 }
