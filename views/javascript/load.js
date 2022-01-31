@@ -9,7 +9,7 @@ async function getData() {
     const idaluno = document.createElement(`div`);
 
     nome.textContent = `Nome do Aluno: ${aluno.nome}`;
-    idaluno.textContent = `ID: ${aluno._id}`;
+    idaluno.textContent = `ID: ${aluno.id}`;
     root.append(nome, idaluno);
     listaAlunos.append(root);
   }

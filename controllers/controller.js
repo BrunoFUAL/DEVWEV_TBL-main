@@ -253,15 +253,18 @@ exports.create = (req, res) => {
 };
 
 exports.consult = (req, res) => {
-  alunos.find({},(err, data) =>{
-    if (err){
-      res.end();
-      return;
-    }
-    res.json(data);
-
+  dbmySQL
+  .cRud_Alunos() // R: Read
+  .then((dados) => {
+    res.send(dados);
+    // console.log("Dados: " + JSON.stringify(dados)); // para debug
+  })
+  .catch((err) => {
+    return res
+      .status(400)
+      .send({ message: "Não há Alunos para mostrar!" });
   });
- };
+}
 
  
 // Remove alunos

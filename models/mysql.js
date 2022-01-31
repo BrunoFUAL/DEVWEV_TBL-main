@@ -139,6 +139,20 @@ exports.cruD_remDocentes = (id) => {
 });
 };
 
+// Obter Grupos da BD
+exports.cRud_Alunos = () => {
+  return new Promise((resolve, reject) => {
+    // lê todos os registos
+    query("SELECT * from ALUNOS")
+      .then((result) => {
+        resolve(result);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+};
+
 // Remover Alunos da BD
 exports.cruD_remAlunos = (id) => {
   return new Promise((resolve, reject) => {
