@@ -1,7 +1,0 @@
-{"_id":"1","tema":"Dev WEB","question":"Qual a linguagem para front end?","answer":"html","option1":"html","option2":"javascript","option3":"node.js","option4":"python"}
-{"_id":"2","tema":"Inteligencia Artificial","question":"Qual destes é um algoritmo que estudámos?","answer":"perceptron","option1":"escadas rolantes","option2":"descendente","option3":"perceptron","option4":"cascata"}
-{"_id":"3","tema":"Matematica","question":"2+2?","answer":"4","option1":"5","option2":"6","option3":"7","option4":"4"}
-{"_id":"4","tema":"Controlo de Gestão","question":"Qual a função do controller?","answer":"animador","option1":"cantor","option2":"ator","option3":"animador","option4":"agricultor"}
-{"_id":"5","tema":"Gestão de Projetos","question":"Qual o nome do software que estudámos?","answer":"microsoft project","option1":"microsoft project","option2":"excel","option3":"powerpoint","option4":"word"}
-{"_id":"6","tema":"Gestão de Projetos","question":"Qual o nome do software que estudámos?","answer":"microsoft project","option1":"microsoft project","option2":"excel","option3":"powerpoint","option4":"word"}
-{"_id":"9999","tema":"Teste","question":"Teste?","answer":"Teste1","option1":"Teste","option2":"Teste1","option3":"Testa","option4":"Testy"}
