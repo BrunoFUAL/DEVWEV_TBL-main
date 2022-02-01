@@ -260,8 +260,8 @@ function ques_details_template(id) {
 function ques_form_template() {
     return `
         <div class="new_form">
-            <h1>Bem Vindos ao portal de discussão de Equipas</h1>
-            <p>Introduza um tema ou efetue o upload do trabalho para discussão</p>
+            <h1>Welcome to your Discussion Portal</h1>
+            <p>Please enter a theme to discuss</p>
             <form>
                 <input type="text" name="subject" placeholder="Subject" required />
                 <textarea name="question" placeholder="Question" required ></textarea>
